@@ -2,11 +2,12 @@
     --primary-color: #8E9AEF;
     --secondary-color: #1D2587;
     --white-color: #FFFFFF;
-    --white-transparent: #ffffff7d;/*Only for dark background*/
     --body-color: #FDFDFD;
     --dark-color: #160731;
-    --section-bg: #8e99ef1d;
-    --shadow-color: #8e99ef5b;
+    --section-bg: #8E99EF1D;
+    --shadow-color: #8E99EF5B;
+    --footer-text-color: #EEEEEE;
+    --white-transparent: #FFFFFF7D;/*Only for dark background*/
 }
 * {
     font-family: 'Plus Jakarta Sans', sans-serif;
@@ -188,13 +189,13 @@ body {
     height: 100px;
 }
 /* footer */
-.footer-color {
+.footer-bg {
     background-color: var(--dark-color);
 }
 .footer-text {
-    color: var(--body-color);
+    color: var(--footer-text-color);
 }
-.footer-color a {
+.footer-bg a {
     &:hover {
         color: var(--primary-color);
     }
