@@ -2,8 +2,11 @@
     --primary-color: #8E9AEF;
     --secondary-color: #1D2587;
     --white-color: #FFFFFF;
+    --white-transparent: #ffffff7d;/*Only for dark background*/
     --body-color: #FDFDFD;
     --dark-color: #160731;
+    --section-bg: #8e99ef1d;
+    --shadow-color: #8e99ef5b;
 }
 * {
     font-family: 'Plus Jakarta Sans', sans-serif;
@@ -11,6 +14,34 @@
 body {
     background-color: var(--body-color);
 }
+/*section_*/
+.hero-size {
+    height: 500px;
+    margin-top: 64px;
+    margin-bottom: 64px;
+}
+.section-margin {
+    margin-top: 180px;
+}
+@media only screen and (max-width: 572px) {
+    .hero-size {
+        height: 230px;
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+    .section-margin {
+        margin-top: 140px;
+    }
+}
+.section-bg-1 {
+    background-color: var(--section-bg);
+}
+/*search*/
+.c-group {
+    border: 1px solid var(--primary-color);
+    /* box-shadow: -6px 6px 18px -8px var(--shadow-color); */
+}
+/*button_css*/
 .primary-btn {
     color: var(--white-color);
     background-color: var(--primary-color);
@@ -31,21 +62,6 @@ body {
     background-color: var(--secondary-color);
     transition: background-color 0.5s ease-in-out;
 }
-.bradius-one {
-    border-radius: 16px;
-}
-.bradius-two {
-    border-radius: 20px;
-}
-.bradius-three {
-    border-radius: 24px;
-}
-.h-highlight {
-    color: var(--primary-color);
-}
-.l-spacing {
-    letter-spacing: 1px;
-}
 .btn-p-1 {
     padding-left: 18px;
     padding-right: 18px;
@@ -55,12 +71,60 @@ body {
 .btn-p-2 {
     padding: 14px 22px;
 }
+.c-shadow {
+    box-shadow: -6px 6px 18px -8px #8E9AEF;
+}
+/*border_radius*/
+.bradius-one {
+    border-radius: 16px;
+}
+.bradius-two {
+    border-radius: 20px;
+}
+.bradius-three {
+    border-radius: 24px;
+}
+.bradius-four {
+    border-radius: 32px;
+}
+/*margin_padding*/
+
+/*icon_sizing*/
+.icon-size-1 {
+    width: 14px;
+    width: 14px;
+}
+.icon-size-2 {
+    width: 18px;
+    width: 18px;
+}
+.icon-size-3 {
+    width: 24px;
+    width: 24px;
+}
+.icon-size-4 {
+    width: 48px;
+    width: 48px;
+}
+.icon-size-5 {
+    width: 56px;
+    width: 56px;
+}
+/*heading_css*/
+.h-highlight {
+    color: var(--primary-color);
+}
+.l-spacing {
+    letter-spacing: 1px;
+}
+/*custom_background_css*/
 .c-bg-one {
     background-image: linear-gradient(90deg, rgba(170, 134, 255, 0.01) 1.97%, rgba(170, 134, 255, 0.01) 1.97%);
     backdrop-filter: blur(41px);
-    box-shadow: 0 4px 8px -6px #8e99ef59;
+    box-shadow: 0 4px 8px -6px var(--shadow-color);
 }
 .h-custom-bg-r {
+    position: relative;
     right: 0px;
     background-image: url(/assets/assets/hero_right_asset.jpg);
     background-position: right;
@@ -68,12 +132,14 @@ body {
     background-size: contain;
 }
 .h-custom-bg-l {
+    position: relative;
     left: 0px;
     background-image: url(/assets/assets/hero_left_asset.jpg);
     background-position: left;
     background-repeat: no-repeat;
     background-size: contain;
 }
+/*card_css*/
 .c-card {
     border: 0px;
     border-radius: 24px;
@@ -81,24 +147,22 @@ body {
     text-decoration: none;
     color: var(--secondary-color);
     background-color: var(--white-color);
-    box-shadow: -6px 6px 16px -8px #8e99ef5b;
+    box-shadow: -6px 6px 16px -8px var(--shadow-color);
+    transition: background-color 0.5s ease-in-out;
     
     &:hover {
-        box-shadow: -6px 6px 16px -4px #8e99ef5b;
+        color: var(--white-color);
+        background-color: var(--primary-color);
+        box-shadow: -6px 6px 16px -4px var(--shadow-color);
+        transition: background-color 0.5s ease-in-out;
     }
-}
-.c-card:hover {
-    color: var(--white-color);
-    background-color: var(--primary-color);
-    transition: background-color 0.5s ease-in-out;
 }
 .c-card .platform-details {
     cursor: pointer;
-    transition: border-color 0.2s ease-out;
 }
 .c-card-2 {
     border: 1px solid var(--primary-color);
-    border-radius: 24px;
+    border-radius: 32px;
     padding: 24px;
     text-decoration: none;
     color: var(--secondary-color);
@@ -107,15 +171,21 @@ body {
 .c-card-2 .platform-details {
     cursor: pointer;
 }
-.section-margin {
-    margin-top: 180px;
+.card-asset-1 {
+    width: auto;
+    height: 100px;
+}
+/*footer*/
+.footer-color {
+    color: var(--body-color);
+    background-color: var(--dark-color);
+}
+.footer-fade-text {
+    color: var(--white-transparent);
+}
+.logo-size {
+    height: 60px;
 }
 .footer_heading {
     font-size: 20px;
-}
-
-@media only screen and (max-width: 572px) {
-    .section-margin {
-        margin-top: 140px;
-    }
 }
