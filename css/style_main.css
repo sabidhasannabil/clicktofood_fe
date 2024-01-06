@@ -48,7 +48,7 @@ body {
 }
 .primary-btn:hover {
     color: var(--white-color);
-    background-color: var(--dark-color);
+    background-color: var(--secondary-color);
 }
 .outline-btn {
     border: 2px solid var(--secondary-color);
