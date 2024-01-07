@@ -102,6 +102,10 @@ body {
 .bradius-four {
     border-radius: 32px;
 }
+.bradius-bottom-1 {
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+}
 /* margin_padding */
 
 /* icon_sizing */
