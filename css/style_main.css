@@ -52,6 +52,14 @@ body {
 .section-bg-1 {
     background-color: var(--section-bg);
 }
+.header-bg {
+    border: 1px solid var(--section-bg);
+    background-image: url(/assets/assets/about_header.jpg);
+    background-color: #FBFBFD;
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 /* search */
 .c-group {
     border: 1px solid var(--primary-color);

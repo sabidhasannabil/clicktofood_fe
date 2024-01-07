@@ -3,9 +3,6 @@
     height: 100%;
 }
 .swiper-slide {
-    /* text-align: center; */
-    /* font-size: 18px; */
-    /* background: #fff; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +11,10 @@
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
+}
+.img-size {
+    height: 320px;
 }
 .autoplay-progress {
     position: absolute;
@@ -27,7 +27,7 @@
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    color: var(--swiper-theme-color);
+    color: var(--primary-color);
 }
 .autoplay-progress svg {
     --progress: 0;
@@ -38,9 +38,12 @@
     width: 100%;
     height: 100%;
     stroke-width: 4px;
-    stroke: var(--swiper-theme-color);
+    stroke: var(--primary-color);
     fill: none;
     stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
     stroke-dasharray: 125.6;
     transform: rotate(-90deg);
+}
+.swiper-pagination-bullet {
+    background: var(--primary-color)!important;
 }
