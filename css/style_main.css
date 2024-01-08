@@ -221,3 +221,18 @@ body {
 .border-fade {
     border-color: var(--white-transparent) !important;
 }
+
+/*about us page*/
+.nav-pills .nav-link:hover {
+    color: var(--primary-color);
+}
+.nav-pills .nav-link.active {
+    background-color: var(--secondary-color);
+}
+.nav-link-custom {
+    color: var(--dark-color);
+    border: 1px solid var(--secondary-color)!important;
+}
+.fade:not(.show) {
+    display: none;
+}
