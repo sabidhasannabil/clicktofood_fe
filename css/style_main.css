@@ -260,3 +260,18 @@ body {
         line-height: 36px;
     }
 }
+/*delivery_page*/
+.delivery-man-hero-size {
+    height: 600px;
+}
+.delivery-hero {
+    background-image: url(/assets/assets/delivery_man_hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+@media only screen and (max-width: 572px) {
+    .delivery-man-hero-size {
+        height: 500px;
+    }
+}
