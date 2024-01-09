@@ -243,3 +243,20 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+.why-icon {
+    width: 60px;
+    height: 60px;
+}
+.comment-bg {
+    height: 100%;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+.comment {
+    line-height: 56px;
+}
+@media only screen and (max-width: 572px) {
+    .comment {
+        line-height: 36px;
+    }
+}
