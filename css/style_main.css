@@ -99,7 +99,7 @@ body {
 }
 /* border_radius */
 .bradius-one {
-    border-radius: 16px;
+    border-radius: 16px !important;
 }
 .bradius-two {
     border-radius: 20px;
@@ -274,4 +274,7 @@ body {
     .delivery-man-hero-size {
         height: 500px;
     }
+}
+.rider-app-screen {
+    height: 400px;
 }
