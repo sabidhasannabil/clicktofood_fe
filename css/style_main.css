@@ -222,7 +222,7 @@ body {
     border-color: var(--white-transparent) !important;
 }
 
-/*about us page*/
+/*about_us_page*/
 .nav-pills .nav-link:hover {
     color: var(--primary-color);
 }
@@ -235,4 +235,11 @@ body {
 }
 .fade:not(.show) {
     display: none;
+}
+
+/*partner_page*/
+.partner-hero {
+    background-image: url(/assets/assets/partner_page_hro.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
