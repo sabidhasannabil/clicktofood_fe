@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click To Food</title>
+    <link rel="icon" type="image/x-icon" href="/assets/fav/fav_icon.png">
+    <!--fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!--Bootstrap_css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!--swiper_css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!--stylesheet-->
+    <link href="/css/style_main.css" rel="stylesheet">
+    <link href="/css/swiper_foods.css" rel="stylesheet">
+</head>
+<body>
+    <!--navbar_start-->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light c-bg-one py-3 mt-3">
+        <div class="container">
+            <a class="navbar-brand p-0" href="index.html">
+                <img src="/assets/logos/c2f_logo.svg" alt="" width="auto" height="40" class="d-inline-block">
+            </a>
+            <button class="navbar-toggler bradius-one toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span>
+                    <svg class="toggler-icon-custom" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                        <path d="M9.45033 15.5633L12.752 12.2616L5.53033 5.05162C4.97033 4.49162 4.00199 4.64328 3.65199 5.36662C2.82366 7.10495 3.12699 9.23995 4.56199 10.6866L9.45033 15.5633ZM17.3603 13.4516C19.1453 14.2799 21.6537 13.6966 23.5087 11.8416C25.737 9.61328 26.1687 6.41662 24.4537 4.70162C22.7503 2.99828 19.5537 3.41828 17.3137 5.64662C15.4587 7.50162 14.8753 10.0099 15.7037 11.7949L5.13366 22.365C4.91552 22.5831 4.79297 22.879 4.79297 23.1875C4.79297 23.4959 4.91552 23.7918 5.13366 24.01C5.3518 24.2281 5.64766 24.3506 5.95616 24.3506C6.26466 24.3506 6.56052 24.2281 6.77866 24.01L14.0003 16.8116L21.2103 24.0216C21.3183 24.1296 21.4466 24.2153 21.5877 24.2738C21.7288 24.3322 21.8801 24.3623 22.0328 24.3623C22.1856 24.3623 22.3368 24.3322 22.478 24.2738C22.6191 24.2153 22.7473 24.1296 22.8553 24.0216C22.9633 23.9136 23.049 23.7854 23.1075 23.6442C23.1659 23.5031 23.196 23.3519 23.196 23.1991C23.196 23.0464 23.1659 22.8951 23.1075 22.754C23.049 22.6129 22.9633 22.4846 22.8553 22.3766L15.6453 15.1666L17.3603 13.4516Z"/>
+                    </svg>
+                </span>
+            </button>
+            
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <!-- <ul class="navbar-nav mt-md-0 mt-5 me-3">
+                    <li class="nav-item">
+                        <a class="nav-link btn bradius-one primary-btn" href="#">
+                            <svg class="nav-svg-1" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.224 4.33333C11.5974 3.54667 12.4027 3 13.3334 3H18.6667C19.5974 3 20.4014 3.54667 20.776 4.33333C21.6867 4.34133 22.3974 4.38267 23.032 4.63067C23.7897 4.92703 24.4486 5.43068 24.9334 6.084C25.4227 6.74267 25.6534 7.58667 25.968 8.748L26.9574 12.3773L27.3307 13.4987L27.3627 13.5387C28.564 15.0773 27.992 17.3653 26.848 21.94C26.12 24.8507 25.7574 26.3053 24.672 27.1533C23.5867 28 22.0867 28 19.0867 28H12.9134C9.91338 28 8.41338 28 7.32804 27.1533C6.24271 26.3053 5.87871 24.8507 5.15204 21.94C4.00804 17.3653 3.43604 15.0773 4.63738 13.5387L4.66938 13.4987L5.04271 12.3773L6.03204 8.748C6.34804 7.58667 6.57871 6.74133 7.06671 6.08267C7.55168 5.42984 8.21057 4.92666 8.96804 4.63067C9.60271 4.38267 10.312 4.34 11.224 4.33333ZM11.2267 6.33733C10.344 6.34667 9.98938 6.38 9.69604 6.49467C9.288 6.65424 8.93313 6.92548 8.67204 7.27733C8.43738 7.59333 8.29871 8.03467 7.91204 9.45733L7.15204 12.2427C8.51204 12 10.3707 12 12.912 12H19.0867C21.6294 12 23.4867 12 24.8467 12.24L24.088 9.45467C23.7014 8.032 23.5627 7.59067 23.328 7.27467C23.067 6.92281 22.7121 6.65157 22.304 6.492C22.0107 6.37733 21.656 6.344 20.7734 6.33467C20.5841 6.73313 20.2857 7.06976 19.9128 7.30552C19.5399 7.54128 19.1079 7.6665 18.6667 7.66667H13.3334C12.8924 7.66662 12.4604 7.54159 12.0876 7.30608C11.7147 7.07057 11.4162 6.73555 11.2267 6.33733Z"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul> -->
+                <form class="mt-md-0 mt-5">
+                    <a class="btn bradius-one primary-btn me-3" href="#">
+                        <svg class="nav-svg-1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.224 4.33333C11.5974 3.54667 12.4027 3 13.3334 3H18.6667C19.5974 3 20.4014 3.54667 20.776 4.33333C21.6867 4.34133 22.3974 4.38267 23.032 4.63067C23.7897 4.92703 24.4486 5.43068 24.9334 6.084C25.4227 6.74267 25.6534 7.58667 25.968 8.748L26.9574 12.3773L27.3307 13.4987L27.3627 13.5387C28.564 15.0773 27.992 17.3653 26.848 21.94C26.12 24.8507 25.7574 26.3053 24.672 27.1533C23.5867 28 22.0867 28 19.0867 28H12.9134C9.91338 28 8.41338 28 7.32804 27.1533C6.24271 26.3053 5.87871 24.8507 5.15204 21.94C4.00804 17.3653 3.43604 15.0773 4.63738 13.5387L4.66938 13.4987L5.04271 12.3773L6.03204 8.748C6.34804 7.58667 6.57871 6.74133 7.06671 6.08267C7.55168 5.42984 8.21057 4.92666 8.96804 4.63067C9.60271 4.38267 10.312 4.34 11.224 4.33333ZM11.2267 6.33733C10.344 6.34667 9.98938 6.38 9.69604 6.49467C9.288 6.65424 8.93313 6.92548 8.67204 7.27733C8.43738 7.59333 8.29871 8.03467 7.91204 9.45733L7.15204 12.2427C8.51204 12 10.3707 12 12.912 12H19.0867C21.6294 12 23.4867 12 24.8467 12.24L24.088 9.45467C23.7014 8.032 23.5627 7.59067 23.328 7.27467C23.067 6.92281 22.7121 6.65157 22.304 6.492C22.0107 6.37733 21.656 6.344 20.7734 6.33467C20.5841 6.73313 20.2857 7.06976 19.9128 7.30552C19.5399 7.54128 19.1079 7.6665 18.6667 7.66667H13.3334C12.8924 7.66662 12.4604 7.54159 12.0876 7.30608C11.7147 7.07057 11.4162 6.73555 11.2267 6.33733Z"/>
+                        </svg>
+                    </a>
+                    <a href="login.html" class="btn primary-btn bradius-one btn-p-1" type="button">Log In
+                        <img class="icon-size-1 ms-3" src="./assets/icons/right_top.svg">
+                    </a>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <section id="" class="">
+        <div class="container">
+            <h1 class="fw-bold l-spacing mt-5">Best Food Service <br>For Your Test</h1>
+            <div class="d-flex justify-content-between mt-5">
+                <!--search_start-->
+                <form class="w-100 me-3" role="search">
+                    <div class="input-group c-group bradius-three">
+                        <div class="input-group-text border-0 bg-white bradius-three ps-3" id="searchFoodIcon">
+                            <img class="icon-size-3" src="/assets/icons/search.svg">
+                        </div>
+                        <input id="foodSearch" class="form-control form-control-lg border-0 bradius-three fs-6 py-3" type="search" placeholder="What do you want to order?" aria-label="Search">
+                    </div>
+                </form>
+                <!--filter_start-->
+                <button id="filterBtn" class="btn primary-btn bradius-three" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFilter" aria-expanded="false" aria-controls="collapseFilter">
+                    <svg class="svg-2 mx-2" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M31.4189 25.8064C31.4189 26.3765 30.9568 26.8387 30.3867 26.8387L11.5161 26.8387C10.946 26.8387 10.4838 26.3765 10.4838 25.8064C10.4838 25.2363 10.946 24.7742 11.5161 24.7742L30.3867 24.7742C30.9568 24.7742 31.4189 25.2363 31.4189 25.8064Z" fill-opacity="0.5"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.2469 26.8387L1.03226 26.8387C0.462157 26.8387 -2.45809e-07 26.3766 -2.70729e-07 25.8065C-2.95648e-07 25.2364 0.462157 24.7742 1.03226 24.7742L5.2469 24.7742C5.73833 21.8449 8.28591 19.6129 11.3548 19.6129C14.7754 19.6129 17.5484 22.3858 17.5484 25.8065C17.5484 29.2271 14.7754 32 11.3548 32C8.28591 32 5.73833 29.768 5.2469 26.8387Z"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M-1.35364e-07 6.19357C-2.10124e-07 5.62347 0.462157 5.16131 1.03226 5.16131L19.9029 5.16131C20.473 5.16131 20.9351 5.62347 20.9351 6.19357C20.9351 6.76367 20.473 7.22583 19.9029 7.22583L1.03226 7.22583C0.462158 7.22583 -6.06047e-08 6.76367 -1.35364e-07 6.19357Z" fill-opacity="0.5"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M25.7214 5.16129L30.3877 5.16129C30.9578 5.16129 31.4199 5.62345 31.4199 6.19355C31.4199 6.76365 30.9578 7.22581 30.3877 7.22581L25.7214 7.22581C25.23 10.1551 22.6824 12.3871 19.6135 12.3871C16.1929 12.3871 13.42 9.61415 13.42 6.19355C13.42 2.77295 16.1929 1.99678e-06 19.6135 1.54823e-06C22.6824 1.14579e-06 25.23 2.23204 25.7214 5.16129Z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="collapse mt-4" id="collapseFilter">
+                <div class="card c-card-2">
+                    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="foodPromotionalSlider" class="mt-5">
+        <div class="container">
+            <div class="swiper foods-first-slide section-bg-2 bradius-three">
+                <div class="swiper-wrapper text-white">
+                    <div class="swiper-slide">
+                        <div class="row align-items-center">
+                            <div class="col-md-8 col-7">
+                                <h1 id="foodSliderHeadingOne" class="fw-bold l-spacing d-md-block d-none ms-4 my-md-0 my-5">Special Deal For New Customer</h1>
+                                <h3 id="foodSliderHeadingMobileOne" class="fw-bold l-spacing d-md-none d-block ms-4 my-md-0 my-5">Special Deal For New Customer</h3>
+                                <p id="foodSliderDesOne" class="mt-4 l-spacing ms-4 d-md-block d-none">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur placeat unde, hic quae quibusdam perspiciatis!</p>
+                            </div>
+                            <div class="col-md-3 col-5 pe-md-0 pe-4">
+                                <img id="foodSliderAssetOne" class="img-size bradius-three" src="/assets/food_images/slider_asset.svg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="row align-items-center">
+                            <div class="col-md-8 col-7">
+                                <h1 id="foodSliderHeadingTwo" class="fw-bold l-spacing d-md-block d-none ms-4 my-md-0 my-5">Special Deal For New Customer</h1>
+                                <h3 id="foodSliderHeadingMobileTwo" class="fw-bold l-spacing d-md-none d-block ms-4 my-md-0 my-5">Special Deal For New Customer</h3>
+                                <p id="foodSliderDesTwo" class="mt-4 l-spacing ms-4 d-md-block d-none">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur placeat unde, hic quae quibusdam perspiciatis!</p>
+                            </div>
+                            <div class="col-md-3 col-5 pe-md-0 pe-4">
+                                <img id="foodSliderAssetTwo" class="img-size bradius-three" src="/assets/food_images/slider_asset.svg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="row align-items-center">
+                            <div class="col-md-8 col-7">
+                                <h1 id="foodSliderHeadingThree" class="fw-bold l-spacing d-md-block d-none ms-4 my-md-0 my-5">Special Deal For New Customer</h1>
+                                <h3 id="foodSliderHeadingMobileThree" class="fw-bold l-spacing d-md-none d-block ms-4 my-md-0 my-5">Special Deal For New Customer</h3>
+                                <p id="foodSliderDesThree" class="mt-4 l-spacing ms-4 d-md-block d-none">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur placeat unde, hic quae quibusdam perspiciatis!</p>                               
+                            </div>
+                            <div class="col-md-3 col-5 pe-md-0 pe-4">
+                                <img id="foodSliderAssetOne" class="img-size bradius-three" src="/assets/food_images/slider_asset.svg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination d-flex justify-content-start mb-md-4 mb-2 ms-4"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="categoriesSection" class="swiper-section mt-5">
+        <div class="container">
+            <div class="swiper swiper-container categoriesSlider">
+                <div class="swiper-wrapper py-4">
+                    <div class="swiper-slide">
+                        <a href="#" class="categories-card-1 p-2 pb-3" id="ctegoryItemOne">
+                            <div class="categories-card-image bradius-three">
+                                <img id="categoryItemImg" src="/assets/food_images/categoris_img/noodles.png">
+                            </div>
+                            <div class="mt-3 mb-2">
+                                <h6 id="categoryItemName" class="text-center">Noodles</h6>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="categories-card-1 p-2 pb-3" id="ctegoryItemOne">
+                            <div class="categories-card-image bradius-three">
+                                <img id="categoryItemImg" src="/assets/food_images/categoris_img/noodles.png">
+                            </div>
+                            <div class="mt-3 mb-2">
+                                <h6 id="categoryItemName" class="text-center">Noodles</h6>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="categories-card-1 p-2 pb-3" id="ctegoryItemOne">
+                            <div class="categories-card-image bradius-three">
+                                <img id="categoryItemImg" src="/assets/food_images/categoris_img/noodles.png">
+                            </div>
+                            <div class="mt-3 mb-2">
+                                <h6 id="categoryItemName" class="text-center">Noodles</h6>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="categories-card-1 p-2 pb-3" id="ctegoryItemOne">
+                            <div class="categories-card-image bradius-three">
+                                <img id="categoryItemImg" src="/assets/food_images/categoris_img/noodles.png">
+                            </div>
+                            <div class="mt-3 mb-2">
+                                <h6 id="categoryItemName" class="text-center">Noodles</h6>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="categories-card-1 p-2 pb-3" id="ctegoryItemOne">
+                            <div class="categories-card-image bradius-three">
+                                <img id="categoryItemImg" src="/assets/food_images/categoris_img/noodles.png">
+                            </div>
+                            <div class="mt-3 mb-2">
+                                <h6 id="categoryItemName" class="text-center">Noodles</h6>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="categories-card-1 p-2 pb-3" id="ctegoryItemOne">
+                            <div class="categories-card-image bradius-three">
+                                <img id="categoryItemImg" src="/assets/food_images/categoris_img/noodles.png">
+                            </div>
+                            <div class="mt-3 mb-2">
+                                <h6 id="categoryItemName" class="text-center">Noodles</h6>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="categories-card-1 p-2 pb-3" id="ctegoryItemOne">
+                            <div class="categories-card-image bradius-three">
+                                <img id="categoryItemImg" src="/assets/food_images/categoris_img/noodles.png">
+                            </div>
+                            <div class="mt-3 mb-2">
+                                <h6 id="categoryItemName" class="text-center">Noodles</h6>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="categories-card-1 p-2 pb-3" id="ctegoryItemOne">
+                            <div class="categories-card-image bradius-three">
+                                <img id="categoryItemImg" src="/assets/food_images/categoris_img/noodles.png">
+                            </div>
+                            <div class="mt-3 mb-2">
+                                <h6 id="categoryItemName" class="text-center">Noodles</h6>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="categories-card-1 p-2 pb-3" id="ctegoryItemOne">
+                            <div class="categories-card-image bradius-three">
+                                <img id="categoryItemImg" src="/assets/food_images/categoris_img/noodles.png">
+                            </div>
+                            <div class="mt-3 mb-2">
+                                <h6 id="categoryItemName" class="text-center">Noodles</h6>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="categories-card-1 p-2 pb-3" id="ctegoryItemOne">
+                            <div class="categories-card-image bradius-three">
+                                <img id="categoryItemImg" src="/assets/food_images/categoris_img/noodles.png">
+                            </div>
+                            <div class="mt-3 mb-2">
+                                <h6 id="categoryItemName" class="text-center">Noodles</h6>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="categories-card-1 p-2 pb-3" id="ctegoryItemOne">
+                            <div class="categories-card-image bradius-three">
+                                <img id="categoryItemImg" src="/assets/food_images/categoris_img/noodles.png">
+                            </div>
+                            <div class="mt-3 mb-2">
+                                <h6 id="categoryItemName" class="text-center">Noodles</h6>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="" class="swiper-section section-margin">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <h3 class="fw-semibold l-spacing">Featured Restaurants</h3>
+                <a class="" href="#">view all</a>
+            </div>
+            <div class="swiper swiper-container featuredRestaurant">
+                <div class="swiper-wrapper py-4">
+                    <div class="swiper-slide">
+                        <div class="product-card bradius-five">
+                            <div class="p-1">
+                                <img class="bradius-four" src="/assets/food_images/burger.png">
+                                <div class="rating bradius-one">
+                                    <a class="d-flex align-items-center" href="#">4.5
+                                        <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                            <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="favourite">
+                                    <button class="btn primary-btn favourite-btn bradius-one">
+                                        <svg class="svg-2 d-flex align-items-center" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3783 5.88622C9.66902 4.10486 6.79049 4.0794 4.92308 5.90387C4.91717 5.90965 4.91116 5.91534 4.90506 5.92092C3.09331 7.58038 3.06654 10.3577 4.92308 12.1716L4.92796 12.1763L11.9374 19.1469L19.0769 12.1716C19.0828 12.1658 19.0888 12.1601 19.0949 12.1545C20.9067 10.495 20.9335 7.71772 19.0769 5.90387C17.2195 4.08919 14.3268 4.08919 12.4694 5.90387C12.3227 6.04722 12.125 6.12596 11.9202 6.12264C11.7154 6.11933 11.5204 6.03424 11.3783 5.88622ZM11.9465 4.31813C9.59468 2.40387 6.12292 2.58601 3.85838 4.79012C1.36802 7.08049 1.39686 10.8778 3.84702 13.2742C3.84785 13.275 3.84869 13.2759 3.84952 13.2767L11.391 20.7763C11.689 21.0727 12.1688 21.0748 12.4694 20.7811L20.1419 13.2851C22.6328 10.9939 22.603 7.19491 20.1505 4.79876C17.8724 2.57305 14.397 2.41284 11.9465 4.31813Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h4 class="">McDonald’s</h4>
+                                <div class="d-flex mt-3">
+                                    <span class="me-3">Free Delivery</span>
+                                    <span class="">10-15 mins</span>
+                                </div>
+                                <div class="mt-5 mb-4">
+                                    <tag class="custom-tag me-2">Burger</tag>
+                                    <tag class="custom-tag me-2">Chicken</tag>
+                                    <tag class="custom-tag">Fast Food</tag>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card bradius-five">
+                            <div class="p-1">
+                                <img class="bradius-four" src="/assets/food_images/noodles.png">
+                                <div class="rating bradius-one">
+                                    <a class="d-flex align-items-center" href="#">4.5
+                                        <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                            <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="favourite">
+                                    <button class="btn primary-btn favourite-btn bradius-one">
+                                        <svg class="svg-2 d-flex align-items-center" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3783 5.88622C9.66902 4.10486 6.79049 4.0794 4.92308 5.90387C4.91717 5.90965 4.91116 5.91534 4.90506 5.92092C3.09331 7.58038 3.06654 10.3577 4.92308 12.1716L4.92796 12.1763L11.9374 19.1469L19.0769 12.1716C19.0828 12.1658 19.0888 12.1601 19.0949 12.1545C20.9067 10.495 20.9335 7.71772 19.0769 5.90387C17.2195 4.08919 14.3268 4.08919 12.4694 5.90387C12.3227 6.04722 12.125 6.12596 11.9202 6.12264C11.7154 6.11933 11.5204 6.03424 11.3783 5.88622ZM11.9465 4.31813C9.59468 2.40387 6.12292 2.58601 3.85838 4.79012C1.36802 7.08049 1.39686 10.8778 3.84702 13.2742C3.84785 13.275 3.84869 13.2759 3.84952 13.2767L11.391 20.7763C11.689 21.0727 12.1688 21.0748 12.4694 20.7811L20.1419 13.2851C22.6328 10.9939 22.603 7.19491 20.1505 4.79876C17.8724 2.57305 14.397 2.41284 11.9465 4.31813Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h4 class="">McDonald’s</h4>
+                                <div class="d-flex mt-3">
+                                    <span class="me-3">Free Delivery</span>
+                                    <span class="">10-15 mins</span>
+                                </div>
+                                <div class="mt-5 mb-4">
+                                    <tag class="custom-tag me-2">Burger</tag>
+                                    <tag class="custom-tag me-2">Chicken</tag>
+                                    <tag class="custom-tag">Fast Food</tag>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card bradius-five">
+                            <div class="p-1">
+                                <img class="bradius-four" src="/assets/food_images/burger.png">
+                                <div class="rating bradius-one">
+                                    <a class="d-flex align-items-center" href="#">4.5
+                                        <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                            <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="favourite">
+                                    <button class="btn primary-btn favourite-btn bradius-one">
+                                        <svg class="svg-2 d-flex align-items-center" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3783 5.88622C9.66902 4.10486 6.79049 4.0794 4.92308 5.90387C4.91717 5.90965 4.91116 5.91534 4.90506 5.92092C3.09331 7.58038 3.06654 10.3577 4.92308 12.1716L4.92796 12.1763L11.9374 19.1469L19.0769 12.1716C19.0828 12.1658 19.0888 12.1601 19.0949 12.1545C20.9067 10.495 20.9335 7.71772 19.0769 5.90387C17.2195 4.08919 14.3268 4.08919 12.4694 5.90387C12.3227 6.04722 12.125 6.12596 11.9202 6.12264C11.7154 6.11933 11.5204 6.03424 11.3783 5.88622ZM11.9465 4.31813C9.59468 2.40387 6.12292 2.58601 3.85838 4.79012C1.36802 7.08049 1.39686 10.8778 3.84702 13.2742C3.84785 13.275 3.84869 13.2759 3.84952 13.2767L11.391 20.7763C11.689 21.0727 12.1688 21.0748 12.4694 20.7811L20.1419 13.2851C22.6328 10.9939 22.603 7.19491 20.1505 4.79876C17.8724 2.57305 14.397 2.41284 11.9465 4.31813Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h4 class="">McDonald’s</h4>
+                                <div class="d-flex mt-3">
+                                    <span class="me-3">Free Delivery</span>
+                                    <span class="">10-15 mins</span>
+                                </div>
+                                <div class="mt-5 mb-4">
+                                    <tag class="custom-tag me-2">Burger</tag>
+                                    <tag class="custom-tag me-2">Chicken</tag>
+                                    <tag class="custom-tag">Fast Food</tag>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card bradius-five">
+                            <div class="p-1">
+                                <img class="bradius-four" src="/assets/food_images/noodles.png">
+                                <div class="rating bradius-one">
+                                    <a class="d-flex align-items-center" href="#">4.5
+                                        <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                            <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="favourite">
+                                    <button class="btn primary-btn favourite-btn bradius-one">
+                                        <svg class="svg-2 d-flex align-items-center" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3783 5.88622C9.66902 4.10486 6.79049 4.0794 4.92308 5.90387C4.91717 5.90965 4.91116 5.91534 4.90506 5.92092C3.09331 7.58038 3.06654 10.3577 4.92308 12.1716L4.92796 12.1763L11.9374 19.1469L19.0769 12.1716C19.0828 12.1658 19.0888 12.1601 19.0949 12.1545C20.9067 10.495 20.9335 7.71772 19.0769 5.90387C17.2195 4.08919 14.3268 4.08919 12.4694 5.90387C12.3227 6.04722 12.125 6.12596 11.9202 6.12264C11.7154 6.11933 11.5204 6.03424 11.3783 5.88622ZM11.9465 4.31813C9.59468 2.40387 6.12292 2.58601 3.85838 4.79012C1.36802 7.08049 1.39686 10.8778 3.84702 13.2742C3.84785 13.275 3.84869 13.2759 3.84952 13.2767L11.391 20.7763C11.689 21.0727 12.1688 21.0748 12.4694 20.7811L20.1419 13.2851C22.6328 10.9939 22.603 7.19491 20.1505 4.79876C17.8724 2.57305 14.397 2.41284 11.9465 4.31813Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h4 class="">McDonald’s</h4>
+                                <div class="d-flex mt-3">
+                                    <span class="me-3">Free Delivery</span>
+                                    <span class="">10-15 mins</span>
+                                </div>
+                                <div class="mt-5 mb-4">
+                                    <tag class="custom-tag me-2">Burger</tag>
+                                    <tag class="custom-tag me-2">Chicken</tag>
+                                    <tag class="custom-tag">Fast Food</tag>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card bradius-five">
+                            <div class="p-1">
+                                <img class="bradius-four" src="/assets/food_images/burger.png">
+                                <div class="rating bradius-one">
+                                    <a class="d-flex align-items-center" href="#">4.5
+                                        <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                            <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="favourite">
+                                    <button class="btn primary-btn favourite-btn bradius-one">
+                                        <svg class="svg-2 d-flex align-items-center" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3783 5.88622C9.66902 4.10486 6.79049 4.0794 4.92308 5.90387C4.91717 5.90965 4.91116 5.91534 4.90506 5.92092C3.09331 7.58038 3.06654 10.3577 4.92308 12.1716L4.92796 12.1763L11.9374 19.1469L19.0769 12.1716C19.0828 12.1658 19.0888 12.1601 19.0949 12.1545C20.9067 10.495 20.9335 7.71772 19.0769 5.90387C17.2195 4.08919 14.3268 4.08919 12.4694 5.90387C12.3227 6.04722 12.125 6.12596 11.9202 6.12264C11.7154 6.11933 11.5204 6.03424 11.3783 5.88622ZM11.9465 4.31813C9.59468 2.40387 6.12292 2.58601 3.85838 4.79012C1.36802 7.08049 1.39686 10.8778 3.84702 13.2742C3.84785 13.275 3.84869 13.2759 3.84952 13.2767L11.391 20.7763C11.689 21.0727 12.1688 21.0748 12.4694 20.7811L20.1419 13.2851C22.6328 10.9939 22.603 7.19491 20.1505 4.79876C17.8724 2.57305 14.397 2.41284 11.9465 4.31813Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h4 class="">McDonald’s</h4>
+                                <div class="d-flex mt-3">
+                                    <span class="me-3">Free Delivery</span>
+                                    <span class="">10-15 mins</span>
+                                </div>
+                                <div class="mt-5 mb-4">
+                                    <tag class="custom-tag me-2">Burger</tag>
+                                    <tag class="custom-tag me-2">Chicken</tag>
+                                    <tag class="custom-tag">Fast Food</tag>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Bootstrap_js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!--custom_js-->
+    <script src="/js/swiper_foods.js"></script>
+</body>
+</html>

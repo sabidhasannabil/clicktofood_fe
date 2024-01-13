@@ -19,8 +19,12 @@
             <a class="navbar-brand p-0" href="index.html">
                 <img src="/assets/logos/c2f_logo.svg" alt="" width="auto" height="40" class="d-inline-block">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler bradius-one toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span>
+                    <svg class="toggler-icon-custom" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                        <path d="M9.45033 15.5633L12.752 12.2616L5.53033 5.05162C4.97033 4.49162 4.00199 4.64328 3.65199 5.36662C2.82366 7.10495 3.12699 9.23995 4.56199 10.6866L9.45033 15.5633ZM17.3603 13.4516C19.1453 14.2799 21.6537 13.6966 23.5087 11.8416C25.737 9.61328 26.1687 6.41662 24.4537 4.70162C22.7503 2.99828 19.5537 3.41828 17.3137 5.64662C15.4587 7.50162 14.8753 10.0099 15.7037 11.7949L5.13366 22.365C4.91552 22.5831 4.79297 22.879 4.79297 23.1875C4.79297 23.4959 4.91552 23.7918 5.13366 24.01C5.3518 24.2281 5.64766 24.3506 5.95616 24.3506C6.26466 24.3506 6.56052 24.2281 6.77866 24.01L14.0003 16.8116L21.2103 24.0216C21.3183 24.1296 21.4466 24.2153 21.5877 24.2738C21.7288 24.3322 21.8801 24.3623 22.0328 24.3623C22.1856 24.3623 22.3368 24.3322 22.478 24.2738C22.6191 24.2153 22.7473 24.1296 22.8553 24.0216C22.9633 23.9136 23.049 23.7854 23.1075 23.6442C23.1659 23.5031 23.196 23.3519 23.196 23.1991C23.196 23.0464 23.1659 22.8951 23.1075 22.754C23.049 22.6129 22.9633 22.4846 22.8553 22.3766L15.6453 15.1666L17.3603 13.4516Z"/>
+                    </svg>
+                </span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav mt-md-0 mt-5 me-3">
@@ -47,28 +51,30 @@
     </nav>
     
     <!--hero_start-->
-    <section id="heroSection" class="h-custom-bg-l">
-        <div class="h-custom-bg-r">
-            <div class="container">
-                <div class="row d-flex justify-content-center align-items-center hero-size">
-                    <div class="col-md-7 col-12">
-                        <!--search start-->
-                        <form class="" role="search">
-                            <div class="input-group c-group bradius-three">
-                                <div class="input-group-text border-0 bg-white bradius-three" id="btnGroupAddon">
-                                    <img class="icon-size-3" src="./assets/icons/location.svg">
+    <section id="heroSection">
+        <div class="h-custom-bg-l">
+            <div class="h-custom-bg-r">
+                <div class="container">
+                    <div class="row d-flex justify-content-center align-items-center hero-size">
+                        <div class="col-md-7 col-12">
+                            <!--search start-->
+                            <form class="" role="search">
+                                <div class="input-group c-group bradius-three">
+                                    <div class="input-group-text border-0 bg-white bradius-three" id="btnGroupAddon">
+                                        <img class="icon-size-3" src="./assets/icons/location.svg">
+                                    </div>
+                                    <input id="locationSearch" class="form-control form-control-lg border-0 fs-6 py-3" type="search" placeholder="Search for area, street name, landmark..." aria-label="Search">
+                                    <button id="findMyLocation" class="input-group-text border-0 bg-white bradius-three">
+                                        <img class="icon-size-3" src="./assets/icons/my_location.svg">
+                                    </button>
                                 </div>
-                                <input id="locationSearch" class="form-control form-control-lg border-0 fs-6 py-3" type="search" placeholder="Search for area, street name, landmark..." aria-label="Search">
-                                <button id="findMyLocation" class="input-group-text border-0 bg-white bradius-three">
-                                    <img class="icon-size-3" src="./assets/icons/my_location.svg">
-                                </button>
-                            </div>
-                            <div class="d-flex justify-content-center mt-4">
-                                <button id="searchButton" class="btn primary-btn bradius-two btn-p-1 fs-5 px-4 c-shadow" type="submit">Lets Go
-                                    <img class="icon-size-3 ms-2" src="./assets/icons/send.svg">
-                                </button>
-                            </div>
-                        </form>
+                                <div class="d-flex justify-content-center mt-4">
+                                    <button id="searchButton" class="btn primary-btn bradius-two btn-p-1 fs-5 px-4 c-shadow" type="submit">Lets Go
+                                        <img class="icon-size-3 ms-2" src="./assets/icons/send.svg">
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -85,7 +91,7 @@
             </div>
             <div class="row mb-md-5 mb-4">
                 <div class="col-md-4 col-12">
-                    <a href="#" class="card c-card mt-md-0 mt-3">
+                    <a href="/foods_platform.html" class="card c-card bradius-three mt-md-0 mt-3">
                         <span class="pe-auto">
                             <img class="icon-size-5" src="/assets/icons/foods.svg">
                             <h4 class="fw-semibold l-spacing mt-2">Foods</h4>
@@ -93,7 +99,7 @@
                     </a>
                 </div>
                 <div class="col-md-4 col-12">
-                    <a href="#" class="card c-card mt-md-0 mt-3">
+                    <a href="#" class="card c-card bradius-three mt-md-0 mt-3">
                         <span class="pe-auto">
                             <img class="icon-size-5" src="/assets/icons/grocaries.svg">
                             <h4 class="fw-semibold l-spacing mt-2">Groceries</h4>
@@ -101,7 +107,7 @@
                     </a>
                 </div>
                 <div class="col-md-4 col-12">
-                    <a href="#" class="card c-card mt-md-0 mt-3">
+                    <a href="#" class="card c-card bradius-three mt-md-0 mt-3">
                         <span class="pe-auto">
                             <img class="icon-size-5" src="/assets/icons/medicines.svg">
                             <h4 class="fw-semibold l-spacing mt-2">Medicines</h4>
@@ -121,7 +127,7 @@
             </div>
             <div class="row mt-md-5 mt-4">
                 <div class="col-md-6 col-12">
-                    <div id="partnerCard" class="card c-card-2 mt-md-0 mt-3">
+                    <div id="partnerCard" class="c-card-2 bradius-four mt-md-0 mt-3">
                         <span>
                             <img id="partnerCardImg" class="card-asset-1" src="/assets/assets/partner_asset.png">
                             <h3 id="partnerCardTitle" class="fw-semibold mt-3">Become a partner</h3>
@@ -131,7 +137,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-12">
-                    <div id="deliverManCard" class="card c-card-2 mt-md-0 mt-3">
+                    <div id="deliverManCard" class="c-card-2 bradius-four mt-md-0 mt-3">
                         <span>
                             <img id="deliveryManImg" class="card-asset-1" src="/assets/assets/delivery_man_asset.png">
                             <h3 id="deliveryManCardTitle" class="fw-semibold mt-3">Become a Delivery Man</h3>
@@ -153,7 +159,7 @@
                     <p class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas, expedita. Dicta nisi dolorem necessitatibus numquam.</p>
                     <div class="row mt-md-5 mt-4">
                         <div class="col-md-5 col-12">
-                            <a href="#" class="card c-card mt-md-0 mt-3">
+                            <a href="#" class="card c-card bradius-three mt-md-0 mt-3">
                                 <div class="d-flex align-items-center">
                                     <img class="icon-size-4" src="/assets/icons/play_store.svg">
                                     <h3 class="ps-3 mt-2">Play Store</h3>
@@ -161,7 +167,7 @@
                             </a>
                         </div>
                         <div class="col-md-5 col-12">
-                            <a href="#" class="card c-card mt-md-0 mt-3">
+                            <a href="#" class="card c-card bradius-three mt-md-0 mt-3">
                                 <div class="d-flex align-items-center">
                                     <img class="icon-size-4" src="/assets/icons/app_store.svg">
                                     <h3 class="ps-3 mt-2">App Store</h3>
@@ -181,24 +187,24 @@
     <section id="coverageSection" class="section-margin">
         <div class="container">
             <h1 class="fw-bold text-center l-spacing">Our <span class="h-highlight">Coverage</span> Areas.</h1>
-            <div class="row mt-md-5 mt-4">
+            <div class="row mt-md-5 mt-4 py-4">
                 <div class="col-md-3 col-6 mt-md-0 mt-3">
-                    <a href="#" class="card c-card">
+                    <a href="#" class="card c-card bradius-three">
                         <h4 id="dhabiTitle" class="pt-2 l-spacing fw-semibold text-center">Dubai</h4>
                     </a>
                 </div>
                 <div class="col-md-3 col-6 mt-md-0 mt-3">
-                    <a href="#" class="card c-card">
+                    <a href="#" class="card c-card bradius-three">
                         <h4 id="abuDhabiTitle" class="pt-2 l-spacing fw-semibold text-center">Abu Dhabi</h4>
                     </a>
                 </div>
                 <div class="col-md-3 col-6 mt-md-0 mt-3">
-                    <a href="#" class="card c-card">
+                    <a href="#" class="card c-card bradius-three">
                         <h4 id="ajmanTitle" class="pt-2 l-spacing fw-semibold text-center">Al Ain</h4>
                     </a>
                 </div>
                 <div class="col-md-3 col-6 mt-md-0 mt-3">
-                    <a href="#" class="card c-card">
+                    <a href="#" class="card c-card bradius-three">
                         <h4 id="fujairahTitle" class="pt-2 l-spacing fw-semibold text-center">Sharjah</h4>
                     </a>
                 </div>
