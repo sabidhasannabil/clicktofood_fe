@@ -54,7 +54,7 @@ body {
     margin-top: 180px;
 }
 .section-margin-2 {
-    margin-top: 120px;
+    margin-top: 100px;
 }
 @media only screen and (max-width: 572px) {
     .hero-size {
@@ -66,7 +66,7 @@ body {
         margin-top: 120px;
     }
     .section-margin-2 {
-        margin-top: 100px;
+        margin-top: 80px;
     }
 }
 .section-bg-1 {
@@ -188,7 +188,6 @@ body {
 .h-custom-bg-r {
     position: relative;
     right: 0px;
-    background-image: url(/assets/assets/hero_right_asset.jpg);
     background-position: right;
     background-repeat: no-repeat;
     background-size: contain;
@@ -196,7 +195,6 @@ body {
 .h-custom-bg-l {
     position: relative;
     left: 0px;
-    background-image: url(/assets/assets/hero_left_asset.jpg);
     background-position: left;
     background-repeat: no-repeat;
     background-size: contain;
@@ -325,9 +323,7 @@ body {
 }
 /*food_categories_card*/
 .categories-card-1 {
-    /* border: 1px solid var(--primary-color); */
     border-radius: 32px;
-    text-decoration: none;
     color: var(--secondary-color);
     background-color: var(--white-color);
     transition: color 0.3s ease-in-out;
@@ -357,7 +353,6 @@ body {
     height: 31px;
     font-size: 14px;
     color: var(--secondary-color);
-    text-decoration: none;
     padding: 4px 12px;
     background-color: var(--white-color);
 }
@@ -372,7 +367,6 @@ body {
 /*products card*/
 .product-card {
     max-width: 500px;
-    text-decoration: none;
     color: var(--secondary-color);
     background-color: var(--white-color);
     box-shadow: var(--shadow-one);
@@ -383,10 +377,10 @@ body {
 }
 .product-card .img-box {
     position: relative;
+    aspect-ratio: 16/9;
 }
 .product-card .img-box img {
     aspect-ratio: 16/9;
-    min-height: 167px;
     object-fit: cover;
 }
 .product-card .img-box .tf-offer {
@@ -408,7 +402,6 @@ body {
 .product-card .img-box .rating span {
     color: var(--primary-color);
     font-size: 14px;
-    text-decoration: none;
 }
 .product-card .img-box .favourite {
     position: absolute;
@@ -430,7 +423,6 @@ body {
 /*restaurant card*/
 .restaurant-card {
     max-width: 500px;
-    text-decoration: none;
     color: var(--secondary-color);
     background-color: var(--white-color);
     box-shadow: var(--shadow-one);
@@ -439,10 +431,12 @@ body {
         color: var(--secondary-color);
     }
 }
+.restaurant-card .img-box {
+    position: relative;
+    aspect-ratio: 16/9;
+}
 .restaurant-card img {
     aspect-ratio: 16/9;
-    min-height: 167px;
-    max-height: 167px;
     object-fit: cover;
 }
 .restaurant-card .rating {
@@ -455,7 +449,6 @@ body {
 .restaurant-card .rating span {
     color: var(--primary-color);
     font-size: 14px;
-    text-decoration: none;
 }
 .restaurant-card .favourite {
     position: absolute;
@@ -465,6 +458,27 @@ body {
 .restaurant-card .favourite .favourite-btn {
     padding: 10px;
 }
+.restaurant-card .img-box .rs-offer {
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+    border-radius: 2px 12px 12px 2px;
+    padding: 4px 18px 4px 32px;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
 .restaurant-card span {
     font-size: 14px;
+}
+/**/
+.free-delivery-asset {
+    /* aspect-ratio: 41/9; */
+    height: 100%;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+@media only screen and (max-width: 572px) {
+    .free-delivery-asset {
+        aspect-ratio: 16/9;
+    }
 }

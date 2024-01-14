@@ -30,11 +30,17 @@
     height: auto;
     overflow: visible;
 }
+.swiper-container-feature {
+    width: 100%;
+    height: auto;
+    padding-right: 24px;
+}
 @media only screen and (max-width: 572px) {
     .swiper-container {
         padding-right: 12px;
     }
 }
+
 .custom-next {
     height: 32px;
     width: 60px;
