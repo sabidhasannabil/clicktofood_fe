@@ -8,6 +8,9 @@
     --shadow-color: #8E99EF5B;
     --footer-text-color: #EEEEEE;
     --white-transparent: #FFFFFF7D;/*Only for dark background*/
+    --shadow-one: -6px 6px 12px -8px var(--shadow-color);
+    --shadow-two: -6px 6px 16px -8px var(--shadow-color);
+    --shadow-three: -6px 6px 18px -8px var(--shadow-color);
 }
 * {
     font-family: 'Plus Jakarta Sans', sans-serif;
@@ -50,6 +53,9 @@ body {
 .section-margin {
     margin-top: 180px;
 }
+.section-margin-2 {
+    margin-top: 120px;
+}
 @media only screen and (max-width: 572px) {
     .hero-size {
         height: 230px;
@@ -58,6 +64,9 @@ body {
     }
     .section-margin {
         margin-top: 120px;
+    }
+    .section-margin-2 {
+        margin-top: 100px;
     }
 }
 .section-bg-1 {
@@ -118,7 +127,7 @@ body {
     padding: 14px 22px;
 }
 .c-shadow {
-    box-shadow: -6px 6px 18px -8px #8E9AEF;
+    box-shadow: var(--shadow-three);
 }
 /* border_radius */
 .bradius-one {
@@ -199,13 +208,13 @@ body {
     text-decoration: none;
     color: var(--secondary-color);
     background-color: var(--white-color);
-    box-shadow: -6px 6px 16px -8px var(--shadow-color);
+    box-shadow: var(--shadow-two);
     transition: background-color 0.5s ease-in-out;
     
     &:hover {
         color: var(--white-color);
         background-color: var(--primary-color);
-        box-shadow: -6px 6px 16px -4px var(--shadow-color);
+        box-shadow: var(--shadow-two);
         transition: background-color 0.5s ease-in-out;
     }
 }
@@ -311,6 +320,9 @@ body {
     fill: var(--white-color);
     transition: fill 0.3s ease-in-out;
 }
+.svg-3 {
+    fill: var(--primary-color);
+}
 /*food_categories_card*/
 .categories-card-1 {
     /* border: 1px solid var(--primary-color); */
@@ -319,7 +331,7 @@ body {
     color: var(--secondary-color);
     background-color: var(--white-color);
     transition: color 0.3s ease-in-out;
-    box-shadow: -6px 6px 16px -8px var(--shadow-color);
+    box-shadow: var(--shadow-two);
     transition: 0.5s ease-in-out;
 
     &:hover {
@@ -338,35 +350,72 @@ body {
 .categories-card-1 .categories-card-image {
     background-color: var(--white-color);
 }
+/*heading*/
+.view-all-btn {
+    border: .5px solid var(--secondary-color);
+    border-radius: 12px;
+    height: 31px;
+    font-size: 14px;
+    color: var(--secondary-color);
+    text-decoration: none;
+    padding: 4px 12px;
+    background-color: var(--white-color);
+}
+.view-all-margin {
+    margin-right: 141px;
+}
+@media only screen and (max-width: 572px) {
+    .view-all-margin {
+        margin-right: 0px;
+    }
+}
 /*products card*/
 .product-card {
-    /* border: 1px solid var(--primary-color); */
+    max-width: 500px;
     text-decoration: none;
     color: var(--secondary-color);
     background-color: var(--white-color);
-    box-shadow: -6px 6px 16px -8px var(--shadow-color);
+    box-shadow: var(--shadow-one);
+
+    &:hover {
+        color: var(--secondary-color);
+    }
 }
-.product-card img {
+.product-card .img-box {
     position: relative;
 }
-.product-card .rating {
+.product-card .img-box img {
+    aspect-ratio: 16/9;
+    min-height: 167px;
+    object-fit: cover;
+}
+.product-card .img-box .tf-offer {
     position: absolute;
-    top: 24px;
-    left: 24px;
+    top: 32px;
+    left: 0;
+    border-radius: 2px 12px 12px 2px;
+    padding: 4px 18px 4px 32px;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+.product-card .img-box .rating {
+    position: absolute;
+    bottom: 20px;
+    left: 16px;
     padding: 8px 16px;
     background-color: var(--white-color);
 }
-.product-card .rating a {
+.product-card .img-box .rating span {
     color: var(--primary-color);
     font-size: 14px;
     text-decoration: none;
 }
-.product-card .favourite {
+.product-card .img-box .favourite {
     position: absolute;
-    top: 24px;
-    right: 24px;
+    bottom: 20px;
+    right: 16px;
 }
-.product-card .favourite .favourite-btn {
+.product-card .img-box .favourite .favourite-btn {
     padding: 10px;
 }
 .product-card tag {
@@ -374,4 +423,48 @@ body {
     border-radius: 14px;
     padding: 10px 14px;
     background-color: var(--section-bg);
+}
+.product-card span {
+    font-size: 14px;
+}
+/*restaurant card*/
+.restaurant-card {
+    max-width: 500px;
+    text-decoration: none;
+    color: var(--secondary-color);
+    background-color: var(--white-color);
+    box-shadow: var(--shadow-one);
+
+    &:hover {
+        color: var(--secondary-color);
+    }
+}
+.restaurant-card img {
+    aspect-ratio: 16/9;
+    min-height: 167px;
+    max-height: 167px;
+    object-fit: cover;
+}
+.restaurant-card .rating {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    padding: 8px 16px;
+    background-color: var(--white-color);
+}
+.restaurant-card .rating span {
+    color: var(--primary-color);
+    font-size: 14px;
+    text-decoration: none;
+}
+.restaurant-card .favourite {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+}
+.restaurant-card .favourite .favourite-btn {
+    padding: 10px;
+}
+.restaurant-card span {
+    font-size: 14px;
 }

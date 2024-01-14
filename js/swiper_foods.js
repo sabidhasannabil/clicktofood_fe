@@ -38,6 +38,31 @@ var swiper = new Swiper(".categoriesSlider", {
     },
 });
 
+var swiper = new Swiper(".trendingFoods", {
+    slidesPerView: 1,
+    spaceBetween: 12,
+    // mousewheel: true,
+    // grabCursor: true,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 16,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 24,
+      },
+    },
+});
+
 var swiper = new Swiper(".featuredRestaurant", {
     slidesPerView: 1,
     spaceBetween: 12,
@@ -47,14 +72,18 @@ var swiper = new Swiper(".featuredRestaurant", {
     //   el: ".swiper-pagination",
     //   clickable: true,
     // },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+    },
     breakpoints: {
       640: {
-        slidesPerView: 2,
-        spaceBetween: 20,
+        slidesPerView: 1,
+        spaceBetween: 16,
       },
       768: {
-        slidesPerView: 3,
-        spaceBetween: 40,
+        slidesPerView: 2,
+        spaceBetween: 20,
       },
       1024: {
         slidesPerView: 4,
@@ -62,3 +91,4 @@ var swiper = new Swiper(".featuredRestaurant", {
       },
     },
 });
+
