@@ -72,3 +72,25 @@
 .custom-prev, .swiper-rtl .custom-next {
     left: auto;
 }
+.custom-next-tab {
+    height: 32px;
+    width: 32px;
+    right: 0;
+    border-radius: 12px;
+    background-color: var(--primary-color);
+}
+.custom-prev-tab {
+    height: 32px;
+    width: 32px;
+    left: 0;
+    border-radius: 12px;
+    background-color: var(--primary-color);
+}
+.custom-next-tab::after {
+    font-size: 18px;
+    color: var(--white-color);
+}
+.custom-prev-tab::after {
+    font-size: 18px;
+    color: var(--white-color);
+}

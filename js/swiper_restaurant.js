@@ -94,3 +94,50 @@ var swiper = new Swiper(".scheduled-food-fe", {
       },
     },
 });
+
+var swiper = new Swiper(".add-ons-slide", {
+    slidesPerView: 2,
+    spaceBetween: 12,
+    mousewheel: true,
+    // grabCursor: true,
+    
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 12,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 14,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 16,
+      },
+    },
+});
+var swiper = new Swiper(".tab-slider", {
+    slidesPerView: "2",
+    spaceBetween: 12,
+    mousewheel: false,
+    // grabCursor: true,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+    },
+    
+    breakpoints: {
+      640: {
+        slidesPerView: 3,
+        spaceBetween: 12,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 14,
+      },
+      1024: {
+        slidesPerView: 6,
+        spaceBetween: 8,
+      },
+    },
+});
