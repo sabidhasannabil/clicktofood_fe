@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click To Food</title>
+    <link rel="icon" type="image/x-icon" href="/assets/fav/fav_icon.png">
+    <!--fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!--Bootstrap_css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!--swiper_css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!--stylesheet-->
+    <link href="/css/style_main.css" rel="stylesheet">
+</head>
+<body>
+    <!--navbar_start-->
+    <nav id="navBarRestaurant" class="navbar sticky-top navbar-expand-lg navbar-light c-bg-one py-3 mt-3">
+        <div class="container">
+            <a id="logo" class="navbar-brand p-0" href="index.html">
+                <img id="logoImg" src="/assets/logos/c2f_logo.svg" alt="" width="auto" height="40" class="d-inline-block">
+            </a>
+            <button class="navbar-toggler bradius-one toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span>
+                    <svg class="toggler-icon-custom" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                        <path d="M9.45033 15.5633L12.752 12.2616L5.53033 5.05162C4.97033 4.49162 4.00199 4.64328 3.65199 5.36662C2.82366 7.10495 3.12699 9.23995 4.56199 10.6866L9.45033 15.5633ZM17.3603 13.4516C19.1453 14.2799 21.6537 13.6966 23.5087 11.8416C25.737 9.61328 26.1687 6.41662 24.4537 4.70162C22.7503 2.99828 19.5537 3.41828 17.3137 5.64662C15.4587 7.50162 14.8753 10.0099 15.7037 11.7949L5.13366 22.365C4.91552 22.5831 4.79297 22.879 4.79297 23.1875C4.79297 23.4959 4.91552 23.7918 5.13366 24.01C5.3518 24.2281 5.64766 24.3506 5.95616 24.3506C6.26466 24.3506 6.56052 24.2281 6.77866 24.01L14.0003 16.8116L21.2103 24.0216C21.3183 24.1296 21.4466 24.2153 21.5877 24.2738C21.7288 24.3322 21.8801 24.3623 22.0328 24.3623C22.1856 24.3623 22.3368 24.3322 22.478 24.2738C22.6191 24.2153 22.7473 24.1296 22.8553 24.0216C22.9633 23.9136 23.049 23.7854 23.1075 23.6442C23.1659 23.5031 23.196 23.3519 23.196 23.1991C23.196 23.0464 23.1659 22.8951 23.1075 22.754C23.049 22.6129 22.9633 22.4846 22.8553 22.3766L15.6453 15.1666L17.3603 13.4516Z"/>
+                    </svg>
+                </span>
+            </button>
+            
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <!--search_start-->
+                <form class="mt-md-0 mt-4 me-md-3" role="search">
+                    <div class="input-group c-group bradius-one bg-white">
+                        <div class="input-group-text border-0 bg-white bradius-three ps-3">
+                            <img id="searchIcon" class="icon-size-3" src="/assets/icons/search.svg">
+                        </div>
+                        <input id="foodSearch" class="form-control border-0 bradius-three fs-6 py-2" type="search" placeholder="What do you want to order?" aria-label="Search">
+                    </div>
+                </form>
+                <form class="mt-md-0 mt-5">
+                    <a id="cartBntAmountOne" class="btn bradius-one primary-btn me-3 active" href="#">
+                        <div class="d-flex align-items-center">
+                            <svg class="nav-svg-1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.224 4.33333C11.5974 3.54667 12.4027 3 13.3334 3H18.6667C19.5974 3 20.4014 3.54667 20.776 4.33333C21.6867 4.34133 22.3974 4.38267 23.032 4.63067C23.7897 4.92703 24.4486 5.43068 24.9334 6.084C25.4227 6.74267 25.6534 7.58667 25.968 8.748L26.9574 12.3773L27.3307 13.4987L27.3627 13.5387C28.564 15.0773 27.992 17.3653 26.848 21.94C26.12 24.8507 25.7574 26.3053 24.672 27.1533C23.5867 28 22.0867 28 19.0867 28H12.9134C9.91338 28 8.41338 28 7.32804 27.1533C6.24271 26.3053 5.87871 24.8507 5.15204 21.94C4.00804 17.3653 3.43604 15.0773 4.63738 13.5387L4.66938 13.4987L5.04271 12.3773L6.03204 8.748C6.34804 7.58667 6.57871 6.74133 7.06671 6.08267C7.55168 5.42984 8.21057 4.92666 8.96804 4.63067C9.60271 4.38267 10.312 4.34 11.224 4.33333ZM11.2267 6.33733C10.344 6.34667 9.98938 6.38 9.69604 6.49467C9.288 6.65424 8.93313 6.92548 8.67204 7.27733C8.43738 7.59333 8.29871 8.03467 7.91204 9.45733L7.15204 12.2427C8.51204 12 10.3707 12 12.912 12H19.0867C21.6294 12 23.4867 12 24.8467 12.24L24.088 9.45467C23.7014 8.032 23.5627 7.59067 23.328 7.27467C23.067 6.92281 22.7121 6.65157 22.304 6.492C22.0107 6.37733 21.656 6.344 20.7734 6.33467C20.5841 6.73313 20.2857 7.06976 19.9128 7.30552C19.5399 7.54128 19.1079 7.6665 18.6667 7.66667H13.3334C12.8924 7.66662 12.4604 7.54159 12.0876 7.30608C11.7147 7.07057 11.4162 6.73555 11.2267 6.33733Z"/>
+                            </svg>
+                            <span id="navCartPrice3" class="badge">15.00 AED</span>
+                        </div>
+                    </a>
+                    <a id="accountBtn1" href="account.html" class="btn primary-btn bradius-one btn-p-1" type="button">Account
+                        <img class="icon-size-1 ms-3" src="./assets/icons/right_top.svg">
+                    </a>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!--checkout section-->
+    <section id="checkOutSection" class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-12">
+                    <h4 class="mb-3">Cart Items</h4>
+                    <div class="d-flex justify-content-between align-items-center bradius-two section-bg-1 p-3">
+                        <div class="col-md-5 col-3 text-truncate">
+                            <span id="cardItem23" class="fs-6 ">Noodles with chicken</span>
+                        </div>
+                        <div class="col-md-7 col-9">
+                            <div class="d-flex justify-content-end align-items-center">
+                                <div class="me-md-3 me-0">
+                                    <button id="cartRemoveBtn1" class="btn">
+                                        <svg class="svg-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M5.12817 8.15385C5.12817 10.4103 5.12817 13.5897 5.12817 15.1282C5.23074 16.4615 5.3333 18.2051 5.43587 19.4359C5.53843 20.8718 6.7692 22 8.2051 22H15.7948C17.2307 22 18.4615 20.8718 18.5641 19.4359C18.6666 18.2051 18.7692 16.4615 18.8718 15.1282C18.9743 13.5897 18.8718 10.4103 18.8718 8.15385H5.12817Z"/>
+                                            <path d="M19.1795 5.07692H16.6154L15.7949 3.53846C15.2821 2.61538 14.359 2 13.3333 2H10.8718C9.84615 2 8.82051 2.61538 8.41026 3.53846L7.38462 5.07692H4.82051C4.41026 5.07692 4 5.48718 4 5.89744C4 6.30769 4.41026 6.71795 4.82051 6.71795H19.1795C19.5897 6.71795 20 6.41026 20 5.89744C20 5.38462 19.5897 5.07692 19.1795 5.07692ZM9.12821 5.07692L9.64103 4.25641C9.84615 3.84615 10.2564 3.53846 10.7692 3.53846H13.2308C13.7436 3.53846 14.1538 3.74359 14.359 4.25641L14.8718 5.07692H9.12821Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div id="quantityUpDownBtn2" class="btn-group d-flex align-items-center" role="group" aria-label="quantity up down">
+                                    <button id="quantityDownBtn" type="button" class="btn primary-btn bradius-one pt-1 pb-2">-</button>
+                                    <span id="cartQuantity1" class="fw-bold fs-6 mx-md-3 mx-2">1</span>
+                                    <button id="quantityUpBtn1" type="button" class="btn primary-btn bradius-one pt-1 pb-2">+</button>
+                                </div>
+                                <div class="ms-md-3 ms-2">
+                                    <span id="foodItemPrice1" class="fs-6">15.00 AED</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="bradius-two section-bg-1 p-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span id="adons" class="fw-semibold fs-6">Add-Ons</span>
+                                <div class="ms-3">
+                                    <span id="addonsItemsPrice1" class="fs-6">0.00 AED</span>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <span id="subTotal" class="fw-semibold fs-6">Sub Total</span>
+                                <div class="ms-3">
+                                    <span id="subTotalAmount1" class="fs-6">15.00 AED</span>
+                                </div>
+                            </div>
+                            <div class="mt-2">
+                                <span id="offerMessage" class="">Add 0.05 AED to make this a reward order</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <span id="serviceFee" class="fw-semibold fs-6">Service Fee</span>
+                                <div class="ms-3">
+                                    <span id="serviceFeePrice1" class="fs-6">0.00 AED</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <span id="deliveryFee" class="fw-semibold fs-6">Delivery Fee</span>
+                                <div class="ms-3">
+                                    <span id="deliveryFeePrice1" class="fs-6">0.00 AED</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <span id="bagFee" class="fw-semibold fs-6">Bag Fee</span>
+                                <div class="ms-3">
+                                    <span id="bagFeePrice1" class="fs-6">0.00 AED</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="mt-4">
+                        <div class=" bradius-two section-bg-1 p-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span id="riderTip" class="fs-6">Rider Tip</span>
+                                <div class="d-flex align-items-center">
+                                    <div id="tipUpDownBtn1" class="btn-group" role="group" aria-label="quantity up down">
+                                        <button id="tipDownBtn1" type="button" class="btn primary-btn bradius-one pt-1 pb-2 me-2">-</button>
+                                        <button id="tipUpBtn1" type="button" class="btn primary-btn bradius-one pt-1 pb-2">+</button>
+                                    </div>
+                                    <div class="ms-3">
+                                        <span id="tipUpDownPrice1" class="fs-6">0.00 AED</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <span id="total" class="fw-semibold fs-6">Total</span>
+                                <div class="ms-3">
+                                    <span id="totalPrice1" class="fs-6">15.00 AED</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7 col-12">
+                    <h4 class="mb-3">Billing address</h4>
+                    <form class="needs-validation" novalidate>
+                      <div class="row g-3">
+                        <div class="col-sm-6">
+                          <label for="firstName" class="form-label">First name</label>
+                          <input type="text" class="form-control form-control-lg bradius-one" id="firstName" placeholder="" value="" required>
+                          <div class="invalid-feedback">
+                            Valid first name is required.
+                          </div>
+                        </div>
+            
+                        <div class="col-sm-6">
+                          <label for="lastName" class="form-label">Last name</label>
+                          <input type="text" class="form-control form-control-lg bradius-one" id="lastName" placeholder="" value="" required>
+                          <div class="invalid-feedback">
+                            Valid last name is required.
+                          </div>
+                        </div>
+            
+                        <div class="col-12">
+                          <label for="username" class="form-label">Username</label>
+                          <div class="has-validation">
+                            <input type="text" class="form-control form-control-lg bradius-one" id="username" placeholder="Username" required>
+                          <div class="invalid-feedback">
+                              Your username is required.
+                            </div>
+                          </div>
+                        </div>
+            
+                        <div class="col-12">
+                          <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
+                          <input type="email" class="form-control form-control-lg bradius-one" id="email" placeholder="you@example.com">
+                          <div class="invalid-feedback">
+                            Please enter a valid email address for shipping updates.
+                          </div>
+                        </div>
+            
+                        <div class="col-12">
+                          <label for="address" class="form-label">Address</label>
+                          <input type="text" class="form-control form-control-lg bradius-one" id="address" placeholder="1234 Main St" required>
+                          <div class="invalid-feedback">
+                            Please enter your shipping address.
+                          </div>
+                        </div>
+            
+                        <div class="col-12">
+                          <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
+                          <input type="text" class="form-control form-control-lg bradius-one" id="address2" placeholder="Apartment or suite">
+                        </div>
+            
+                        <div class="col-md-5">
+                          <label for="country" class="form-label">Country</label>
+                          <select class="form-select bradius-one form-control-lg" id="country" required>
+                            <option value="">Choose...</option>
+                            <option>United Arab Emirates</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please select a valid country.
+                          </div>
+                        </div>
+            
+                        <div class="col-md-4">
+                          <label for="state" class="form-label">State</label>
+                          <select class="form-select bradius-one form-control-lg" id="state" required>
+                            <option value="">Choose...</option>
+                            <option>Dubai</option>
+                            <option>Abu Dhabi</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please provide a valid state.
+                          </div>
+                        </div>
+            
+                        <div class="col-md-3">
+                          <label for="zip" class="form-label">Zip</label>
+                          <input type="text" class="form-control form-control-lg bradius-one" id="zip" placeholder="" required>
+                          <div class="invalid-feedback">
+                            Zip code required.
+                          </div>
+                        </div>
+                      </div>
+            
+                      <hr class="my-4">
+            
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="sameAddress">
+                        <label class="form-check-label" for="sameAddress">Shipping address is the same as my billing address</label>
+                      </div>
+            
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="saveInfo">
+                        <label class="form-check-label" for="saveInfo">Save this information for next time</label>
+                      </div>
+            
+                      <hr class="my-4">
+            
+                      <h4 class="mb-3">Payment</h4>
+            
+                      <div class="my-3">
+                        <div class="form-check">
+                          <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                          <label class="form-check-label" for="credit">Credit card</label>
+                        </div>
+                        <div class="form-check">
+                          <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+                          <label class="form-check-label" for="debit">Debit card</label>
+                        </div>
+                        <div class="form-check">
+                          <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+                          <label class="form-check-label" for="paypal">PayPal</label>
+                        </div>
+                      </div>
+            
+                      <div class="row gy-3">
+                        <div class="col-md-6">
+                          <label for="ccName" class="form-label">Name on card</label>
+                          <input type="text" class="form-control form-control-lg bradius-one" id="ccName" placeholder="" required>
+                          <small class="text-muted">Full name as displayed on card</small>
+                          <div class="invalid-feedback">
+                            Name on card is required
+                          </div>
+                        </div>
+            
+                        <div class="col-md-6">
+                          <label for="ccNumber" class="form-label">Credit card number</label>
+                          <input type="text" class="form-control form-control-lg bradius-one" id="ccNumber" placeholder="" required>
+                          <div class="invalid-feedback">
+                            Credit card number is required
+                          </div>
+                        </div>
+            
+                        <div class="col-md-3">
+                          <label for="ccExpiration" class="form-label">Expiration</label>
+                          <input type="text" class="form-control form-control-lg bradius-one" id="ccExpiration" placeholder="" required>
+                          <div class="invalid-feedback">
+                            Expiration date required
+                          </div>
+                        </div>
+            
+                        <div class="col-md-3">
+                          <label for="ccCvv" class="form-label">CVV</label>
+                          <input type="text" class="form-control form-control-lg bradius-one" id="ccCvv" placeholder="" required>
+                          <div class="invalid-feedback">
+                            Security code required
+                          </div>
+                        </div>
+                      </div>
+            
+                      <hr class="my-4">
+            
+                      <button class="w-100 btn primary-btn bradius-one btn-p-1" type="submit">Continue to checkout</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--footer_start-->
+    <footer id="footerSection" class="section-margin footer-bg py-5">
+        <div class="container">
+
+            <div class="row border-bottom border-2 border-fade">
+                <div class="pb-5 d-md-flex justify-content-md-between footer-fade-text">
+                    <a id="careers" class="nav-link mt-2" href="careers.html">Careers</a>
+                    <a id="termsAndCondition" class="nav-link mt-2" href="terms_and_conditions.html">Terms and Conditions</a>
+                    <a id="faq" class="nav-link mt-2" href="faq.html">FAQ</a>
+                    <a id="privacyPolicy" class="nav-link mt-2" href="privacy_policy.html">Privacy Policy</a>
+                    <a id="contactUs" class="nav-link mt-2" href="contact_us.html">Contact Us</a>
+                    <a id="siteMap" class="nav-link mt-2" href="site_map.html">Site Map</a>
+                </div>
+            </div>
+
+            <div class="row footer-text pt-5 mb-5">
+
+                <div class="col-md-4 col-12">
+                    <a id="footerLogo" href="#" class="">
+                        <img id="footerLogoImg" class="logo-size" src="/assets/logos/c2f_logo_white.svg">
+                    </a>
+                    <p id="footerDescription" class="l-spacing mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem perferendis aliquid, cumque accusamus, quo nemo porro laboriosam aut magni saepe nobis corrupti tenetur voluptatem dolorum distinctio.</p>
+                </div>
+
+                <div class="col-md-2 col-6 mt-md-0 mt-4">
+                    <span id="footerHeading1" class="fs-5 fw-semibold">Company</span>
+                    <span class="mt-4">
+                        <a id="aboutUsLink" class="nav-link mt-4" href="about_us.html">About Us</a>
+                        <a id="OffersLink" class="nav-link mt-3" href="offers.html">Offers</a>
+                        <a id="bPartnerLink" class="nav-link mt-3" href="become_partner.html">Become a Partnet</a>
+                        <a id="bDeliveryManLink" class="nav-link mt-3" href="become_delivery_man.html">Become a Delivery Man</a>
+                    </span>
+                </div>
+                <div class="col-md-2 col-6 mt-md-0 mt-4">
+                    <span id="footerHeading2" class="fs-5 fw-semibold">Coverage</span>
+                    <span class="mt-4">
+                        <a class="nav-link mt-4" href="#">Dubai</a>
+                        <a class="nav-link mt-3" href="#">Abu Dhabi</a>
+                        <a class="nav-link mt-3" href="#">Al Ain</a>
+                        <a class="nav-link mt-3" href="#">Sharjah</a>
+                    </span>
+                </div>
+                <div class="col-md-2 col-6 mt-md-0 mt-4">
+                    <span id="footerHeading3" class="fs-5 fw-semibold">Shops</span>
+                    <span class="mt-4">
+                        <a class="nav-link mt-4" href="#">Almaya Supermarket</a>
+                        <a class="nav-link mt-3" href="#">Fresh Mart</a>
+                        <a class="nav-link mt-3" href="#">Pizza Express</a>
+                        <a class="nav-link mt-3" href="#">Al Rubooa Groery</a>
+                    </span>
+                </div>
+                <div class="col-md-2 col-6 mt-md-0 mt-4">
+                    <span id="footerHeading4" class="fs-5 fw-semibold">Restaurants</span>
+                    <span class="mt-4">
+                        <a class="nav-link mt-4" href="#">Burger King</a>
+                        <a class="nav-link mt-3" href="#">Texas Chicken</a>
+                        <a class="nav-link mt-3" href="#">Pizza Express</a>
+                        <a class="nav-link mt-3" href="#">Click To Food</a>
+                    </span>
+                </div>
+            </div>
+            <div class="row footer-text border-top border-2 border-fade">
+
+                <div class="col-md-6 col-12 mt-4">
+                    <p id="copyRight" class="text-md-start text-center">&copy; 2024 Click To Food</p>
+                </div>
+
+                <div class="col-md-6 col-12 mt-4">
+                    <div class="d-flex justify-content-md-end justify-content-center">
+                        <a id="facebookLink" class="nav-link me-4" href="#">
+                            <img id="facebookIcon" class="icon-size-3" src="/assets/icons/facebook.svg">
+                        </a>
+                        <a id="twitterLink" class="nav-link me-4" href="#">
+                            <img id="twitterIcon" class="icon-size-3" src="/assets/icons/x.svg">
+                        </a>
+                        <a id="instagramLink" class="nav-link me-4" href="#">
+                            <img id="instagramIcon" class="icon-size-3" src="/assets/icons/instagram.svg">
+                        </a>
+                        <a id="linkedinLink" class="nav-link" href="#">
+                            <img id="linkedinIcon" class="icon-size-3" src="/assets/icons/linkedin.svg">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    
+    <!--Bootstrap_js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!--custom_js-->
+</body>
+</html>
