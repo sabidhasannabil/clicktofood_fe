@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click To Food</title>
+    <link rel="icon" type="image/x-icon" href="/assets/fav/fav_icon.png">
+    <!--fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!--Bootstrap_css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!--swiper_css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!--stylesheet-->
+    <link href="/css/style_main.css" rel="stylesheet">
+    <link href="/css/swiper_restaurant.css" rel="stylesheet">
+</head>
+<body>
+    <!--navbar_start-->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light c-bg-one py-3 mt-3">
+        <div class="container">
+            <a class="navbar-brand p-0" href="index.html">
+                <img src="/assets/logos/c2f_logo.svg" alt="" width="auto" height="40" class="d-inline-block">
+            </a>
+            <button class="navbar-toggler bradius-one toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span>
+                    <svg class="toggler-icon-custom" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                        <path d="M9.45033 15.5633L12.752 12.2616L5.53033 5.05162C4.97033 4.49162 4.00199 4.64328 3.65199 5.36662C2.82366 7.10495 3.12699 9.23995 4.56199 10.6866L9.45033 15.5633ZM17.3603 13.4516C19.1453 14.2799 21.6537 13.6966 23.5087 11.8416C25.737 9.61328 26.1687 6.41662 24.4537 4.70162C22.7503 2.99828 19.5537 3.41828 17.3137 5.64662C15.4587 7.50162 14.8753 10.0099 15.7037 11.7949L5.13366 22.365C4.91552 22.5831 4.79297 22.879 4.79297 23.1875C4.79297 23.4959 4.91552 23.7918 5.13366 24.01C5.3518 24.2281 5.64766 24.3506 5.95616 24.3506C6.26466 24.3506 6.56052 24.2281 6.77866 24.01L14.0003 16.8116L21.2103 24.0216C21.3183 24.1296 21.4466 24.2153 21.5877 24.2738C21.7288 24.3322 21.8801 24.3623 22.0328 24.3623C22.1856 24.3623 22.3368 24.3322 22.478 24.2738C22.6191 24.2153 22.7473 24.1296 22.8553 24.0216C22.9633 23.9136 23.049 23.7854 23.1075 23.6442C23.1659 23.5031 23.196 23.3519 23.196 23.1991C23.196 23.0464 23.1659 22.8951 23.1075 22.754C23.049 22.6129 22.9633 22.4846 22.8553 22.3766L15.6453 15.1666L17.3603 13.4516Z"/>
+                    </svg>
+                </span>
+            </button>
+            
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <!--search_start-->
+                <form class="mt-md-0 mt-4 me-md-3" role="search">
+                    <div class="input-group c-group bradius-one bg-white">
+                        <div class="input-group-text border-0 bg-white bradius-three ps-3" id="searchFoodIcon">
+                            <img class="icon-size-3" src="/assets/icons/search.svg">
+                        </div>
+                        <input id="foodSearch" class="form-control border-0 bradius-three fs-6 py-2" type="search" placeholder="What do you want to order?" aria-label="Search">
+                    </div>
+                </form>
+                <form class="mt-md-0 mt-5">
+                    <a class="btn bradius-one primary-btn me-3" href="#">
+                        <svg class="nav-svg-1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.224 4.33333C11.5974 3.54667 12.4027 3 13.3334 3H18.6667C19.5974 3 20.4014 3.54667 20.776 4.33333C21.6867 4.34133 22.3974 4.38267 23.032 4.63067C23.7897 4.92703 24.4486 5.43068 24.9334 6.084C25.4227 6.74267 25.6534 7.58667 25.968 8.748L26.9574 12.3773L27.3307 13.4987L27.3627 13.5387C28.564 15.0773 27.992 17.3653 26.848 21.94C26.12 24.8507 25.7574 26.3053 24.672 27.1533C23.5867 28 22.0867 28 19.0867 28H12.9134C9.91338 28 8.41338 28 7.32804 27.1533C6.24271 26.3053 5.87871 24.8507 5.15204 21.94C4.00804 17.3653 3.43604 15.0773 4.63738 13.5387L4.66938 13.4987L5.04271 12.3773L6.03204 8.748C6.34804 7.58667 6.57871 6.74133 7.06671 6.08267C7.55168 5.42984 8.21057 4.92666 8.96804 4.63067C9.60271 4.38267 10.312 4.34 11.224 4.33333ZM11.2267 6.33733C10.344 6.34667 9.98938 6.38 9.69604 6.49467C9.288 6.65424 8.93313 6.92548 8.67204 7.27733C8.43738 7.59333 8.29871 8.03467 7.91204 9.45733L7.15204 12.2427C8.51204 12 10.3707 12 12.912 12H19.0867C21.6294 12 23.4867 12 24.8467 12.24L24.088 9.45467C23.7014 8.032 23.5627 7.59067 23.328 7.27467C23.067 6.92281 22.7121 6.65157 22.304 6.492C22.0107 6.37733 21.656 6.344 20.7734 6.33467C20.5841 6.73313 20.2857 7.06976 19.9128 7.30552C19.5399 7.54128 19.1079 7.6665 18.6667 7.66667H13.3334C12.8924 7.66662 12.4604 7.54159 12.0876 7.30608C11.7147 7.07057 11.4162 6.73555 11.2267 6.33733Z"/>
+                        </svg>
+                    </a>
+                    <a href="login.html" class="btn primary-btn bradius-one btn-p-1" type="button">Log In
+                        <img class="icon-size-1 ms-3" src="./assets/icons/right_top.svg">
+                    </a>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!--restautant_info_section-->
+    <section id="" class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-12">
+                    <img id="resImage1" class="res-image ratio-16x9 w-100 bradius-three" src="/assets/food_images/restaurant.png">
+                </div>
+                <div class="col-md-7 col-12">
+                    <h2 id="restaurantName33" class="fw-semibold l-spacing">Gouqi Restaurant</h2>
+                    <div class="d-flex mt-3">
+                        <span id="resDeliveryTime26" class="me-3 d-flex align-items-center">
+                            <svg class="svg-3 me-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 5.90543C7.86439 5.90543 4.5 9.17885 4.5 13.2027C4.5 17.2266 7.86443 20.5 12 20.5C16.1356 20.5 19.5 17.2266 19.5 13.2027C19.5 9.17885 16.1356 5.90543 12 5.90543ZM12 19.7961C8.25442 19.7961 5.20673 16.8382 5.20673 13.2027C5.20673 9.5673 8.25442 6.6093 12 6.6093C15.7456 6.6093 18.7933 9.5673 18.7933 13.2027C18.7933 16.8382 15.7456 19.7961 12 19.7961ZM11.9788 13.2027L16.7491 16.8817C16.1702 17.5762 15.4442 18.1345 14.6231 18.5167C13.8021 18.8988 12.9063 19.0954 12 19.0923C8.6431 19.0923 5.91345 16.4501 5.91345 13.2027C5.91345 9.96229 8.63208 7.32456 11.9784 7.31358V13.2027L11.9788 13.2027ZM12 5.20159C11.1614 5.20106 10.3275 5.32652 9.52649 5.57374V4.62178C9.52649 4.32426 9.64516 4.03894 9.85639 3.82856C10.0676 3.61819 10.3541 3.5 10.6528 3.5H13.3503C13.6484 3.50082 13.9341 3.61937 14.1447 3.82966C14.3552 4.03994 14.4735 4.3248 14.4735 4.62178V5.57378C13.6725 5.32654 12.8386 5.20109 12 5.20159ZM16.7844 6.70609L17.5309 5.97627C17.8573 5.65689 18.3202 5.5896 18.5654 5.82538L19.3224 6.5552C19.5671 6.79098 19.4991 7.24103 19.1745 7.56041L18.4532 8.26425C17.9729 7.66982 17.4113 7.14534 16.7849 6.70609H16.7844ZM5.55964 8.24928L4.84012 7.54541C4.51369 7.22603 4.4426 6.77952 4.6842 6.54814L5.42755 5.83196C5.66785 5.60061 6.12722 5.67142 6.45361 5.9908L7.19744 6.7184C6.58361 7.15149 6.03251 7.66663 5.55964 8.24932V8.24928Z"/>
+                            </svg>
+                            25 - 30 mins
+                        </span>
+                        <span id="resFeature44" class="me-3 d-flex align-items-center">
+                            <svg class="svg-3 me-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M19 7C19 5.9 18.1 5 17 5H15C14.45 5 14 5.45 14 6C14 6.55 14.45 7 15 7H17V9.65L13.52 14H10V10C10 9.45 9.55 9 9 9H6C3.79 9 2 10.79 2 13V15C2 15.55 2.45 16 3 16H4C4 17.66 5.34 19 7 19C8.66 19 10 17.66 10 16H13.52C14.13 16 14.7 15.72 15.08 15.25L18.56 10.9C18.85 10.54 19 10.1 19 9.65V7ZM7 17C6.45 17 6 16.55 6 16H8C8 16.55 7.55 17 7 17Z"/>
+                                <path d="M6 6H9C9.55 6 10 6.45 10 7C10 7.55 9.55 8 9 8H6C5.45 8 5 7.55 5 7C5 6.45 5.45 6 6 6ZM19 13C17.34 13 16 14.34 16 16C16 17.66 17.34 19 19 19C20.66 19 22 17.66 22 16C22 14.34 20.66 13 19 13ZM19 17C18.45 17 18 16.55 18 16C18 15.45 18.45 15 19 15C19.55 15 20 15.45 20 16C20 16.55 19.55 17 19 17Z"/>
+                            </svg>
+                            Free Delivery
+                        </span>
+                    </div>
+                    <div class="d-flex mt-3">
+                        <span id="foodType1" class="me-2">Korean</span>
+                        <span class="vr"></span>
+                        <span id="foodType2" class="mx-2">Japanese</span>
+                        <span class="vr"></span>
+                        <span id="foodType3" class="mx-2">Sushi</span>
+                    </div>
+                    <div class="d-flex mt-3">
+                        <span id="distance5" class="me-2">2.9 Miles</span>
+                        <span class="vr"></span>
+                        <span id="rsCloseTime" class="mx-2">Close at 23:45</span>
+                        <span class="vr"></span>
+                        <span id="minimumOrderAmount" class="mx-2">15 AED minimum</span>
+                    </div>
+                    <!-- button_trigger_modal -->
+                    <button id="infoBtn" type="button" class="btn p-0 mt-4 text-start" data-bs-toggle="modal" data-bs-target="#infoModal">
+                        <h6 id="infoText" class="mb-0">Info</h6>
+                        <span class="res-info-des">Map, Allergens and Hygiene rating</span>
+                    </button>
+                    <!-- button_trigger_modal -->
+                    <button id="reviewBtn" type="button" class="btn p-0 mt-4 d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#reviewModal">
+                        <span id="ratingText9" class="">4.5</span>
+                        <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                            <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                        </svg>
+                        <span id="previousReviewAmount" class="badge ms-2 section-bg-2">500+</span>
+                    </button>
+                    
+                    <!-- modal_review-->
+                    <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModal" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content border-0 bradius-three">
+                            <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="reviewModalHeading">Reviews</h1>
+                            <button id="modalCloseBtn1" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h6 class="mb-0">All Reviews</h6>
+                                    <button id="reviewSortBtn" class="btn p-0">Sort</button>
+                                </div>
+                                <!--review-->
+                                <div id="customerRivew5" class="section-bg-1 bradius-two p-3 mt-3">
+                                    <h6 id="reviewCustomerName5" class="fw-semibold">Click To Food Customer</h6>
+                                    <span>
+                                        <img id="rivewSvg5" class="mb-3" height="18px" src="/assets/icons/stars.svg">
+                                    </span>
+                                    <p id="reviewMessage5" class="text-sm mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem ratione, a est repellat enim obcaecati?</p>
+                                </div>
+                                <!--review-->
+                                <div id="customerRivew6" class="section-bg-1 bradius-two p-3 mt-3">
+                                    <h6 id="reviewCustomerName6" class="fw-semibold">Click To Food Customer</h6>
+                                    <span>
+                                        <img id="rivewSvg6" class="mb-3" height="18px" src="/assets/icons/stars.svg">
+                                    </span>
+                                    <p id="reviewMessage6" class="text-sm mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem ratione, a est repellat enim obcaecati?</p>
+                                </div>
+                                <!--review-->
+                                <div id="customerRivew7" class="section-bg-1 bradius-two p-3 mt-3">
+                                    <h6 id="reviewCustomerName7" class="fw-semibold">Click To Food Customer</h6>
+                                    <span>
+                                        <img id="rivewSvg7" class="mb-3" height="18px" src="/assets/icons/stars.svg">
+                                    </span>
+                                    <p id="reviewMessage7" class="text-sm mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem ratione, a est repellat enim obcaecati?</p>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button id="modalCloseBtn2" type="button" class="btn primary-btn bradius-one w-100 px-3 py-2" data-bs-dismiss="modal">Back To Menu</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModal" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                            <div class="modal-content border-0 bradius-three">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="infoModalHeading">Info</h1>
+                                    <button id="modalCloseBtn3" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button id="modalCloseBtn4" type="button" class="btn primary-btn bradius-one w-100 px-3 py-2" data-bs-dismiss="modal">Back To Menu</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!---->
+    <section id="offerSection" class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-12">
+                    <div id="offerCard32" class="c-card-2 d-flex justify-content-between bradius-three">
+                        <div>
+                            <h6 id="offerHeading32" class="fw-bold">3 Orders to get 8.00 AED reward</h6>
+                            <p id="offerCondition32" class="text-color-3 mb-0">20 AED Minimum spends</p>
+                        </div>
+                        <div>
+                            <img id="offerIcon32" class="icon-size-5" src="/assets/icons/stopwatch.svg">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12">
+                    <div id="offerCard32" class="c-card-2 d-flex justify-content-between bradius-three">
+                        <div>
+                            <h6 id="offerHeading32" class="fw-bold">3 Orders to get 8.00 AED reward</h6>
+                            <p id="offerCondition32" class="text-color-3 mb-0">20 AED Minimum spends</p>
+                        </div>
+                        <div>
+                            <img id="offerIcon32" class="icon-size-5" src="/assets/icons/stopwatch.svg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--popular_by_order_section_start-->
+    <section id="popularByOrderSection" class="swiper-section mt-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h3 id="popularSectionHeading" class="fw-semibold l-spacing">Popular By Orders</h3>
+            </div>
+            <div class="swiper swiper-container restaurant-menu-1">
+                <div class="swiper-wrapper py-4">
+                    <!--dear_backend_this_one_for_use-->
+                    <div class="swiper-slide">
+                        <!--product_card-->
+                        <a id="popularCardOne" class="product-card text-decoration-none bradius-five" href="#">
+                            <div class="img-box p-1">
+                                <img id="popularCardImgOne" class="bradius-four" src="/assets/food_images/egg.png">
+                                <div class="rating bradius-one">
+                                    <span id="popularFoodRatingTextOne" class="d-flex align-items-center">4.5
+                                        <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                            <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="favourite">
+                                    <button id="popularFavBntOne" class="btn primary-btn favourite-btn bradius-one">
+                                        <svg class="svg-2 d-flex align-items-center" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3783 5.88622C9.66902 4.10486 6.79049 4.0794 4.92308 5.90387C4.91717 5.90965 4.91116 5.91534 4.90506 5.92092C3.09331 7.58038 3.06654 10.3577 4.92308 12.1716L4.92796 12.1763L11.9374 19.1469L19.0769 12.1716C19.0828 12.1658 19.0888 12.1601 19.0949 12.1545C20.9067 10.495 20.9335 7.71772 19.0769 5.90387C17.2195 4.08919 14.3268 4.08919 12.4694 5.90387C12.3227 6.04722 12.125 6.12596 11.9202 6.12264C11.7154 6.11933 11.5204 6.03424 11.3783 5.88622ZM11.9465 4.31813C9.59468 2.40387 6.12292 2.58601 3.85838 4.79012C1.36802 7.08049 1.39686 10.8778 3.84702 13.2742C3.84785 13.275 3.84869 13.2759 3.84952 13.2767L11.391 20.7763C11.689 21.0727 12.1688 21.0748 12.4694 20.7811L20.1419 13.2851C22.6328 10.9939 22.603 7.19491 20.1505 4.79876C17.8724 2.57305 14.397 2.41284 11.9465 4.31813Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h5 id="popularCardNameOne">Ground Beef Tacos</h5>
+                                <div class="mt-2">
+                                    <span id="popularCardFeatureOne" class="">Lorem ipsum dolor sit ametj.</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-end mt-4 mb-3">
+                                    <h4 id="foodPrice" class="">15.00 <span id="currency">AED</span></h4>
+                                    <button id="popularMenuCartBtnOne" class="btn primary-btn bradius-one">
+                                        <svg class="nav-svg-1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.224 4.33333C11.5974 3.54667 12.4027 3 13.3334 3H18.6667C19.5974 3 20.4014 3.54667 20.776 4.33333C21.6867 4.34133 22.3974 4.38267 23.032 4.63067C23.7897 4.92703 24.4486 5.43068 24.9334 6.084C25.4227 6.74267 25.6534 7.58667 25.968 8.748L26.9574 12.3773L27.3307 13.4987L27.3627 13.5387C28.564 15.0773 27.992 17.3653 26.848 21.94C26.12 24.8507 25.7574 26.3053 24.672 27.1533C23.5867 28 22.0867 28 19.0867 28H12.9134C9.91338 28 8.41338 28 7.32804 27.1533C6.24271 26.3053 5.87871 24.8507 5.15204 21.94C4.00804 17.3653 3.43604 15.0773 4.63738 13.5387L4.66938 13.4987L5.04271 12.3773L6.03204 8.748C6.34804 7.58667 6.57871 6.74133 7.06671 6.08267C7.55168 5.42984 8.21057 4.92666 8.96804 4.63067C9.60271 4.38267 10.312 4.34 11.224 4.33333ZM11.2267 6.33733C10.344 6.34667 9.98938 6.38 9.69604 6.49467C9.288 6.65424 8.93313 6.92548 8.67204 7.27733C8.43738 7.59333 8.29871 8.03467 7.91204 9.45733L7.15204 12.2427C8.51204 12 10.3707 12 12.912 12H19.0867C21.6294 12 23.4867 12 24.8467 12.24L24.088 9.45467C23.7014 8.032 23.5627 7.59067 23.328 7.27467C23.067 6.92281 22.7121 6.65157 22.304 6.492C22.0107 6.37733 21.656 6.344 20.7734 6.33467C20.5841 6.73313 20.2857 7.06976 19.9128 7.30552C19.5399 7.54128 19.1079 7.6665 18.6667 7.66667H13.3334C12.8924 7.66662 12.4604 7.54159 12.0876 7.30608C11.7147 7.07057 11.4162 6.73555 11.2267 6.33733Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!--end-->
+                    <!--dear_backend_those_are_dummy-->
+                    <div class="swiper-slide">
+                        <a id="tfCardOne" class="product-card text-decoration-none bradius-five" href="#">
+                            <div class="img-box p-1">
+                                <img id="tfCardImgOne" class="bradius-four" src="/assets/food_images/egg1.png">
+                                <div class="rating bradius-one">
+                                    <span id="foodRatingTextOne" class="d-flex align-items-center">4.5
+                                        <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                            <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="favourite">
+                                    <button id="tfFavBntOne" class="btn primary-btn favourite-btn bradius-one">
+                                        <svg class="svg-2 d-flex align-items-center" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3783 5.88622C9.66902 4.10486 6.79049 4.0794 4.92308 5.90387C4.91717 5.90965 4.91116 5.91534 4.90506 5.92092C3.09331 7.58038 3.06654 10.3577 4.92308 12.1716L4.92796 12.1763L11.9374 19.1469L19.0769 12.1716C19.0828 12.1658 19.0888 12.1601 19.0949 12.1545C20.9067 10.495 20.9335 7.71772 19.0769 5.90387C17.2195 4.08919 14.3268 4.08919 12.4694 5.90387C12.3227 6.04722 12.125 6.12596 11.9202 6.12264C11.7154 6.11933 11.5204 6.03424 11.3783 5.88622ZM11.9465 4.31813C9.59468 2.40387 6.12292 2.58601 3.85838 4.79012C1.36802 7.08049 1.39686 10.8778 3.84702 13.2742C3.84785 13.275 3.84869 13.2759 3.84952 13.2767L11.391 20.7763C11.689 21.0727 12.1688 21.0748 12.4694 20.7811L20.1419 13.2851C22.6328 10.9939 22.603 7.19491 20.1505 4.79876C17.8724 2.57305 14.397 2.41284 11.9465 4.31813Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h5 id="tfCardNameOne">Ground Beef Tacos</h5>
+                                <div class="d-flex mt-2">
+                                    <span id="tfCardFeatureOne">Restaurant Name</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-end mt-4 mb-3">
+                                    <h4 id="foodPrice" class="">15.00 <span id="currency">AED</span></h4>
+                                    <button class="btn primary-btn bradius-one">
+                                        <svg class="nav-svg-1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.224 4.33333C11.5974 3.54667 12.4027 3 13.3334 3H18.6667C19.5974 3 20.4014 3.54667 20.776 4.33333C21.6867 4.34133 22.3974 4.38267 23.032 4.63067C23.7897 4.92703 24.4486 5.43068 24.9334 6.084C25.4227 6.74267 25.6534 7.58667 25.968 8.748L26.9574 12.3773L27.3307 13.4987L27.3627 13.5387C28.564 15.0773 27.992 17.3653 26.848 21.94C26.12 24.8507 25.7574 26.3053 24.672 27.1533C23.5867 28 22.0867 28 19.0867 28H12.9134C9.91338 28 8.41338 28 7.32804 27.1533C6.24271 26.3053 5.87871 24.8507 5.15204 21.94C4.00804 17.3653 3.43604 15.0773 4.63738 13.5387L4.66938 13.4987L5.04271 12.3773L6.03204 8.748C6.34804 7.58667 6.57871 6.74133 7.06671 6.08267C7.55168 5.42984 8.21057 4.92666 8.96804 4.63067C9.60271 4.38267 10.312 4.34 11.224 4.33333ZM11.2267 6.33733C10.344 6.34667 9.98938 6.38 9.69604 6.49467C9.288 6.65424 8.93313 6.92548 8.67204 7.27733C8.43738 7.59333 8.29871 8.03467 7.91204 9.45733L7.15204 12.2427C8.51204 12 10.3707 12 12.912 12H19.0867C21.6294 12 23.4867 12 24.8467 12.24L24.088 9.45467C23.7014 8.032 23.5627 7.59067 23.328 7.27467C23.067 6.92281 22.7121 6.65157 22.304 6.492C22.0107 6.37733 21.656 6.344 20.7734 6.33467C20.5841 6.73313 20.2857 7.06976 19.9128 7.30552C19.5399 7.54128 19.1079 7.6665 18.6667 7.66667H13.3334C12.8924 7.66662 12.4604 7.54159 12.0876 7.30608C11.7147 7.07057 11.4162 6.73555 11.2267 6.33733Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a id="tfCardOne" class="product-card text-decoration-none bradius-five" href="#">
+                            <div class="img-box p-1">
+                                <img id="tfCardImgOne" class="bradius-four" src="/assets/food_images/noodles.png">
+                                <div class="rating bradius-one">
+                                    <span id="foodRatingTextOne" class="d-flex align-items-center">4.5
+                                        <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                            <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="favourite">
+                                    <button id="tfFavBntOne" class="btn primary-btn favourite-btn bradius-one">
+                                        <svg class="svg-2 d-flex align-items-center" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3783 5.88622C9.66902 4.10486 6.79049 4.0794 4.92308 5.90387C4.91717 5.90965 4.91116 5.91534 4.90506 5.92092C3.09331 7.58038 3.06654 10.3577 4.92308 12.1716L4.92796 12.1763L11.9374 19.1469L19.0769 12.1716C19.0828 12.1658 19.0888 12.1601 19.0949 12.1545C20.9067 10.495 20.9335 7.71772 19.0769 5.90387C17.2195 4.08919 14.3268 4.08919 12.4694 5.90387C12.3227 6.04722 12.125 6.12596 11.9202 6.12264C11.7154 6.11933 11.5204 6.03424 11.3783 5.88622ZM11.9465 4.31813C9.59468 2.40387 6.12292 2.58601 3.85838 4.79012C1.36802 7.08049 1.39686 10.8778 3.84702 13.2742C3.84785 13.275 3.84869 13.2759 3.84952 13.2767L11.391 20.7763C11.689 21.0727 12.1688 21.0748 12.4694 20.7811L20.1419 13.2851C22.6328 10.9939 22.603 7.19491 20.1505 4.79876C17.8724 2.57305 14.397 2.41284 11.9465 4.31813Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h5 id="tfCardNameOne">Ground Beef Tacos</h5>
+                                <div class="d-flex mt-2">
+                                    <span id="tfCardFeatureOne">Lorem ipsum dolor sit amet.</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-end mt-4 mb-3">
+                                    <h4 id="foodPrice" class="">15.00 <span id="currency">AED</span></h4>
+                                    <button class="btn primary-btn bradius-one">
+                                        <svg class="nav-svg-1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.224 4.33333C11.5974 3.54667 12.4027 3 13.3334 3H18.6667C19.5974 3 20.4014 3.54667 20.776 4.33333C21.6867 4.34133 22.3974 4.38267 23.032 4.63067C23.7897 4.92703 24.4486 5.43068 24.9334 6.084C25.4227 6.74267 25.6534 7.58667 25.968 8.748L26.9574 12.3773L27.3307 13.4987L27.3627 13.5387C28.564 15.0773 27.992 17.3653 26.848 21.94C26.12 24.8507 25.7574 26.3053 24.672 27.1533C23.5867 28 22.0867 28 19.0867 28H12.9134C9.91338 28 8.41338 28 7.32804 27.1533C6.24271 26.3053 5.87871 24.8507 5.15204 21.94C4.00804 17.3653 3.43604 15.0773 4.63738 13.5387L4.66938 13.4987L5.04271 12.3773L6.03204 8.748C6.34804 7.58667 6.57871 6.74133 7.06671 6.08267C7.55168 5.42984 8.21057 4.92666 8.96804 4.63067C9.60271 4.38267 10.312 4.34 11.224 4.33333ZM11.2267 6.33733C10.344 6.34667 9.98938 6.38 9.69604 6.49467C9.288 6.65424 8.93313 6.92548 8.67204 7.27733C8.43738 7.59333 8.29871 8.03467 7.91204 9.45733L7.15204 12.2427C8.51204 12 10.3707 12 12.912 12H19.0867C21.6294 12 23.4867 12 24.8467 12.24L24.088 9.45467C23.7014 8.032 23.5627 7.59067 23.328 7.27467C23.067 6.92281 22.7121 6.65157 22.304 6.492C22.0107 6.37733 21.656 6.344 20.7734 6.33467C20.5841 6.73313 20.2857 7.06976 19.9128 7.30552C19.5399 7.54128 19.1079 7.6665 18.6667 7.66667H13.3334C12.8924 7.66662 12.4604 7.54159 12.0876 7.30608C11.7147 7.07057 11.4162 6.73555 11.2267 6.33733Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a id="tfCardOne" class="product-card text-decoration-none bradius-five" href="#">
+                            <div class="img-box p-1">
+                                <img id="tfCardImgOne" class="bradius-four" src="/assets/food_images/egg.png">
+                                <div class="rating bradius-one">
+                                    <span id="foodRatingTextOne" class="d-flex align-items-center">4.5
+                                        <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                            <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="favourite">
+                                    <button id="tfFavBntOne" class="btn primary-btn favourite-btn bradius-one">
+                                        <svg class="svg-2 d-flex align-items-center" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3783 5.88622C9.66902 4.10486 6.79049 4.0794 4.92308 5.90387C4.91717 5.90965 4.91116 5.91534 4.90506 5.92092C3.09331 7.58038 3.06654 10.3577 4.92308 12.1716L4.92796 12.1763L11.9374 19.1469L19.0769 12.1716C19.0828 12.1658 19.0888 12.1601 19.0949 12.1545C20.9067 10.495 20.9335 7.71772 19.0769 5.90387C17.2195 4.08919 14.3268 4.08919 12.4694 5.90387C12.3227 6.04722 12.125 6.12596 11.9202 6.12264C11.7154 6.11933 11.5204 6.03424 11.3783 5.88622ZM11.9465 4.31813C9.59468 2.40387 6.12292 2.58601 3.85838 4.79012C1.36802 7.08049 1.39686 10.8778 3.84702 13.2742C3.84785 13.275 3.84869 13.2759 3.84952 13.2767L11.391 20.7763C11.689 21.0727 12.1688 21.0748 12.4694 20.7811L20.1419 13.2851C22.6328 10.9939 22.603 7.19491 20.1505 4.79876C17.8724 2.57305 14.397 2.41284 11.9465 4.31813Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h5 id="tfCardNameOne">Ground Beef Tacos</h5>
+                                <div class="d-flex mt-2">
+                                    <span id="tfCardFeatureOne">Lorem ipsum dolor sit amet.</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-end mt-4 mb-3">
+                                    <h4 id="foodPrice" class="">15.00 <span id="currency">AED</span></h4>
+                                    <button class="btn primary-btn bradius-one">
+                                        <svg class="nav-svg-1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.224 4.33333C11.5974 3.54667 12.4027 3 13.3334 3H18.6667C19.5974 3 20.4014 3.54667 20.776 4.33333C21.6867 4.34133 22.3974 4.38267 23.032 4.63067C23.7897 4.92703 24.4486 5.43068 24.9334 6.084C25.4227 6.74267 25.6534 7.58667 25.968 8.748L26.9574 12.3773L27.3307 13.4987L27.3627 13.5387C28.564 15.0773 27.992 17.3653 26.848 21.94C26.12 24.8507 25.7574 26.3053 24.672 27.1533C23.5867 28 22.0867 28 19.0867 28H12.9134C9.91338 28 8.41338 28 7.32804 27.1533C6.24271 26.3053 5.87871 24.8507 5.15204 21.94C4.00804 17.3653 3.43604 15.0773 4.63738 13.5387L4.66938 13.4987L5.04271 12.3773L6.03204 8.748C6.34804 7.58667 6.57871 6.74133 7.06671 6.08267C7.55168 5.42984 8.21057 4.92666 8.96804 4.63067C9.60271 4.38267 10.312 4.34 11.224 4.33333ZM11.2267 6.33733C10.344 6.34667 9.98938 6.38 9.69604 6.49467C9.288 6.65424 8.93313 6.92548 8.67204 7.27733C8.43738 7.59333 8.29871 8.03467 7.91204 9.45733L7.15204 12.2427C8.51204 12 10.3707 12 12.912 12H19.0867C21.6294 12 23.4867 12 24.8467 12.24L24.088 9.45467C23.7014 8.032 23.5627 7.59067 23.328 7.27467C23.067 6.92281 22.7121 6.65157 22.304 6.492C22.0107 6.37733 21.656 6.344 20.7734 6.33467C20.5841 6.73313 20.2857 7.06976 19.9128 7.30552C19.5399 7.54128 19.1079 7.6665 18.6667 7.66667H13.3334C12.8924 7.66662 12.4604 7.54159 12.0876 7.30608C11.7147 7.07057 11.4162 6.73555 11.2267 6.33733Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a id="tfCardOne" class="product-card text-decoration-none bradius-five" href="#">
+                            <div class="img-box p-1">
+                                <img id="tfCardImgOne" class="bradius-four" src="/assets/food_images/egg.png">
+                                <div class="rating bradius-one">
+                                    <span id="foodRatingTextOne" class="d-flex align-items-center">4.5
+                                        <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                            <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="favourite">
+                                    <button id="tfFavBntOne" class="btn primary-btn favourite-btn bradius-one">
+                                        <svg class="svg-2 d-flex align-items-center" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3783 5.88622C9.66902 4.10486 6.79049 4.0794 4.92308 5.90387C4.91717 5.90965 4.91116 5.91534 4.90506 5.92092C3.09331 7.58038 3.06654 10.3577 4.92308 12.1716L4.92796 12.1763L11.9374 19.1469L19.0769 12.1716C19.0828 12.1658 19.0888 12.1601 19.0949 12.1545C20.9067 10.495 20.9335 7.71772 19.0769 5.90387C17.2195 4.08919 14.3268 4.08919 12.4694 5.90387C12.3227 6.04722 12.125 6.12596 11.9202 6.12264C11.7154 6.11933 11.5204 6.03424 11.3783 5.88622ZM11.9465 4.31813C9.59468 2.40387 6.12292 2.58601 3.85838 4.79012C1.36802 7.08049 1.39686 10.8778 3.84702 13.2742C3.84785 13.275 3.84869 13.2759 3.84952 13.2767L11.391 20.7763C11.689 21.0727 12.1688 21.0748 12.4694 20.7811L20.1419 13.2851C22.6328 10.9939 22.603 7.19491 20.1505 4.79876C17.8724 2.57305 14.397 2.41284 11.9465 4.31813Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h5 id="tfCardNameOne">Ground Beef Tacos</h5>
+                                <div class="d-flex mt-2">
+                                    <span id="tfCardFeatureOne">Lorem ipsum dolor sit amet.</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-end mt-4 mb-3">
+                                    <h4 class="">$ 15.00</h4>
+                                    <button class="btn primary-btn bradius-one">
+                                        <svg class="nav-svg-1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.224 4.33333C11.5974 3.54667 12.4027 3 13.3334 3H18.6667C19.5974 3 20.4014 3.54667 20.776 4.33333C21.6867 4.34133 22.3974 4.38267 23.032 4.63067C23.7897 4.92703 24.4486 5.43068 24.9334 6.084C25.4227 6.74267 25.6534 7.58667 25.968 8.748L26.9574 12.3773L27.3307 13.4987L27.3627 13.5387C28.564 15.0773 27.992 17.3653 26.848 21.94C26.12 24.8507 25.7574 26.3053 24.672 27.1533C23.5867 28 22.0867 28 19.0867 28H12.9134C9.91338 28 8.41338 28 7.32804 27.1533C6.24271 26.3053 5.87871 24.8507 5.15204 21.94C4.00804 17.3653 3.43604 15.0773 4.63738 13.5387L4.66938 13.4987L5.04271 12.3773L6.03204 8.748C6.34804 7.58667 6.57871 6.74133 7.06671 6.08267C7.55168 5.42984 8.21057 4.92666 8.96804 4.63067C9.60271 4.38267 10.312 4.34 11.224 4.33333ZM11.2267 6.33733C10.344 6.34667 9.98938 6.38 9.69604 6.49467C9.288 6.65424 8.93313 6.92548 8.67204 7.27733C8.43738 7.59333 8.29871 8.03467 7.91204 9.45733L7.15204 12.2427C8.51204 12 10.3707 12 12.912 12H19.0867C21.6294 12 23.4867 12 24.8467 12.24L24.088 9.45467C23.7014 8.032 23.5627 7.59067 23.328 7.27467C23.067 6.92281 22.7121 6.65157 22.304 6.492C22.0107 6.37733 21.656 6.344 20.7734 6.33467C20.5841 6.73313 20.2857 7.06976 19.9128 7.30552C19.5399 7.54128 19.1079 7.6665 18.6667 7.66667H13.3334C12.8924 7.66662 12.4604 7.54159 12.0876 7.30608C11.7147 7.07057 11.4162 6.73555 11.2267 6.33733Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a id="tfCardOne" class="product-card text-decoration-none bradius-five" href="#">
+                            <div class="img-box p-1">
+                                <img id="tfCardImgOne" class="bradius-four" src="/assets/food_images/egg.png">
+                                <div class="rating bradius-one">
+                                    <span id="foodRatingTextOne" class="d-flex align-items-center">4.5
+                                        <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                            <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="favourite">
+                                    <button id="tfFavBntOne" class="btn primary-btn favourite-btn bradius-one">
+                                        <svg class="svg-2 d-flex align-items-center" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3783 5.88622C9.66902 4.10486 6.79049 4.0794 4.92308 5.90387C4.91717 5.90965 4.91116 5.91534 4.90506 5.92092C3.09331 7.58038 3.06654 10.3577 4.92308 12.1716L4.92796 12.1763L11.9374 19.1469L19.0769 12.1716C19.0828 12.1658 19.0888 12.1601 19.0949 12.1545C20.9067 10.495 20.9335 7.71772 19.0769 5.90387C17.2195 4.08919 14.3268 4.08919 12.4694 5.90387C12.3227 6.04722 12.125 6.12596 11.9202 6.12264C11.7154 6.11933 11.5204 6.03424 11.3783 5.88622ZM11.9465 4.31813C9.59468 2.40387 6.12292 2.58601 3.85838 4.79012C1.36802 7.08049 1.39686 10.8778 3.84702 13.2742C3.84785 13.275 3.84869 13.2759 3.84952 13.2767L11.391 20.7763C11.689 21.0727 12.1688 21.0748 12.4694 20.7811L20.1419 13.2851C22.6328 10.9939 22.603 7.19491 20.1505 4.79876C17.8724 2.57305 14.397 2.41284 11.9465 4.31813Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h5 id="tfCardNameOne">Ground Beef Tacos</h5>
+                                <div class="d-flex mt-2">
+                                    <span id="tfCardFeatureOne">Lorem ipsum dolor sit amet.</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-end mt-4 mb-3">
+                                    <h4 class="">$ 15.00</h4>
+                                    <button class="btn primary-btn bradius-one">
+                                        <svg class="nav-svg-1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.224 4.33333C11.5974 3.54667 12.4027 3 13.3334 3H18.6667C19.5974 3 20.4014 3.54667 20.776 4.33333C21.6867 4.34133 22.3974 4.38267 23.032 4.63067C23.7897 4.92703 24.4486 5.43068 24.9334 6.084C25.4227 6.74267 25.6534 7.58667 25.968 8.748L26.9574 12.3773L27.3307 13.4987L27.3627 13.5387C28.564 15.0773 27.992 17.3653 26.848 21.94C26.12 24.8507 25.7574 26.3053 24.672 27.1533C23.5867 28 22.0867 28 19.0867 28H12.9134C9.91338 28 8.41338 28 7.32804 27.1533C6.24271 26.3053 5.87871 24.8507 5.15204 21.94C4.00804 17.3653 3.43604 15.0773 4.63738 13.5387L4.66938 13.4987L5.04271 12.3773L6.03204 8.748C6.34804 7.58667 6.57871 6.74133 7.06671 6.08267C7.55168 5.42984 8.21057 4.92666 8.96804 4.63067C9.60271 4.38267 10.312 4.34 11.224 4.33333ZM11.2267 6.33733C10.344 6.34667 9.98938 6.38 9.69604 6.49467C9.288 6.65424 8.93313 6.92548 8.67204 7.27733C8.43738 7.59333 8.29871 8.03467 7.91204 9.45733L7.15204 12.2427C8.51204 12 10.3707 12 12.912 12H19.0867C21.6294 12 23.4867 12 24.8467 12.24L24.088 9.45467C23.7014 8.032 23.5627 7.59067 23.328 7.27467C23.067 6.92281 22.7121 6.65157 22.304 6.492C22.0107 6.37733 21.656 6.344 20.7734 6.33467C20.5841 6.73313 20.2857 7.06976 19.9128 7.30552C19.5399 7.54128 19.1079 7.6665 18.6667 7.66667H13.3334C12.8924 7.66662 12.4604 7.54159 12.0876 7.30608C11.7147 7.07057 11.4162 6.73555 11.2267 6.33733Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!--end-->
+                </div>
+                <div class="d-md-block d-none">
+                    <div class="swiper-button-next custom-next"></div>
+                    <div class="swiper-button-prev custom-prev"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--features_section_start-->
+    <section id="rsFeaturesSection" class="mt-5">
+        <div class="container">
+            <div class="section-bg-1 bradius-five">
+                <div class="row">
+                    <div class="col-md-6 col-12 pt-5 pb-md-5 pb-4">
+                        <div>
+                            <h2 id="rsFeaturesHeadline" class="fw-bold l-spacing ps-4">Looking for <span id="changebleHeading" class="h-highlight">Dinner</span>?</h2>
+                        </div>
+                        <div class="swiper swiper-container-feature scheduled-food-fe ps-md-4 ps-3 mt-4">
+                            <div class="swiper-wrapper">
+                                <!--dear_backend_this_one_for_use-->
+                                <div class="swiper-slide">
+                                    <!--featured_product_card-->
+                                    <a id="rsFeCardOne" class="product-card text-decoration-none shadow-none bradius-five" href="#">
+                                        <div class="img-box p-1">
+                                            <img id="rsFeCardImgOne" class="bradius-four" src="/assets/food_images/egg.png">
+                                            <div class="rating bradius-one">
+                                                <span id="feRatingTextOne" class="d-flex align-items-center">4.5
+                                                    <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                                        <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                            <div class="favourite">
+                                                <button id="rsFeFavBntOne" class="btn primary-btn favourite-btn bradius-one">
+                                                    <svg class="svg-2 d-flex align-items-center" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3783 5.88622C9.66902 4.10486 6.79049 4.0794 4.92308 5.90387C4.91717 5.90965 4.91116 5.91534 4.90506 5.92092C3.09331 7.58038 3.06654 10.3577 4.92308 12.1716L4.92796 12.1763L11.9374 19.1469L19.0769 12.1716C19.0828 12.1658 19.0888 12.1601 19.0949 12.1545C20.9067 10.495 20.9335 7.71772 19.0769 5.90387C17.2195 4.08919 14.3268 4.08919 12.4694 5.90387C12.3227 6.04722 12.125 6.12596 11.9202 6.12264C11.7154 6.11933 11.5204 6.03424 11.3783 5.88622ZM11.9465 4.31813C9.59468 2.40387 6.12292 2.58601 3.85838 4.79012C1.36802 7.08049 1.39686 10.8778 3.84702 13.2742C3.84785 13.275 3.84869 13.2759 3.84952 13.2767L11.391 20.7763C11.689 21.0727 12.1688 21.0748 12.4694 20.7811L20.1419 13.2851C22.6328 10.9939 22.603 7.19491 20.1505 4.79876C17.8724 2.57305 14.397 2.41284 11.9465 4.31813Z"/>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="p-3">
+                                            <h6 id="rsFeCardNameOne">Ground Beef Tacos</h6>
+                                            <div class="d-flex mt-2">
+                                                <span id="rsFeCardFeatureOne">Restaurant Name</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-end mt-4 mb-3">
+                                                <h5 id="rsFeFoodPrice" class="">15.00 <span id="currency">AED</span></h5>
+                                                <button id="rsFeCartBtn" class="btn primary-btn bradius-one d-flex align-items-center">
+                                                    <svg class="nav-svg-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32" fill="none">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.224 4.33333C11.5974 3.54667 12.4027 3 13.3334 3H18.6667C19.5974 3 20.4014 3.54667 20.776 4.33333C21.6867 4.34133 22.3974 4.38267 23.032 4.63067C23.7897 4.92703 24.4486 5.43068 24.9334 6.084C25.4227 6.74267 25.6534 7.58667 25.968 8.748L26.9574 12.3773L27.3307 13.4987L27.3627 13.5387C28.564 15.0773 27.992 17.3653 26.848 21.94C26.12 24.8507 25.7574 26.3053 24.672 27.1533C23.5867 28 22.0867 28 19.0867 28H12.9134C9.91338 28 8.41338 28 7.32804 27.1533C6.24271 26.3053 5.87871 24.8507 5.15204 21.94C4.00804 17.3653 3.43604 15.0773 4.63738 13.5387L4.66938 13.4987L5.04271 12.3773L6.03204 8.748C6.34804 7.58667 6.57871 6.74133 7.06671 6.08267C7.55168 5.42984 8.21057 4.92666 8.96804 4.63067C9.60271 4.38267 10.312 4.34 11.224 4.33333ZM11.2267 6.33733C10.344 6.34667 9.98938 6.38 9.69604 6.49467C9.288 6.65424 8.93313 6.92548 8.67204 7.27733C8.43738 7.59333 8.29871 8.03467 7.91204 9.45733L7.15204 12.2427C8.51204 12 10.3707 12 12.912 12H19.0867C21.6294 12 23.4867 12 24.8467 12.24L24.088 9.45467C23.7014 8.032 23.5627 7.59067 23.328 7.27467C23.067 6.92281 22.7121 6.65157 22.304 6.492C22.0107 6.37733 21.656 6.344 20.7734 6.33467C20.5841 6.73313 20.2857 7.06976 19.9128 7.30552C19.5399 7.54128 19.1079 7.6665 18.6667 7.66667H13.3334C12.8924 7.66662 12.4604 7.54159 12.0876 7.30608C11.7147 7.07057 11.4162 6.73555 11.2267 6.33733Z"/>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!--end-->
+                                <!--dear_backend_those_are_dummy-->
+                                <div class="swiper-slide">
+                                    <!--product_card-->
+                                    <a id="rsFeCardOne" class="product-card text-decoration-none shadow-none bradius-five" href="#">
+                                        <div class="img-box p-1">
+                                            <img id="rsFeCardImgOne" class="bradius-four" src="/assets/food_images/egg.png">
+                                            <div class="rating bradius-one">
+                                                <span id="feRatingTextOne" class="d-flex align-items-center">4.5
+                                                    <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                                        <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                            <div class="favourite">
+                                                <button id="rsFeFavBntOne" class="btn primary-btn favourite-btn bradius-one">
+                                                    <svg class="svg-2 d-flex align-items-center" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3783 5.88622C9.66902 4.10486 6.79049 4.0794 4.92308 5.90387C4.91717 5.90965 4.91116 5.91534 4.90506 5.92092C3.09331 7.58038 3.06654 10.3577 4.92308 12.1716L4.92796 12.1763L11.9374 19.1469L19.0769 12.1716C19.0828 12.1658 19.0888 12.1601 19.0949 12.1545C20.9067 10.495 20.9335 7.71772 19.0769 5.90387C17.2195 4.08919 14.3268 4.08919 12.4694 5.90387C12.3227 6.04722 12.125 6.12596 11.9202 6.12264C11.7154 6.11933 11.5204 6.03424 11.3783 5.88622ZM11.9465 4.31813C9.59468 2.40387 6.12292 2.58601 3.85838 4.79012C1.36802 7.08049 1.39686 10.8778 3.84702 13.2742C3.84785 13.275 3.84869 13.2759 3.84952 13.2767L11.391 20.7763C11.689 21.0727 12.1688 21.0748 12.4694 20.7811L20.1419 13.2851C22.6328 10.9939 22.603 7.19491 20.1505 4.79876C17.8724 2.57305 14.397 2.41284 11.9465 4.31813Z"/>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="p-3">
+                                            <h6 id="rsFeCardNameOne">Ground Beef Tacos</h6>
+                                            <div class="d-flex mt-2">
+                                                <span id="rsFeCardFeatureOne">Restaurant Name</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-end mt-4 mb-3">
+                                                <h5 id="rsFeFoodPrice" class="">15.00 <span id="currency">AED</span></h5>
+                                                <button id="rsFeCartBtn" class="btn primary-btn bradius-one d-flex align-items-center">
+                                                    <svg class="nav-svg-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32" fill="none">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.224 4.33333C11.5974 3.54667 12.4027 3 13.3334 3H18.6667C19.5974 3 20.4014 3.54667 20.776 4.33333C21.6867 4.34133 22.3974 4.38267 23.032 4.63067C23.7897 4.92703 24.4486 5.43068 24.9334 6.084C25.4227 6.74267 25.6534 7.58667 25.968 8.748L26.9574 12.3773L27.3307 13.4987L27.3627 13.5387C28.564 15.0773 27.992 17.3653 26.848 21.94C26.12 24.8507 25.7574 26.3053 24.672 27.1533C23.5867 28 22.0867 28 19.0867 28H12.9134C9.91338 28 8.41338 28 7.32804 27.1533C6.24271 26.3053 5.87871 24.8507 5.15204 21.94C4.00804 17.3653 3.43604 15.0773 4.63738 13.5387L4.66938 13.4987L5.04271 12.3773L6.03204 8.748C6.34804 7.58667 6.57871 6.74133 7.06671 6.08267C7.55168 5.42984 8.21057 4.92666 8.96804 4.63067C9.60271 4.38267 10.312 4.34 11.224 4.33333ZM11.2267 6.33733C10.344 6.34667 9.98938 6.38 9.69604 6.49467C9.288 6.65424 8.93313 6.92548 8.67204 7.27733C8.43738 7.59333 8.29871 8.03467 7.91204 9.45733L7.15204 12.2427C8.51204 12 10.3707 12 12.912 12H19.0867C21.6294 12 23.4867 12 24.8467 12.24L24.088 9.45467C23.7014 8.032 23.5627 7.59067 23.328 7.27467C23.067 6.92281 22.7121 6.65157 22.304 6.492C22.0107 6.37733 21.656 6.344 20.7734 6.33467C20.5841 6.73313 20.2857 7.06976 19.9128 7.30552C19.5399 7.54128 19.1079 7.6665 18.6667 7.66667H13.3334C12.8924 7.66662 12.4604 7.54159 12.0876 7.30608C11.7147 7.07057 11.4162 6.73555 11.2267 6.33733Z"/>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <!--product_card-->
+                                    <a id="rsFeCardOne" class="product-card text-decoration-none shadow-none bradius-five" href="#">
+                                        <div class="img-box p-1">
+                                            <img id="rsFeCardImgOne" class="bradius-four" src="/assets/food_images/egg.png">
+                                            <div class="rating bradius-one">
+                                                <span id="feRatingTextOne" class="d-flex align-items-center">4.5
+                                                    <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                                        <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                            <div class="favourite">
+                                                <button id="rsFeFavBntOne" class="btn primary-btn favourite-btn bradius-one">
+                                                    <svg class="svg-2 d-flex align-items-center" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3783 5.88622C9.66902 4.10486 6.79049 4.0794 4.92308 5.90387C4.91717 5.90965 4.91116 5.91534 4.90506 5.92092C3.09331 7.58038 3.06654 10.3577 4.92308 12.1716L4.92796 12.1763L11.9374 19.1469L19.0769 12.1716C19.0828 12.1658 19.0888 12.1601 19.0949 12.1545C20.9067 10.495 20.9335 7.71772 19.0769 5.90387C17.2195 4.08919 14.3268 4.08919 12.4694 5.90387C12.3227 6.04722 12.125 6.12596 11.9202 6.12264C11.7154 6.11933 11.5204 6.03424 11.3783 5.88622ZM11.9465 4.31813C9.59468 2.40387 6.12292 2.58601 3.85838 4.79012C1.36802 7.08049 1.39686 10.8778 3.84702 13.2742C3.84785 13.275 3.84869 13.2759 3.84952 13.2767L11.391 20.7763C11.689 21.0727 12.1688 21.0748 12.4694 20.7811L20.1419 13.2851C22.6328 10.9939 22.603 7.19491 20.1505 4.79876C17.8724 2.57305 14.397 2.41284 11.9465 4.31813Z"/>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="p-3">
+                                            <h6 id="rsFeCardNameOne">Ground Beef Tacos</h6>
+                                            <div class="d-flex mt-2">
+                                                <span id="rsFeCardFeatureOne">Restaurant Name</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-end mt-4 mb-3">
+                                                <h5 id="rsFeFoodPrice" class="">15.00 <span id="currency">AED</span></h5>
+                                                <button id="rsFeCartBtn" class="btn primary-btn bradius-one d-flex align-items-center">
+                                                    <svg class="nav-svg-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32" fill="none">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.224 4.33333C11.5974 3.54667 12.4027 3 13.3334 3H18.6667C19.5974 3 20.4014 3.54667 20.776 4.33333C21.6867 4.34133 22.3974 4.38267 23.032 4.63067C23.7897 4.92703 24.4486 5.43068 24.9334 6.084C25.4227 6.74267 25.6534 7.58667 25.968 8.748L26.9574 12.3773L27.3307 13.4987L27.3627 13.5387C28.564 15.0773 27.992 17.3653 26.848 21.94C26.12 24.8507 25.7574 26.3053 24.672 27.1533C23.5867 28 22.0867 28 19.0867 28H12.9134C9.91338 28 8.41338 28 7.32804 27.1533C6.24271 26.3053 5.87871 24.8507 5.15204 21.94C4.00804 17.3653 3.43604 15.0773 4.63738 13.5387L4.66938 13.4987L5.04271 12.3773L6.03204 8.748C6.34804 7.58667 6.57871 6.74133 7.06671 6.08267C7.55168 5.42984 8.21057 4.92666 8.96804 4.63067C9.60271 4.38267 10.312 4.34 11.224 4.33333ZM11.2267 6.33733C10.344 6.34667 9.98938 6.38 9.69604 6.49467C9.288 6.65424 8.93313 6.92548 8.67204 7.27733C8.43738 7.59333 8.29871 8.03467 7.91204 9.45733L7.15204 12.2427C8.51204 12 10.3707 12 12.912 12H19.0867C21.6294 12 23.4867 12 24.8467 12.24L24.088 9.45467C23.7014 8.032 23.5627 7.59067 23.328 7.27467C23.067 6.92281 22.7121 6.65157 22.304 6.492C22.0107 6.37733 21.656 6.344 20.7734 6.33467C20.5841 6.73313 20.2857 7.06976 19.9128 7.30552C19.5399 7.54128 19.1079 7.6665 18.6667 7.66667H13.3334C12.8924 7.66662 12.4604 7.54159 12.0876 7.30608C11.7147 7.07057 11.4162 6.73555 11.2267 6.33733Z"/>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <!--product_card-->
+                                    <a id="rsFeCardOne" class="product-card text-decoration-none shadow-none bradius-five" href="#">
+                                        <div class="img-box p-1">
+                                            <img id="rsFeCardImgOne" class="bradius-four" src="/assets/food_images/egg.png">
+                                            <div class="rating bradius-one">
+                                                <span id="feRatingTextOne" class="d-flex align-items-center">4.5
+                                                    <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                                        <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                            <div class="favourite">
+                                                <button id="rsFeFavBntOne" class="btn primary-btn favourite-btn bradius-one">
+                                                    <svg class="svg-2 d-flex align-items-center" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3783 5.88622C9.66902 4.10486 6.79049 4.0794 4.92308 5.90387C4.91717 5.90965 4.91116 5.91534 4.90506 5.92092C3.09331 7.58038 3.06654 10.3577 4.92308 12.1716L4.92796 12.1763L11.9374 19.1469L19.0769 12.1716C19.0828 12.1658 19.0888 12.1601 19.0949 12.1545C20.9067 10.495 20.9335 7.71772 19.0769 5.90387C17.2195 4.08919 14.3268 4.08919 12.4694 5.90387C12.3227 6.04722 12.125 6.12596 11.9202 6.12264C11.7154 6.11933 11.5204 6.03424 11.3783 5.88622ZM11.9465 4.31813C9.59468 2.40387 6.12292 2.58601 3.85838 4.79012C1.36802 7.08049 1.39686 10.8778 3.84702 13.2742C3.84785 13.275 3.84869 13.2759 3.84952 13.2767L11.391 20.7763C11.689 21.0727 12.1688 21.0748 12.4694 20.7811L20.1419 13.2851C22.6328 10.9939 22.603 7.19491 20.1505 4.79876C17.8724 2.57305 14.397 2.41284 11.9465 4.31813Z"/>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="p-3">
+                                            <h6 id="rsFeCardNameOne">Ground Beef Tacos</h6>
+                                            <div class="d-flex mt-2">
+                                                <span id="rsFeCardFeatureOne">Restaurant Name</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-end mt-4 mb-3">
+                                                <h5 id="rsFeFoodPrice" class="">15.00 <span id="currency">AED</span></h5>
+                                                <button id="rsFeCartBtn" class="btn primary-btn bradius-one d-flex align-items-center">
+                                                    <svg class="nav-svg-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32" fill="none">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.224 4.33333C11.5974 3.54667 12.4027 3 13.3334 3H18.6667C19.5974 3 20.4014 3.54667 20.776 4.33333C21.6867 4.34133 22.3974 4.38267 23.032 4.63067C23.7897 4.92703 24.4486 5.43068 24.9334 6.084C25.4227 6.74267 25.6534 7.58667 25.968 8.748L26.9574 12.3773L27.3307 13.4987L27.3627 13.5387C28.564 15.0773 27.992 17.3653 26.848 21.94C26.12 24.8507 25.7574 26.3053 24.672 27.1533C23.5867 28 22.0867 28 19.0867 28H12.9134C9.91338 28 8.41338 28 7.32804 27.1533C6.24271 26.3053 5.87871 24.8507 5.15204 21.94C4.00804 17.3653 3.43604 15.0773 4.63738 13.5387L4.66938 13.4987L5.04271 12.3773L6.03204 8.748C6.34804 7.58667 6.57871 6.74133 7.06671 6.08267C7.55168 5.42984 8.21057 4.92666 8.96804 4.63067C9.60271 4.38267 10.312 4.34 11.224 4.33333ZM11.2267 6.33733C10.344 6.34667 9.98938 6.38 9.69604 6.49467C9.288 6.65424 8.93313 6.92548 8.67204 7.27733C8.43738 7.59333 8.29871 8.03467 7.91204 9.45733L7.15204 12.2427C8.51204 12 10.3707 12 12.912 12H19.0867C21.6294 12 23.4867 12 24.8467 12.24L24.088 9.45467C23.7014 8.032 23.5627 7.59067 23.328 7.27467C23.067 6.92281 22.7121 6.65157 22.304 6.492C22.0107 6.37733 21.656 6.344 20.7734 6.33467C20.5841 6.73313 20.2857 7.06976 19.9128 7.30552C19.5399 7.54128 19.1079 7.6665 18.6667 7.66667H13.3334C12.8924 7.66662 12.4604 7.54159 12.0876 7.30608C11.7147 7.07057 11.4162 6.73555 11.2267 6.33733Z"/>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!--end-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="free-delivery-asset d-flex align-items-md-end align-items-center" style="background-image: url(/assets/assets/free_delivery_asset.svg);">
+                            <div class="ms-4 mb-md-5 mb-0">
+                                <h1 id="featuresHeadline" class="fw-bold l-spacing">Free Delivery In <span class="h-highlight">UAE</span></h1>
+                                <p id="featuresDescription" class="mt-3 mb-0">You’ve to order at least <span class="h-highlight">10.00 AED</span> for free delivery in UAE.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--special_menu_section_start-->
+    <section id="specialMenuSection" class="swiper-section mt-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h3 id="spMenuSectionHeading" class="fw-semibold l-spacing">Gouqi Restaurant Special Sushi Menu</h3>
+            </div>
+            <div class="swiper swiper-container restaurant-menu-2">
+                <div class="swiper-wrapper py-4">
+                    <!--dear_backend_this_one_for_use-->
+                    <div class="swiper-slide">
+                        <!--product_card-->
+                        <a id="spMenuCardOne" class="product-card text-decoration-none bradius-five" href="#">
+                            <div class="img-box p-1">
+                                <img id="spMenuCardImgOne" class="bradius-four" src="/assets/food_images/egg.png">
+                                <div class="rating bradius-one">
+                                    <span id="foodRatingText34" class="d-flex align-items-center">4.5
+                                        <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                            <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="favourite">
+                                    <button id="spMenuFavBntOne" class="btn primary-btn favourite-btn bradius-one">
+                                        <svg class="svg-2 d-flex align-items-center" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3783 5.88622C9.66902 4.10486 6.79049 4.0794 4.92308 5.90387C4.91717 5.90965 4.91116 5.91534 4.90506 5.92092C3.09331 7.58038 3.06654 10.3577 4.92308 12.1716L4.92796 12.1763L11.9374 19.1469L19.0769 12.1716C19.0828 12.1658 19.0888 12.1601 19.0949 12.1545C20.9067 10.495 20.9335 7.71772 19.0769 5.90387C17.2195 4.08919 14.3268 4.08919 12.4694 5.90387C12.3227 6.04722 12.125 6.12596 11.9202 6.12264C11.7154 6.11933 11.5204 6.03424 11.3783 5.88622ZM11.9465 4.31813C9.59468 2.40387 6.12292 2.58601 3.85838 4.79012C1.36802 7.08049 1.39686 10.8778 3.84702 13.2742C3.84785 13.275 3.84869 13.2759 3.84952 13.2767L11.391 20.7763C11.689 21.0727 12.1688 21.0748 12.4694 20.7811L20.1419 13.2851C22.6328 10.9939 22.603 7.19491 20.1505 4.79876C17.8724 2.57305 14.397 2.41284 11.9465 4.31813Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h5 id="spMenuCardNameOne">Ground Beef Tacos</h5>
+                                <div class="mt-2">
+                                    <span id="spMenuCardFeatureOne" class="">Lorem ipsum dolor sit ametj.</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-end mt-4 mb-3">
+                                    <h4 id="spMenufoodPrice34" class="">15.00 <span id="currency">AED</span></h4>
+                                    <button id="spMenuCartBtnOne" class="btn primary-btn bradius-one">
+                                        <svg class="nav-svg-1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.224 4.33333C11.5974 3.54667 12.4027 3 13.3334 3H18.6667C19.5974 3 20.4014 3.54667 20.776 4.33333C21.6867 4.34133 22.3974 4.38267 23.032 4.63067C23.7897 4.92703 24.4486 5.43068 24.9334 6.084C25.4227 6.74267 25.6534 7.58667 25.968 8.748L26.9574 12.3773L27.3307 13.4987L27.3627 13.5387C28.564 15.0773 27.992 17.3653 26.848 21.94C26.12 24.8507 25.7574 26.3053 24.672 27.1533C23.5867 28 22.0867 28 19.0867 28H12.9134C9.91338 28 8.41338 28 7.32804 27.1533C6.24271 26.3053 5.87871 24.8507 5.15204 21.94C4.00804 17.3653 3.43604 15.0773 4.63738 13.5387L4.66938 13.4987L5.04271 12.3773L6.03204 8.748C6.34804 7.58667 6.57871 6.74133 7.06671 6.08267C7.55168 5.42984 8.21057 4.92666 8.96804 4.63067C9.60271 4.38267 10.312 4.34 11.224 4.33333ZM11.2267 6.33733C10.344 6.34667 9.98938 6.38 9.69604 6.49467C9.288 6.65424 8.93313 6.92548 8.67204 7.27733C8.43738 7.59333 8.29871 8.03467 7.91204 9.45733L7.15204 12.2427C8.51204 12 10.3707 12 12.912 12H19.0867C21.6294 12 23.4867 12 24.8467 12.24L24.088 9.45467C23.7014 8.032 23.5627 7.59067 23.328 7.27467C23.067 6.92281 22.7121 6.65157 22.304 6.492C22.0107 6.37733 21.656 6.344 20.7734 6.33467C20.5841 6.73313 20.2857 7.06976 19.9128 7.30552C19.5399 7.54128 19.1079 7.6665 18.6667 7.66667H13.3334C12.8924 7.66662 12.4604 7.54159 12.0876 7.30608C11.7147 7.07057 11.4162 6.73555 11.2267 6.33733Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!--end-->
+                    <!--dear_backend_those_are_dummy-->
+                    <div class="swiper-slide">
+                        <a id="tfCardOne" class="product-card text-decoration-none bradius-five" href="#">
+                            <div class="img-box p-1">
+                                <img id="tfCardImgOne" class="bradius-four" src="/assets/food_images/egg1.png">
+                                <div class="rating bradius-one">
+                                    <span id="foodRatingTextOne" class="d-flex align-items-center">4.5
+                                        <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                            <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="favourite">
+                                    <button id="tfFavBntOne" class="btn primary-btn favourite-btn bradius-one">
+                                        <svg class="svg-2 d-flex align-items-center" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3783 5.88622C9.66902 4.10486 6.79049 4.0794 4.92308 5.90387C4.91717 5.90965 4.91116 5.91534 4.90506 5.92092C3.09331 7.58038 3.06654 10.3577 4.92308 12.1716L4.92796 12.1763L11.9374 19.1469L19.0769 12.1716C19.0828 12.1658 19.0888 12.1601 19.0949 12.1545C20.9067 10.495 20.9335 7.71772 19.0769 5.90387C17.2195 4.08919 14.3268 4.08919 12.4694 5.90387C12.3227 6.04722 12.125 6.12596 11.9202 6.12264C11.7154 6.11933 11.5204 6.03424 11.3783 5.88622ZM11.9465 4.31813C9.59468 2.40387 6.12292 2.58601 3.85838 4.79012C1.36802 7.08049 1.39686 10.8778 3.84702 13.2742C3.84785 13.275 3.84869 13.2759 3.84952 13.2767L11.391 20.7763C11.689 21.0727 12.1688 21.0748 12.4694 20.7811L20.1419 13.2851C22.6328 10.9939 22.603 7.19491 20.1505 4.79876C17.8724 2.57305 14.397 2.41284 11.9465 4.31813Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h5 id="tfCardNameOne">Ground Beef Tacos</h5>
+                                <div class="d-flex mt-2">
+                                    <span id="tfCardFeatureOne">Restaurant Name</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-end mt-4 mb-3">
+                                    <h4 id="foodPrice" class="">15.00 <span id="currency">AED</span></h4>
+                                    <button class="btn primary-btn bradius-one">
+                                        <svg class="nav-svg-1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.224 4.33333C11.5974 3.54667 12.4027 3 13.3334 3H18.6667C19.5974 3 20.4014 3.54667 20.776 4.33333C21.6867 4.34133 22.3974 4.38267 23.032 4.63067C23.7897 4.92703 24.4486 5.43068 24.9334 6.084C25.4227 6.74267 25.6534 7.58667 25.968 8.748L26.9574 12.3773L27.3307 13.4987L27.3627 13.5387C28.564 15.0773 27.992 17.3653 26.848 21.94C26.12 24.8507 25.7574 26.3053 24.672 27.1533C23.5867 28 22.0867 28 19.0867 28H12.9134C9.91338 28 8.41338 28 7.32804 27.1533C6.24271 26.3053 5.87871 24.8507 5.15204 21.94C4.00804 17.3653 3.43604 15.0773 4.63738 13.5387L4.66938 13.4987L5.04271 12.3773L6.03204 8.748C6.34804 7.58667 6.57871 6.74133 7.06671 6.08267C7.55168 5.42984 8.21057 4.92666 8.96804 4.63067C9.60271 4.38267 10.312 4.34 11.224 4.33333ZM11.2267 6.33733C10.344 6.34667 9.98938 6.38 9.69604 6.49467C9.288 6.65424 8.93313 6.92548 8.67204 7.27733C8.43738 7.59333 8.29871 8.03467 7.91204 9.45733L7.15204 12.2427C8.51204 12 10.3707 12 12.912 12H19.0867C21.6294 12 23.4867 12 24.8467 12.24L24.088 9.45467C23.7014 8.032 23.5627 7.59067 23.328 7.27467C23.067 6.92281 22.7121 6.65157 22.304 6.492C22.0107 6.37733 21.656 6.344 20.7734 6.33467C20.5841 6.73313 20.2857 7.06976 19.9128 7.30552C19.5399 7.54128 19.1079 7.6665 18.6667 7.66667H13.3334C12.8924 7.66662 12.4604 7.54159 12.0876 7.30608C11.7147 7.07057 11.4162 6.73555 11.2267 6.33733Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a id="tfCardOne" class="product-card text-decoration-none bradius-five" href="#">
+                            <div class="img-box p-1">
+                                <img id="tfCardImgOne" class="bradius-four" src="/assets/food_images/noodles.png">
+                                <div class="rating bradius-one">
+                                    <span id="foodRatingTextOne" class="d-flex align-items-center">4.5
+                                        <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                            <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="favourite">
+                                    <button id="tfFavBntOne" class="btn primary-btn favourite-btn bradius-one">
+                                        <svg class="svg-2 d-flex align-items-center" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3783 5.88622C9.66902 4.10486 6.79049 4.0794 4.92308 5.90387C4.91717 5.90965 4.91116 5.91534 4.90506 5.92092C3.09331 7.58038 3.06654 10.3577 4.92308 12.1716L4.92796 12.1763L11.9374 19.1469L19.0769 12.1716C19.0828 12.1658 19.0888 12.1601 19.0949 12.1545C20.9067 10.495 20.9335 7.71772 19.0769 5.90387C17.2195 4.08919 14.3268 4.08919 12.4694 5.90387C12.3227 6.04722 12.125 6.12596 11.9202 6.12264C11.7154 6.11933 11.5204 6.03424 11.3783 5.88622ZM11.9465 4.31813C9.59468 2.40387 6.12292 2.58601 3.85838 4.79012C1.36802 7.08049 1.39686 10.8778 3.84702 13.2742C3.84785 13.275 3.84869 13.2759 3.84952 13.2767L11.391 20.7763C11.689 21.0727 12.1688 21.0748 12.4694 20.7811L20.1419 13.2851C22.6328 10.9939 22.603 7.19491 20.1505 4.79876C17.8724 2.57305 14.397 2.41284 11.9465 4.31813Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h5 id="tfCardNameOne">Ground Beef Tacos</h5>
+                                <div class="d-flex mt-2">
+                                    <span id="tfCardFeatureOne">Lorem ipsum dolor sit amet.</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-end mt-4 mb-3">
+                                    <h4 id="foodPrice" class="">15.00 <span id="currency">AED</span></h4>
+                                    <button class="btn primary-btn bradius-one">
+                                        <svg class="nav-svg-1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.224 4.33333C11.5974 3.54667 12.4027 3 13.3334 3H18.6667C19.5974 3 20.4014 3.54667 20.776 4.33333C21.6867 4.34133 22.3974 4.38267 23.032 4.63067C23.7897 4.92703 24.4486 5.43068 24.9334 6.084C25.4227 6.74267 25.6534 7.58667 25.968 8.748L26.9574 12.3773L27.3307 13.4987L27.3627 13.5387C28.564 15.0773 27.992 17.3653 26.848 21.94C26.12 24.8507 25.7574 26.3053 24.672 27.1533C23.5867 28 22.0867 28 19.0867 28H12.9134C9.91338 28 8.41338 28 7.32804 27.1533C6.24271 26.3053 5.87871 24.8507 5.15204 21.94C4.00804 17.3653 3.43604 15.0773 4.63738 13.5387L4.66938 13.4987L5.04271 12.3773L6.03204 8.748C6.34804 7.58667 6.57871 6.74133 7.06671 6.08267C7.55168 5.42984 8.21057 4.92666 8.96804 4.63067C9.60271 4.38267 10.312 4.34 11.224 4.33333ZM11.2267 6.33733C10.344 6.34667 9.98938 6.38 9.69604 6.49467C9.288 6.65424 8.93313 6.92548 8.67204 7.27733C8.43738 7.59333 8.29871 8.03467 7.91204 9.45733L7.15204 12.2427C8.51204 12 10.3707 12 12.912 12H19.0867C21.6294 12 23.4867 12 24.8467 12.24L24.088 9.45467C23.7014 8.032 23.5627 7.59067 23.328 7.27467C23.067 6.92281 22.7121 6.65157 22.304 6.492C22.0107 6.37733 21.656 6.344 20.7734 6.33467C20.5841 6.73313 20.2857 7.06976 19.9128 7.30552C19.5399 7.54128 19.1079 7.6665 18.6667 7.66667H13.3334C12.8924 7.66662 12.4604 7.54159 12.0876 7.30608C11.7147 7.07057 11.4162 6.73555 11.2267 6.33733Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a id="tfCardOne" class="product-card text-decoration-none bradius-five" href="#">
+                            <div class="img-box p-1">
+                                <img id="tfCardImgOne" class="bradius-four" src="/assets/food_images/egg.png">
+                                <div class="rating bradius-one">
+                                    <span id="foodRatingTextOne" class="d-flex align-items-center">4.5
+                                        <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                            <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="favourite">
+                                    <button id="tfFavBntOne" class="btn primary-btn favourite-btn bradius-one">
+                                        <svg class="svg-2 d-flex align-items-center" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3783 5.88622C9.66902 4.10486 6.79049 4.0794 4.92308 5.90387C4.91717 5.90965 4.91116 5.91534 4.90506 5.92092C3.09331 7.58038 3.06654 10.3577 4.92308 12.1716L4.92796 12.1763L11.9374 19.1469L19.0769 12.1716C19.0828 12.1658 19.0888 12.1601 19.0949 12.1545C20.9067 10.495 20.9335 7.71772 19.0769 5.90387C17.2195 4.08919 14.3268 4.08919 12.4694 5.90387C12.3227 6.04722 12.125 6.12596 11.9202 6.12264C11.7154 6.11933 11.5204 6.03424 11.3783 5.88622ZM11.9465 4.31813C9.59468 2.40387 6.12292 2.58601 3.85838 4.79012C1.36802 7.08049 1.39686 10.8778 3.84702 13.2742C3.84785 13.275 3.84869 13.2759 3.84952 13.2767L11.391 20.7763C11.689 21.0727 12.1688 21.0748 12.4694 20.7811L20.1419 13.2851C22.6328 10.9939 22.603 7.19491 20.1505 4.79876C17.8724 2.57305 14.397 2.41284 11.9465 4.31813Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h5 id="tfCardNameOne">Ground Beef Tacos</h5>
+                                <div class="d-flex mt-2">
+                                    <span id="tfCardFeatureOne">Lorem ipsum dolor sit amet.</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-end mt-4 mb-3">
+                                    <h4 id="foodPrice" class="">15.00 <span id="currency">AED</span></h4>
+                                    <button class="btn primary-btn bradius-one">
+                                        <svg class="nav-svg-1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.224 4.33333C11.5974 3.54667 12.4027 3 13.3334 3H18.6667C19.5974 3 20.4014 3.54667 20.776 4.33333C21.6867 4.34133 22.3974 4.38267 23.032 4.63067C23.7897 4.92703 24.4486 5.43068 24.9334 6.084C25.4227 6.74267 25.6534 7.58667 25.968 8.748L26.9574 12.3773L27.3307 13.4987L27.3627 13.5387C28.564 15.0773 27.992 17.3653 26.848 21.94C26.12 24.8507 25.7574 26.3053 24.672 27.1533C23.5867 28 22.0867 28 19.0867 28H12.9134C9.91338 28 8.41338 28 7.32804 27.1533C6.24271 26.3053 5.87871 24.8507 5.15204 21.94C4.00804 17.3653 3.43604 15.0773 4.63738 13.5387L4.66938 13.4987L5.04271 12.3773L6.03204 8.748C6.34804 7.58667 6.57871 6.74133 7.06671 6.08267C7.55168 5.42984 8.21057 4.92666 8.96804 4.63067C9.60271 4.38267 10.312 4.34 11.224 4.33333ZM11.2267 6.33733C10.344 6.34667 9.98938 6.38 9.69604 6.49467C9.288 6.65424 8.93313 6.92548 8.67204 7.27733C8.43738 7.59333 8.29871 8.03467 7.91204 9.45733L7.15204 12.2427C8.51204 12 10.3707 12 12.912 12H19.0867C21.6294 12 23.4867 12 24.8467 12.24L24.088 9.45467C23.7014 8.032 23.5627 7.59067 23.328 7.27467C23.067 6.92281 22.7121 6.65157 22.304 6.492C22.0107 6.37733 21.656 6.344 20.7734 6.33467C20.5841 6.73313 20.2857 7.06976 19.9128 7.30552C19.5399 7.54128 19.1079 7.6665 18.6667 7.66667H13.3334C12.8924 7.66662 12.4604 7.54159 12.0876 7.30608C11.7147 7.07057 11.4162 6.73555 11.2267 6.33733Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a id="tfCardOne" class="product-card text-decoration-none bradius-five" href="#">
+                            <div class="img-box p-1">
+                                <img id="tfCardImgOne" class="bradius-four" src="/assets/food_images/egg.png">
+                                <div class="rating bradius-one">
+                                    <span id="foodRatingTextOne" class="d-flex align-items-center">4.5
+                                        <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                            <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="favourite">
+                                    <button id="tfFavBntOne" class="btn primary-btn favourite-btn bradius-one">
+                                        <svg class="svg-2 d-flex align-items-center" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3783 5.88622C9.66902 4.10486 6.79049 4.0794 4.92308 5.90387C4.91717 5.90965 4.91116 5.91534 4.90506 5.92092C3.09331 7.58038 3.06654 10.3577 4.92308 12.1716L4.92796 12.1763L11.9374 19.1469L19.0769 12.1716C19.0828 12.1658 19.0888 12.1601 19.0949 12.1545C20.9067 10.495 20.9335 7.71772 19.0769 5.90387C17.2195 4.08919 14.3268 4.08919 12.4694 5.90387C12.3227 6.04722 12.125 6.12596 11.9202 6.12264C11.7154 6.11933 11.5204 6.03424 11.3783 5.88622ZM11.9465 4.31813C9.59468 2.40387 6.12292 2.58601 3.85838 4.79012C1.36802 7.08049 1.39686 10.8778 3.84702 13.2742C3.84785 13.275 3.84869 13.2759 3.84952 13.2767L11.391 20.7763C11.689 21.0727 12.1688 21.0748 12.4694 20.7811L20.1419 13.2851C22.6328 10.9939 22.603 7.19491 20.1505 4.79876C17.8724 2.57305 14.397 2.41284 11.9465 4.31813Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h5 id="tfCardNameOne">Ground Beef Tacos</h5>
+                                <div class="d-flex mt-2">
+                                    <span id="tfCardFeatureOne">Lorem ipsum dolor sit amet.</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-end mt-4 mb-3">
+                                    <h4 class="">$ 15.00</h4>
+                                    <button class="btn primary-btn bradius-one">
+                                        <svg class="nav-svg-1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.224 4.33333C11.5974 3.54667 12.4027 3 13.3334 3H18.6667C19.5974 3 20.4014 3.54667 20.776 4.33333C21.6867 4.34133 22.3974 4.38267 23.032 4.63067C23.7897 4.92703 24.4486 5.43068 24.9334 6.084C25.4227 6.74267 25.6534 7.58667 25.968 8.748L26.9574 12.3773L27.3307 13.4987L27.3627 13.5387C28.564 15.0773 27.992 17.3653 26.848 21.94C26.12 24.8507 25.7574 26.3053 24.672 27.1533C23.5867 28 22.0867 28 19.0867 28H12.9134C9.91338 28 8.41338 28 7.32804 27.1533C6.24271 26.3053 5.87871 24.8507 5.15204 21.94C4.00804 17.3653 3.43604 15.0773 4.63738 13.5387L4.66938 13.4987L5.04271 12.3773L6.03204 8.748C6.34804 7.58667 6.57871 6.74133 7.06671 6.08267C7.55168 5.42984 8.21057 4.92666 8.96804 4.63067C9.60271 4.38267 10.312 4.34 11.224 4.33333ZM11.2267 6.33733C10.344 6.34667 9.98938 6.38 9.69604 6.49467C9.288 6.65424 8.93313 6.92548 8.67204 7.27733C8.43738 7.59333 8.29871 8.03467 7.91204 9.45733L7.15204 12.2427C8.51204 12 10.3707 12 12.912 12H19.0867C21.6294 12 23.4867 12 24.8467 12.24L24.088 9.45467C23.7014 8.032 23.5627 7.59067 23.328 7.27467C23.067 6.92281 22.7121 6.65157 22.304 6.492C22.0107 6.37733 21.656 6.344 20.7734 6.33467C20.5841 6.73313 20.2857 7.06976 19.9128 7.30552C19.5399 7.54128 19.1079 7.6665 18.6667 7.66667H13.3334C12.8924 7.66662 12.4604 7.54159 12.0876 7.30608C11.7147 7.07057 11.4162 6.73555 11.2267 6.33733Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a id="tfCardOne" class="product-card text-decoration-none bradius-five" href="#">
+                            <div class="img-box p-1">
+                                <img id="tfCardImgOne" class="bradius-four" src="/assets/food_images/egg.png">
+                                <div class="rating bradius-one">
+                                    <span id="foodRatingTextOne" class="d-flex align-items-center">4.5
+                                        <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                            <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="favourite">
+                                    <button id="tfFavBntOne" class="btn primary-btn favourite-btn bradius-one">
+                                        <svg class="svg-2 d-flex align-items-center" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3783 5.88622C9.66902 4.10486 6.79049 4.0794 4.92308 5.90387C4.91717 5.90965 4.91116 5.91534 4.90506 5.92092C3.09331 7.58038 3.06654 10.3577 4.92308 12.1716L4.92796 12.1763L11.9374 19.1469L19.0769 12.1716C19.0828 12.1658 19.0888 12.1601 19.0949 12.1545C20.9067 10.495 20.9335 7.71772 19.0769 5.90387C17.2195 4.08919 14.3268 4.08919 12.4694 5.90387C12.3227 6.04722 12.125 6.12596 11.9202 6.12264C11.7154 6.11933 11.5204 6.03424 11.3783 5.88622ZM11.9465 4.31813C9.59468 2.40387 6.12292 2.58601 3.85838 4.79012C1.36802 7.08049 1.39686 10.8778 3.84702 13.2742C3.84785 13.275 3.84869 13.2759 3.84952 13.2767L11.391 20.7763C11.689 21.0727 12.1688 21.0748 12.4694 20.7811L20.1419 13.2851C22.6328 10.9939 22.603 7.19491 20.1505 4.79876C17.8724 2.57305 14.397 2.41284 11.9465 4.31813Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h5 id="tfCardNameOne">Ground Beef Tacos</h5>
+                                <div class="d-flex mt-2">
+                                    <span id="tfCardFeatureOne">Lorem ipsum dolor sit amet.</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-end mt-4 mb-3">
+                                    <h4 class="">$ 15.00</h4>
+                                    <button class="btn primary-btn bradius-one">
+                                        <svg class="nav-svg-1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.224 4.33333C11.5974 3.54667 12.4027 3 13.3334 3H18.6667C19.5974 3 20.4014 3.54667 20.776 4.33333C21.6867 4.34133 22.3974 4.38267 23.032 4.63067C23.7897 4.92703 24.4486 5.43068 24.9334 6.084C25.4227 6.74267 25.6534 7.58667 25.968 8.748L26.9574 12.3773L27.3307 13.4987L27.3627 13.5387C28.564 15.0773 27.992 17.3653 26.848 21.94C26.12 24.8507 25.7574 26.3053 24.672 27.1533C23.5867 28 22.0867 28 19.0867 28H12.9134C9.91338 28 8.41338 28 7.32804 27.1533C6.24271 26.3053 5.87871 24.8507 5.15204 21.94C4.00804 17.3653 3.43604 15.0773 4.63738 13.5387L4.66938 13.4987L5.04271 12.3773L6.03204 8.748C6.34804 7.58667 6.57871 6.74133 7.06671 6.08267C7.55168 5.42984 8.21057 4.92666 8.96804 4.63067C9.60271 4.38267 10.312 4.34 11.224 4.33333ZM11.2267 6.33733C10.344 6.34667 9.98938 6.38 9.69604 6.49467C9.288 6.65424 8.93313 6.92548 8.67204 7.27733C8.43738 7.59333 8.29871 8.03467 7.91204 9.45733L7.15204 12.2427C8.51204 12 10.3707 12 12.912 12H19.0867C21.6294 12 23.4867 12 24.8467 12.24L24.088 9.45467C23.7014 8.032 23.5627 7.59067 23.328 7.27467C23.067 6.92281 22.7121 6.65157 22.304 6.492C22.0107 6.37733 21.656 6.344 20.7734 6.33467C20.5841 6.73313 20.2857 7.06976 19.9128 7.30552C19.5399 7.54128 19.1079 7.6665 18.6667 7.66667H13.3334C12.8924 7.66662 12.4604 7.54159 12.0876 7.30608C11.7147 7.07057 11.4162 6.73555 11.2267 6.33733Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!--end-->
+                </div>
+                <div class="d-md-block d-none">
+                    <div class="swiper-button-next custom-next"></div>
+                    <div class="swiper-button-prev custom-prev"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--side_menu_section_start-->
+    <section id="sideMenuSection" class="swiper-section mt-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h3 id="sideMenuSectionHeading" class="fw-semibold l-spacing">Starters and Sides</h3>
+            </div>
+            <div class="swiper swiper-container restaurant-menu-3">
+                <div class="swiper-wrapper py-4">
+                    <!--dear_backend_this_one_for_use-->
+                    <div class="swiper-slide">
+                        <!--product_card-->
+                        <a id="sideMenuCardOne" class="product-card text-decoration-none bradius-five" href="#">
+                            <div class="img-box p-1">
+                                <img id="sideMenuCardImgOne" class="bradius-four" src="/assets/food_images/egg.png">
+                                <div class="rating bradius-one">
+                                    <span id="foodRatingText36" class="d-flex align-items-center">4.5
+                                        <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                            <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="favourite">
+                                    <button id="sideMenuFavBntOne" class="btn primary-btn favourite-btn bradius-one">
+                                        <svg class="svg-2 d-flex align-items-center" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3783 5.88622C9.66902 4.10486 6.79049 4.0794 4.92308 5.90387C4.91717 5.90965 4.91116 5.91534 4.90506 5.92092C3.09331 7.58038 3.06654 10.3577 4.92308 12.1716L4.92796 12.1763L11.9374 19.1469L19.0769 12.1716C19.0828 12.1658 19.0888 12.1601 19.0949 12.1545C20.9067 10.495 20.9335 7.71772 19.0769 5.90387C17.2195 4.08919 14.3268 4.08919 12.4694 5.90387C12.3227 6.04722 12.125 6.12596 11.9202 6.12264C11.7154 6.11933 11.5204 6.03424 11.3783 5.88622ZM11.9465 4.31813C9.59468 2.40387 6.12292 2.58601 3.85838 4.79012C1.36802 7.08049 1.39686 10.8778 3.84702 13.2742C3.84785 13.275 3.84869 13.2759 3.84952 13.2767L11.391 20.7763C11.689 21.0727 12.1688 21.0748 12.4694 20.7811L20.1419 13.2851C22.6328 10.9939 22.603 7.19491 20.1505 4.79876C17.8724 2.57305 14.397 2.41284 11.9465 4.31813Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h5 id="sideMenuCardNameOne">Ground Beef Tacos</h5>
+                                <div class="mt-2">
+                                    <span id="sideMenuCardFeatureOne" class="">Lorem ipsum dolor sit ametj.</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-end mt-4 mb-3">
+                                    <h4 id="sideMenufoodPrice34" class="">15.00 <span id="currency">AED</span></h4>
+                                    <button id="sideMenuCartBtnOne" class="btn primary-btn bradius-one">
+                                        <svg class="nav-svg-1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.224 4.33333C11.5974 3.54667 12.4027 3 13.3334 3H18.6667C19.5974 3 20.4014 3.54667 20.776 4.33333C21.6867 4.34133 22.3974 4.38267 23.032 4.63067C23.7897 4.92703 24.4486 5.43068 24.9334 6.084C25.4227 6.74267 25.6534 7.58667 25.968 8.748L26.9574 12.3773L27.3307 13.4987L27.3627 13.5387C28.564 15.0773 27.992 17.3653 26.848 21.94C26.12 24.8507 25.7574 26.3053 24.672 27.1533C23.5867 28 22.0867 28 19.0867 28H12.9134C9.91338 28 8.41338 28 7.32804 27.1533C6.24271 26.3053 5.87871 24.8507 5.15204 21.94C4.00804 17.3653 3.43604 15.0773 4.63738 13.5387L4.66938 13.4987L5.04271 12.3773L6.03204 8.748C6.34804 7.58667 6.57871 6.74133 7.06671 6.08267C7.55168 5.42984 8.21057 4.92666 8.96804 4.63067C9.60271 4.38267 10.312 4.34 11.224 4.33333ZM11.2267 6.33733C10.344 6.34667 9.98938 6.38 9.69604 6.49467C9.288 6.65424 8.93313 6.92548 8.67204 7.27733C8.43738 7.59333 8.29871 8.03467 7.91204 9.45733L7.15204 12.2427C8.51204 12 10.3707 12 12.912 12H19.0867C21.6294 12 23.4867 12 24.8467 12.24L24.088 9.45467C23.7014 8.032 23.5627 7.59067 23.328 7.27467C23.067 6.92281 22.7121 6.65157 22.304 6.492C22.0107 6.37733 21.656 6.344 20.7734 6.33467C20.5841 6.73313 20.2857 7.06976 19.9128 7.30552C19.5399 7.54128 19.1079 7.6665 18.6667 7.66667H13.3334C12.8924 7.66662 12.4604 7.54159 12.0876 7.30608C11.7147 7.07057 11.4162 6.73555 11.2267 6.33733Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!--end-->
+                    <!--dear_backend_those_are_dummy-->
+                    <div class="swiper-slide">
+                        <a id="tfCardOne" class="product-card text-decoration-none bradius-five" href="#">
+                            <div class="img-box p-1">
+                                <img id="tfCardImgOne" class="bradius-four" src="/assets/food_images/egg1.png">
+                                <div class="rating bradius-one">
+                                    <span id="foodRatingTextOne" class="d-flex align-items-center">4.5
+                                        <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                            <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="favourite">
+                                    <button id="tfFavBntOne" class="btn primary-btn favourite-btn bradius-one">
+                                        <svg class="svg-2 d-flex align-items-center" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3783 5.88622C9.66902 4.10486 6.79049 4.0794 4.92308 5.90387C4.91717 5.90965 4.91116 5.91534 4.90506 5.92092C3.09331 7.58038 3.06654 10.3577 4.92308 12.1716L4.92796 12.1763L11.9374 19.1469L19.0769 12.1716C19.0828 12.1658 19.0888 12.1601 19.0949 12.1545C20.9067 10.495 20.9335 7.71772 19.0769 5.90387C17.2195 4.08919 14.3268 4.08919 12.4694 5.90387C12.3227 6.04722 12.125 6.12596 11.9202 6.12264C11.7154 6.11933 11.5204 6.03424 11.3783 5.88622ZM11.9465 4.31813C9.59468 2.40387 6.12292 2.58601 3.85838 4.79012C1.36802 7.08049 1.39686 10.8778 3.84702 13.2742C3.84785 13.275 3.84869 13.2759 3.84952 13.2767L11.391 20.7763C11.689 21.0727 12.1688 21.0748 12.4694 20.7811L20.1419 13.2851C22.6328 10.9939 22.603 7.19491 20.1505 4.79876C17.8724 2.57305 14.397 2.41284 11.9465 4.31813Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h5 id="tfCardNameOne">Ground Beef Tacos</h5>
+                                <div class="d-flex mt-2">
+                                    <span id="tfCardFeatureOne">Restaurant Name</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-end mt-4 mb-3">
+                                    <h4 id="foodPrice" class="">15.00 <span id="currency">AED</span></h4>
+                                    <button class="btn primary-btn bradius-one">
+                                        <svg class="nav-svg-1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.224 4.33333C11.5974 3.54667 12.4027 3 13.3334 3H18.6667C19.5974 3 20.4014 3.54667 20.776 4.33333C21.6867 4.34133 22.3974 4.38267 23.032 4.63067C23.7897 4.92703 24.4486 5.43068 24.9334 6.084C25.4227 6.74267 25.6534 7.58667 25.968 8.748L26.9574 12.3773L27.3307 13.4987L27.3627 13.5387C28.564 15.0773 27.992 17.3653 26.848 21.94C26.12 24.8507 25.7574 26.3053 24.672 27.1533C23.5867 28 22.0867 28 19.0867 28H12.9134C9.91338 28 8.41338 28 7.32804 27.1533C6.24271 26.3053 5.87871 24.8507 5.15204 21.94C4.00804 17.3653 3.43604 15.0773 4.63738 13.5387L4.66938 13.4987L5.04271 12.3773L6.03204 8.748C6.34804 7.58667 6.57871 6.74133 7.06671 6.08267C7.55168 5.42984 8.21057 4.92666 8.96804 4.63067C9.60271 4.38267 10.312 4.34 11.224 4.33333ZM11.2267 6.33733C10.344 6.34667 9.98938 6.38 9.69604 6.49467C9.288 6.65424 8.93313 6.92548 8.67204 7.27733C8.43738 7.59333 8.29871 8.03467 7.91204 9.45733L7.15204 12.2427C8.51204 12 10.3707 12 12.912 12H19.0867C21.6294 12 23.4867 12 24.8467 12.24L24.088 9.45467C23.7014 8.032 23.5627 7.59067 23.328 7.27467C23.067 6.92281 22.7121 6.65157 22.304 6.492C22.0107 6.37733 21.656 6.344 20.7734 6.33467C20.5841 6.73313 20.2857 7.06976 19.9128 7.30552C19.5399 7.54128 19.1079 7.6665 18.6667 7.66667H13.3334C12.8924 7.66662 12.4604 7.54159 12.0876 7.30608C11.7147 7.07057 11.4162 6.73555 11.2267 6.33733Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a id="tfCardOne" class="product-card text-decoration-none bradius-five" href="#">
+                            <div class="img-box p-1">
+                                <img id="tfCardImgOne" class="bradius-four" src="/assets/food_images/noodles.png">
+                                <div class="rating bradius-one">
+                                    <span id="foodRatingTextOne" class="d-flex align-items-center">4.5
+                                        <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                            <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="favourite">
+                                    <button id="tfFavBntOne" class="btn primary-btn favourite-btn bradius-one">
+                                        <svg class="svg-2 d-flex align-items-center" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3783 5.88622C9.66902 4.10486 6.79049 4.0794 4.92308 5.90387C4.91717 5.90965 4.91116 5.91534 4.90506 5.92092C3.09331 7.58038 3.06654 10.3577 4.92308 12.1716L4.92796 12.1763L11.9374 19.1469L19.0769 12.1716C19.0828 12.1658 19.0888 12.1601 19.0949 12.1545C20.9067 10.495 20.9335 7.71772 19.0769 5.90387C17.2195 4.08919 14.3268 4.08919 12.4694 5.90387C12.3227 6.04722 12.125 6.12596 11.9202 6.12264C11.7154 6.11933 11.5204 6.03424 11.3783 5.88622ZM11.9465 4.31813C9.59468 2.40387 6.12292 2.58601 3.85838 4.79012C1.36802 7.08049 1.39686 10.8778 3.84702 13.2742C3.84785 13.275 3.84869 13.2759 3.84952 13.2767L11.391 20.7763C11.689 21.0727 12.1688 21.0748 12.4694 20.7811L20.1419 13.2851C22.6328 10.9939 22.603 7.19491 20.1505 4.79876C17.8724 2.57305 14.397 2.41284 11.9465 4.31813Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h5 id="tfCardNameOne">Ground Beef Tacos</h5>
+                                <div class="d-flex mt-2">
+                                    <span id="tfCardFeatureOne">Lorem ipsum dolor sit amet.</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-end mt-4 mb-3">
+                                    <h4 id="foodPrice" class="">15.00 <span id="currency">AED</span></h4>
+                                    <button class="btn primary-btn bradius-one">
+                                        <svg class="nav-svg-1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.224 4.33333C11.5974 3.54667 12.4027 3 13.3334 3H18.6667C19.5974 3 20.4014 3.54667 20.776 4.33333C21.6867 4.34133 22.3974 4.38267 23.032 4.63067C23.7897 4.92703 24.4486 5.43068 24.9334 6.084C25.4227 6.74267 25.6534 7.58667 25.968 8.748L26.9574 12.3773L27.3307 13.4987L27.3627 13.5387C28.564 15.0773 27.992 17.3653 26.848 21.94C26.12 24.8507 25.7574 26.3053 24.672 27.1533C23.5867 28 22.0867 28 19.0867 28H12.9134C9.91338 28 8.41338 28 7.32804 27.1533C6.24271 26.3053 5.87871 24.8507 5.15204 21.94C4.00804 17.3653 3.43604 15.0773 4.63738 13.5387L4.66938 13.4987L5.04271 12.3773L6.03204 8.748C6.34804 7.58667 6.57871 6.74133 7.06671 6.08267C7.55168 5.42984 8.21057 4.92666 8.96804 4.63067C9.60271 4.38267 10.312 4.34 11.224 4.33333ZM11.2267 6.33733C10.344 6.34667 9.98938 6.38 9.69604 6.49467C9.288 6.65424 8.93313 6.92548 8.67204 7.27733C8.43738 7.59333 8.29871 8.03467 7.91204 9.45733L7.15204 12.2427C8.51204 12 10.3707 12 12.912 12H19.0867C21.6294 12 23.4867 12 24.8467 12.24L24.088 9.45467C23.7014 8.032 23.5627 7.59067 23.328 7.27467C23.067 6.92281 22.7121 6.65157 22.304 6.492C22.0107 6.37733 21.656 6.344 20.7734 6.33467C20.5841 6.73313 20.2857 7.06976 19.9128 7.30552C19.5399 7.54128 19.1079 7.6665 18.6667 7.66667H13.3334C12.8924 7.66662 12.4604 7.54159 12.0876 7.30608C11.7147 7.07057 11.4162 6.73555 11.2267 6.33733Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a id="tfCardOne" class="product-card text-decoration-none bradius-five" href="#">
+                            <div class="img-box p-1">
+                                <img id="tfCardImgOne" class="bradius-four" src="/assets/food_images/egg.png">
+                                <div class="rating bradius-one">
+                                    <span id="foodRatingTextOne" class="d-flex align-items-center">4.5
+                                        <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                            <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="favourite">
+                                    <button id="tfFavBntOne" class="btn primary-btn favourite-btn bradius-one">
+                                        <svg class="svg-2 d-flex align-items-center" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3783 5.88622C9.66902 4.10486 6.79049 4.0794 4.92308 5.90387C4.91717 5.90965 4.91116 5.91534 4.90506 5.92092C3.09331 7.58038 3.06654 10.3577 4.92308 12.1716L4.92796 12.1763L11.9374 19.1469L19.0769 12.1716C19.0828 12.1658 19.0888 12.1601 19.0949 12.1545C20.9067 10.495 20.9335 7.71772 19.0769 5.90387C17.2195 4.08919 14.3268 4.08919 12.4694 5.90387C12.3227 6.04722 12.125 6.12596 11.9202 6.12264C11.7154 6.11933 11.5204 6.03424 11.3783 5.88622ZM11.9465 4.31813C9.59468 2.40387 6.12292 2.58601 3.85838 4.79012C1.36802 7.08049 1.39686 10.8778 3.84702 13.2742C3.84785 13.275 3.84869 13.2759 3.84952 13.2767L11.391 20.7763C11.689 21.0727 12.1688 21.0748 12.4694 20.7811L20.1419 13.2851C22.6328 10.9939 22.603 7.19491 20.1505 4.79876C17.8724 2.57305 14.397 2.41284 11.9465 4.31813Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h5 id="tfCardNameOne">Ground Beef Tacos</h5>
+                                <div class="d-flex mt-2">
+                                    <span id="tfCardFeatureOne">Lorem ipsum dolor sit amet.</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-end mt-4 mb-3">
+                                    <h4 id="foodPrice" class="">15.00 <span id="currency">AED</span></h4>
+                                    <button class="btn primary-btn bradius-one">
+                                        <svg class="nav-svg-1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.224 4.33333C11.5974 3.54667 12.4027 3 13.3334 3H18.6667C19.5974 3 20.4014 3.54667 20.776 4.33333C21.6867 4.34133 22.3974 4.38267 23.032 4.63067C23.7897 4.92703 24.4486 5.43068 24.9334 6.084C25.4227 6.74267 25.6534 7.58667 25.968 8.748L26.9574 12.3773L27.3307 13.4987L27.3627 13.5387C28.564 15.0773 27.992 17.3653 26.848 21.94C26.12 24.8507 25.7574 26.3053 24.672 27.1533C23.5867 28 22.0867 28 19.0867 28H12.9134C9.91338 28 8.41338 28 7.32804 27.1533C6.24271 26.3053 5.87871 24.8507 5.15204 21.94C4.00804 17.3653 3.43604 15.0773 4.63738 13.5387L4.66938 13.4987L5.04271 12.3773L6.03204 8.748C6.34804 7.58667 6.57871 6.74133 7.06671 6.08267C7.55168 5.42984 8.21057 4.92666 8.96804 4.63067C9.60271 4.38267 10.312 4.34 11.224 4.33333ZM11.2267 6.33733C10.344 6.34667 9.98938 6.38 9.69604 6.49467C9.288 6.65424 8.93313 6.92548 8.67204 7.27733C8.43738 7.59333 8.29871 8.03467 7.91204 9.45733L7.15204 12.2427C8.51204 12 10.3707 12 12.912 12H19.0867C21.6294 12 23.4867 12 24.8467 12.24L24.088 9.45467C23.7014 8.032 23.5627 7.59067 23.328 7.27467C23.067 6.92281 22.7121 6.65157 22.304 6.492C22.0107 6.37733 21.656 6.344 20.7734 6.33467C20.5841 6.73313 20.2857 7.06976 19.9128 7.30552C19.5399 7.54128 19.1079 7.6665 18.6667 7.66667H13.3334C12.8924 7.66662 12.4604 7.54159 12.0876 7.30608C11.7147 7.07057 11.4162 6.73555 11.2267 6.33733Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a id="tfCardOne" class="product-card text-decoration-none bradius-five" href="#">
+                            <div class="img-box p-1">
+                                <img id="tfCardImgOne" class="bradius-four" src="/assets/food_images/egg.png">
+                                <div class="rating bradius-one">
+                                    <span id="foodRatingTextOne" class="d-flex align-items-center">4.5
+                                        <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                            <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="favourite">
+                                    <button id="tfFavBntOne" class="btn primary-btn favourite-btn bradius-one">
+                                        <svg class="svg-2 d-flex align-items-center" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3783 5.88622C9.66902 4.10486 6.79049 4.0794 4.92308 5.90387C4.91717 5.90965 4.91116 5.91534 4.90506 5.92092C3.09331 7.58038 3.06654 10.3577 4.92308 12.1716L4.92796 12.1763L11.9374 19.1469L19.0769 12.1716C19.0828 12.1658 19.0888 12.1601 19.0949 12.1545C20.9067 10.495 20.9335 7.71772 19.0769 5.90387C17.2195 4.08919 14.3268 4.08919 12.4694 5.90387C12.3227 6.04722 12.125 6.12596 11.9202 6.12264C11.7154 6.11933 11.5204 6.03424 11.3783 5.88622ZM11.9465 4.31813C9.59468 2.40387 6.12292 2.58601 3.85838 4.79012C1.36802 7.08049 1.39686 10.8778 3.84702 13.2742C3.84785 13.275 3.84869 13.2759 3.84952 13.2767L11.391 20.7763C11.689 21.0727 12.1688 21.0748 12.4694 20.7811L20.1419 13.2851C22.6328 10.9939 22.603 7.19491 20.1505 4.79876C17.8724 2.57305 14.397 2.41284 11.9465 4.31813Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h5 id="tfCardNameOne">Ground Beef Tacos</h5>
+                                <div class="d-flex mt-2">
+                                    <span id="tfCardFeatureOne">Lorem ipsum dolor sit amet.</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-end mt-4 mb-3">
+                                    <h4 class="">$ 15.00</h4>
+                                    <button class="btn primary-btn bradius-one">
+                                        <svg class="nav-svg-1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.224 4.33333C11.5974 3.54667 12.4027 3 13.3334 3H18.6667C19.5974 3 20.4014 3.54667 20.776 4.33333C21.6867 4.34133 22.3974 4.38267 23.032 4.63067C23.7897 4.92703 24.4486 5.43068 24.9334 6.084C25.4227 6.74267 25.6534 7.58667 25.968 8.748L26.9574 12.3773L27.3307 13.4987L27.3627 13.5387C28.564 15.0773 27.992 17.3653 26.848 21.94C26.12 24.8507 25.7574 26.3053 24.672 27.1533C23.5867 28 22.0867 28 19.0867 28H12.9134C9.91338 28 8.41338 28 7.32804 27.1533C6.24271 26.3053 5.87871 24.8507 5.15204 21.94C4.00804 17.3653 3.43604 15.0773 4.63738 13.5387L4.66938 13.4987L5.04271 12.3773L6.03204 8.748C6.34804 7.58667 6.57871 6.74133 7.06671 6.08267C7.55168 5.42984 8.21057 4.92666 8.96804 4.63067C9.60271 4.38267 10.312 4.34 11.224 4.33333ZM11.2267 6.33733C10.344 6.34667 9.98938 6.38 9.69604 6.49467C9.288 6.65424 8.93313 6.92548 8.67204 7.27733C8.43738 7.59333 8.29871 8.03467 7.91204 9.45733L7.15204 12.2427C8.51204 12 10.3707 12 12.912 12H19.0867C21.6294 12 23.4867 12 24.8467 12.24L24.088 9.45467C23.7014 8.032 23.5627 7.59067 23.328 7.27467C23.067 6.92281 22.7121 6.65157 22.304 6.492C22.0107 6.37733 21.656 6.344 20.7734 6.33467C20.5841 6.73313 20.2857 7.06976 19.9128 7.30552C19.5399 7.54128 19.1079 7.6665 18.6667 7.66667H13.3334C12.8924 7.66662 12.4604 7.54159 12.0876 7.30608C11.7147 7.07057 11.4162 6.73555 11.2267 6.33733Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a id="tfCardOne" class="product-card text-decoration-none bradius-five" href="#">
+                            <div class="img-box p-1">
+                                <img id="tfCardImgOne" class="bradius-four" src="/assets/food_images/egg.png">
+                                <div class="rating bradius-one">
+                                    <span id="foodRatingTextOne" class="d-flex align-items-center">4.5
+                                        <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                                            <path d="M4.57662 2.704C5.21012 1.568 5.52662 1 6.00012 1C6.47362 1 6.79012 1.568 7.42362 2.704L7.58762 2.998C7.76762 3.321 7.85762 3.4825 7.99762 3.589C8.13762 3.6955 8.31262 3.735 8.66262 3.814L8.98062 3.886C10.2106 4.1645 10.8251 4.3035 10.9716 4.774C11.1176 5.244 10.6986 5.7345 9.86012 6.715L9.64312 6.9685C9.40512 7.247 9.28562 7.3865 9.23212 7.5585C9.17862 7.731 9.19662 7.917 9.23262 8.2885L9.26562 8.627C9.39212 9.9355 9.45562 10.5895 9.07262 10.88C8.68962 11.171 8.11362 10.9055 6.96262 10.3755L6.66412 10.2385C6.33712 10.0875 6.17362 10.0125 6.00012 10.0125C5.82662 10.0125 5.66312 10.0875 5.33562 10.2385L5.03812 10.3755C3.88662 10.9055 3.31062 11.1705 2.92812 10.8805C2.54462 10.5895 2.60812 9.9355 2.73462 8.627L2.76762 8.289C2.80362 7.917 2.82162 7.731 2.76762 7.559C2.71462 7.3865 2.59512 7.247 2.35712 6.969L2.14012 6.715C1.30162 5.735 0.882617 5.2445 1.02862 4.774C1.17512 4.3035 1.79012 4.164 3.02012 3.886L3.33812 3.814C3.68762 3.735 3.86212 3.6955 4.00262 3.589C4.14262 3.4825 4.23262 3.321 4.41262 2.998L4.57662 2.704Z" fill="#FFC529"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="favourite">
+                                    <button id="tfFavBntOne" class="btn primary-btn favourite-btn bradius-one">
+                                        <svg class="svg-2 d-flex align-items-center" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3783 5.88622C9.66902 4.10486 6.79049 4.0794 4.92308 5.90387C4.91717 5.90965 4.91116 5.91534 4.90506 5.92092C3.09331 7.58038 3.06654 10.3577 4.92308 12.1716L4.92796 12.1763L11.9374 19.1469L19.0769 12.1716C19.0828 12.1658 19.0888 12.1601 19.0949 12.1545C20.9067 10.495 20.9335 7.71772 19.0769 5.90387C17.2195 4.08919 14.3268 4.08919 12.4694 5.90387C12.3227 6.04722 12.125 6.12596 11.9202 6.12264C11.7154 6.11933 11.5204 6.03424 11.3783 5.88622ZM11.9465 4.31813C9.59468 2.40387 6.12292 2.58601 3.85838 4.79012C1.36802 7.08049 1.39686 10.8778 3.84702 13.2742C3.84785 13.275 3.84869 13.2759 3.84952 13.2767L11.391 20.7763C11.689 21.0727 12.1688 21.0748 12.4694 20.7811L20.1419 13.2851C22.6328 10.9939 22.603 7.19491 20.1505 4.79876C17.8724 2.57305 14.397 2.41284 11.9465 4.31813Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h5 id="tfCardNameOne">Ground Beef Tacos</h5>
+                                <div class="d-flex mt-2">
+                                    <span id="tfCardFeatureOne">Lorem ipsum dolor sit amet.</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-end mt-4 mb-3">
+                                    <h4 class="">$ 15.00</h4>
+                                    <button class="btn primary-btn bradius-one">
+                                        <svg class="nav-svg-1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.224 4.33333C11.5974 3.54667 12.4027 3 13.3334 3H18.6667C19.5974 3 20.4014 3.54667 20.776 4.33333C21.6867 4.34133 22.3974 4.38267 23.032 4.63067C23.7897 4.92703 24.4486 5.43068 24.9334 6.084C25.4227 6.74267 25.6534 7.58667 25.968 8.748L26.9574 12.3773L27.3307 13.4987L27.3627 13.5387C28.564 15.0773 27.992 17.3653 26.848 21.94C26.12 24.8507 25.7574 26.3053 24.672 27.1533C23.5867 28 22.0867 28 19.0867 28H12.9134C9.91338 28 8.41338 28 7.32804 27.1533C6.24271 26.3053 5.87871 24.8507 5.15204 21.94C4.00804 17.3653 3.43604 15.0773 4.63738 13.5387L4.66938 13.4987L5.04271 12.3773L6.03204 8.748C6.34804 7.58667 6.57871 6.74133 7.06671 6.08267C7.55168 5.42984 8.21057 4.92666 8.96804 4.63067C9.60271 4.38267 10.312 4.34 11.224 4.33333ZM11.2267 6.33733C10.344 6.34667 9.98938 6.38 9.69604 6.49467C9.288 6.65424 8.93313 6.92548 8.67204 7.27733C8.43738 7.59333 8.29871 8.03467 7.91204 9.45733L7.15204 12.2427C8.51204 12 10.3707 12 12.912 12H19.0867C21.6294 12 23.4867 12 24.8467 12.24L24.088 9.45467C23.7014 8.032 23.5627 7.59067 23.328 7.27467C23.067 6.92281 22.7121 6.65157 22.304 6.492C22.0107 6.37733 21.656 6.344 20.7734 6.33467C20.5841 6.73313 20.2857 7.06976 19.9128 7.30552C19.5399 7.54128 19.1079 7.6665 18.6667 7.66667H13.3334C12.8924 7.66662 12.4604 7.54159 12.0876 7.30608C11.7147 7.07057 11.4162 6.73555 11.2267 6.33733Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!--end-->
+                </div>
+                <div class="d-md-block d-none">
+                    <div class="swiper-button-next custom-next"></div>
+                    <div class="swiper-button-prev custom-prev"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--footer_start-->
+    <footer id="footerSection" class="section-margin footer-bg py-5">
+        <div class="container">
+
+            <div class="row border-bottom border-2 border-fade">
+                <div class="pb-5 d-md-flex justify-content-md-between footer-fade-text">
+                    <a class="nav-link mt-2" href="careers.html">Careers</a>
+                    <a class="nav-link mt-2" href="terms_and_conditions.html">Terms and Conditions</a>
+                    <a class="nav-link mt-2" href="faq.html">FAQ</a>
+                    <a class="nav-link mt-2" href="privacy_policy.html">Privacy Policy</a>
+                    <a class="nav-link mt-2" href="contact_us.html">Contact Us</a>
+                    <a class="nav-link mt-2" href="site_map.html">Site Map</a>
+                </div>
+            </div>
+
+            <div class="row footer-text pt-5 mb-5">
+
+                <div class="col-md-4 col-12">
+                    <a href="#" class="">
+                        <img class="logo-size" src="/assets/logos/c2f_logo_white.svg">
+                    </a>
+                    <p class="l-spacing mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem perferendis aliquid, cumque accusamus, quo nemo porro laboriosam aut magni saepe nobis corrupti tenetur voluptatem dolorum distinctio.</p>
+                </div>
+
+                <div class="col-md-2 col-6 mt-md-0 mt-4">
+                    <span class="fs-5 fw-semibold">Company</span>
+                    <span class="mt-4">
+                        <a class="nav-link mt-4" href="about_us.html">About Us</a>
+                        <a class="nav-link mt-3" href="offers.html">Offers</a>
+                        <a class="nav-link mt-3" href="become_partner.html">Become a Partnet</a>
+                        <a class="nav-link mt-3" href="become_delivery_man.html">Become a Delivery Man</a>
+                    </span>
+                </div>
+                <div class="col-md-2 col-6 mt-md-0 mt-4">
+                    <span class="fs-5 fw-semibold">Coverage</span>
+                    <span class="mt-4">
+                        <a class="nav-link mt-4" href="#">Dubai</a>
+                        <a class="nav-link mt-3" href="#">Abu Dhabi</a>
+                        <a class="nav-link mt-3" href="#">Al Ain</a>
+                        <a class="nav-link mt-3" href="#">Sharjah</a>
+                    </span>
+                </div>
+                <div class="col-md-2 col-6 mt-md-0 mt-4">
+                    <span class="fs-5 fw-semibold">Shops</span>
+                    <span class="mt-4">
+                        <a class="nav-link mt-4" href="#">Almaya Supermarket</a>
+                        <a class="nav-link mt-3" href="#">Fresh Mart</a>
+                        <a class="nav-link mt-3" href="#">Pizza Express</a>
+                        <a class="nav-link mt-3" href="#">Al Rubooa Groery</a>
+                    </span>
+                </div>
+                <div class="col-md-2 col-6 mt-md-0 mt-4">
+                    <span class="fs-5 fw-semibold">Restaurants</span>
+                    <span class="mt-4">
+                        <a class="nav-link mt-4" href="#">Burger King</a>
+                        <a class="nav-link mt-3" href="#">Texas Chicken</a>
+                        <a class="nav-link mt-3" href="#">Pizza Express</a>
+                        <a class="nav-link mt-3" href="#">Click To Food</a>
+                    </span>
+                </div>
+            </div>
+            <div class="row footer-text border-top border-2 border-fade">
+
+                <div class="col-md-6 col-12 mt-4">
+                    <p class="text-md-start text-center">&copy; 2024 Click To Food</p>
+                </div>
+
+                <div class="col-md-6 col-12 mt-4">
+                    <div class="d-flex justify-content-md-end justify-content-center">
+                        <a class="nav-link me-4" href="#">
+                            <img class="icon-size-3" src="/assets/icons/facebook.svg">
+                        </a>
+                        <a class="nav-link me-4" href="#">
+                            <img class="icon-size-3" src="/assets/icons/x.svg">
+                        </a>
+                        <a class="nav-link me-4" href="#">
+                            <img class="icon-size-3" src="/assets/icons/instagram.svg">
+                        </a>
+                        <a class="nav-link" href="#">
+                            <img class="icon-size-3" src="/assets/icons/linkedin.svg">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <!--Bootstrap_js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!--custom_js-->
+    <script src="/js/swiper_restaurant.js"></script>
+</body>
+</html>

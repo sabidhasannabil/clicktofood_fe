@@ -84,7 +84,32 @@ var swiper = new Swiper(".featured-restaurant", {
     },
 });
 
-var swiper = new Swiper(".all-Category-foods", {
+var swiper = new Swiper(".top-rated-restaurants", {
+    slidesPerView: 1,
+    spaceBetween: 12,
+    // mousewheel: true,
+    // grabCursor: true,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 16,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 24,
+      },
+    },
+});
+
+var swiper = new Swiper(".great-value-money", {
     slidesPerView: 1,
     spaceBetween: 12,
     // mousewheel: true,
@@ -130,3 +155,4 @@ var swiper = new Swiper(".scheduled-food", {
       },
     },
 });
+

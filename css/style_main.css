@@ -7,6 +7,7 @@
     --section-bg: #8E99EF1D;
     --shadow-color: #8E99EF5B;
     --footer-text-color: #EEEEEE;
+    --text-fade-color: #1d26877e;
     --white-transparent: #FFFFFF7D;/*Only for dark background*/
     --shadow-one: -6px 6px 12px -8px var(--shadow-color);
     --shadow-two: -6px 6px 16px -8px var(--shadow-color);
@@ -74,6 +75,9 @@ body {
 }
 .section-bg-2 {
     background-color: var(--primary-color);
+}
+.text-color-3 {
+    color: var(--text-fade-color);
 }
 .header-bg {
     border: 1px solid var(--section-bg);
@@ -366,7 +370,7 @@ body {
 }
 /*products card*/
 .product-card {
-    max-width: 500px;
+    max-width: 450px;
     color: var(--secondary-color);
     background-color: var(--white-color);
     box-shadow: var(--shadow-one);
@@ -375,12 +379,17 @@ body {
         color: var(--secondary-color);
     }
 }
+@media only screen and (max-width: 572px) {
+    .product-card {
+        max-width: 500px;
+    }
+}
 .product-card .img-box {
     position: relative;
     aspect-ratio: 16/9;
 }
 .product-card .img-box img {
-    aspect-ratio: 16/9;
+    /* aspect-ratio: 16/9; */
     object-fit: cover;
 }
 .product-card .img-box .tf-offer {
@@ -472,7 +481,6 @@ body {
 }
 /**/
 .free-delivery-asset {
-    /* aspect-ratio: 41/9; */
     height: 100%;
     background-position: right;
     background-repeat: no-repeat;
@@ -481,4 +489,12 @@ body {
     .free-delivery-asset {
         aspect-ratio: 16/9;
     }
+}
+/*restaurant_page*/
+.res-image {
+    object-fit: cover;
+}
+.res-info-des {
+    font-size: 13px;
+    color: var(--primary-color);
 }
