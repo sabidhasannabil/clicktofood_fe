@@ -82,7 +82,7 @@ body {
 }
 .header-bg {
     border: 1px solid var(--section-bg);
-    background-image: url(/assets/assets/about_header.jpg);
+    /* background-image: url(/assets/assets/about_header.jpg); */
     background-color: #FBFBFD;
     background-position: right;
     background-size: contain;
@@ -155,6 +155,9 @@ body {
 }
 .bradius-five {
     border-radius: 36px;
+}
+.bradius-six {
+    border-radius: 28px 28px 8px 8px;
 }
 .bradius-bottom-1 {
     border-bottom-left-radius: 32px;
@@ -238,10 +241,18 @@ body {
         cursor: pointer;
     }
 }
-.card-asset-1 {
+/* .card-asset-1 {
     width: auto;
     height: 100px;
+} */
+.partner-card {
+    padding: 24px;;
+    color: var(--white-color);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 /* footer */
 .footer-bg {
     background-color: var(--dark-color);
@@ -281,7 +292,6 @@ body {
 
 /*partner_page*/
 .partner-hero {
-    background-image: url(/assets/assets/partner_page_hro.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -307,7 +317,6 @@ body {
     height: 600px;
 }
 .delivery-hero {
-    background-image: url(/assets/assets/delivery_man_hero.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -505,13 +514,13 @@ body {
     top: 76px;
 }
 .tab-bg {
-    color: var(--secondary-color);
-    background-color: var(--section-bg);
+    color: var(--white-color);
+    background-color: var(--primary-color);
     transition: 0.3s ease-in-out;
 }
 .tab-bg:hover {
     color: var(--white-color);
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     transition: 0.3s ease-in-out;
 }
 .res-image {
@@ -548,8 +557,8 @@ body {
     border-color: var(--primary-color);
     height: 24px;
     width: 24px;
-    bottom: 24px;
-    right: 24px;
+    bottom: 18px;
+    right: 18px;
 }
 .input-custom:checked {
     background-color: var(--primary-color);
