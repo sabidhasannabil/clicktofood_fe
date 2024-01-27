@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click To Food</title>
+    <link rel="icon" type="image/x-icon" href="/assets/fav/fav_icon.png">
+    <!--fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!--Bootstrap_css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!--swiper_css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!--stylesheet-->
+    <link href="/css/style_main.css" rel="stylesheet">
+    <link href="/css/swiper_about.css" rel="stylesheet">
+</head>
+<body>
+    <!--navbar_start-->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light c-bg-one py-3">
+        <div class="container">
+            <a class="navbar-brand p-0" href="index.html">
+                <img src="/assets/logos/c2f_logo.svg" alt="" width="auto" height="40" class="d-inline-block">
+            </a>
+            <button class="navbar-toggler bradius-one toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span>
+                    <svg class="toggler-icon-custom" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                        <path d="M9.45033 15.5633L12.752 12.2616L5.53033 5.05162C4.97033 4.49162 4.00199 4.64328 3.65199 5.36662C2.82366 7.10495 3.12699 9.23995 4.56199 10.6866L9.45033 15.5633ZM17.3603 13.4516C19.1453 14.2799 21.6537 13.6966 23.5087 11.8416C25.737 9.61328 26.1687 6.41662 24.4537 4.70162C22.7503 2.99828 19.5537 3.41828 17.3137 5.64662C15.4587 7.50162 14.8753 10.0099 15.7037 11.7949L5.13366 22.365C4.91552 22.5831 4.79297 22.879 4.79297 23.1875C4.79297 23.4959 4.91552 23.7918 5.13366 24.01C5.3518 24.2281 5.64766 24.3506 5.95616 24.3506C6.26466 24.3506 6.56052 24.2281 6.77866 24.01L14.0003 16.8116L21.2103 24.0216C21.3183 24.1296 21.4466 24.2153 21.5877 24.2738C21.7288 24.3322 21.8801 24.3623 22.0328 24.3623C22.1856 24.3623 22.3368 24.3322 22.478 24.2738C22.6191 24.2153 22.7473 24.1296 22.8553 24.0216C22.9633 23.9136 23.049 23.7854 23.1075 23.6442C23.1659 23.5031 23.196 23.3519 23.196 23.1991C23.196 23.0464 23.1659 22.8951 23.1075 22.754C23.049 22.6129 22.9633 22.4846 22.8553 22.3766L15.6453 15.1666L17.3603 13.4516Z"/>
+                    </svg>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav mt-md-0 mt-5 me-3">
+                    <li class="nav-item">
+                        <a class="nav-link n-link-color active" href="about_us.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link n-link-color" href="offers.html">Offers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link n-link-color" href="become_partner.html">Become a Partner</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link n-link-color" href="become_delivery_man.html">Become a Delivery Man</a>
+                    </li>
+                </ul>
+                <form class="mt-md-0 mt-5">
+                    <a href="login.html" class="btn primary-btn bradius-one btn-p-1" type="button">Log In
+                        <img class="icon-size-1 ms-3" src="./assets/icons/right_top.svg">
+                    </a>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <section id="" class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-lg-7 col-xl-6 mb-4 mb-md-0">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex flex-row mt-1">
+                          <h6 id="totalAmount">Total</h6>
+                          <h6 class="fw-bold h-highlight ms-1">13.24 <span id="currencyType">AED</span></h6>
+                        </div>
+                        <div class="d-flex flex-row align-items-center">
+                          <a href="#" class="text-decoration-none ms-1">Add Payment card</a>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-column my-3">
+                        <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                          <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" />
+                          <label class="btn btn-outline-primary btn-lg" for="option1">
+                            <div class="d-flex justify-content-between">
+                              <span id="cardType">VISA </span>
+                              <span id="cardNumber1">**** 5436</span>
+                            </div>
+                          </label>
+                
+                          <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" checked />
+                          <label class="btn btn-outline-primary btn-lg" for="option2">
+                            <div class="d-flex justify-content-between">
+                              <span id="cardType">MASTER CARD </span>
+                              <span id="cardNumber2">**** 5038</span>
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="btn primary-btn btn-lg bradius-one btn-p-1 mt-4">Proceed to payment</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--footer_start-->
+    <footer id="footerSection" class="section-margin footer-bg py-5">
+        <div class="container">
+
+            <div class="row border-bottom border-2 border-fade">
+                <div class="pb-5 d-md-flex justify-content-md-between footer-fade-text">
+                    <a id="careers" class="nav-link mt-2" href="careers.html">Careers</a>
+                    <a id="termsAndCondition" class="nav-link mt-2" href="terms_and_conditions.html">Terms and Conditions</a>
+                    <a id="faq" class="nav-link mt-2" href="faq.html">FAQ</a>
+                    <a id="privacyPolicy" class="nav-link mt-2" href="privacy_policy.html">Privacy Policy</a>
+                    <a id="contactUs" class="nav-link mt-2" href="contact_us.html">Contact Us</a>
+                    <a id="siteMap" class="nav-link mt-2" href="site_map.html">Site Map</a>
+                </div>
+            </div>
+
+            <div class="row footer-text pt-5 mb-5">
+
+                <div class="col-md-4 col-12">
+                    <a id="footerLogo" href="#" class="">
+                        <img id="footerLogoImg" class="logo-size" src="/assets/logos/c2f_logo_white.svg">
+                    </a>
+                    <p id="footerDescription" class="l-spacing mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem perferendis aliquid, cumque accusamus, quo nemo porro laboriosam aut magni saepe nobis corrupti tenetur voluptatem dolorum distinctio.</p>
+                </div>
+
+                <div class="col-md-2 col-6 mt-md-0 mt-4">
+                    <span id="footerHeading1" class="fs-5 fw-semibold">Company</span>
+                    <span class="mt-4">
+                        <a id="aboutUsLink" class="nav-link mt-4" href="about_us.html">About Us</a>
+                        <a id="OffersLink" class="nav-link mt-3" href="offers.html">Offers</a>
+                        <a id="bPartnerLink" class="nav-link mt-3" href="become_partner.html">Become a Partnet</a>
+                        <a id="bDeliveryManLink" class="nav-link mt-3" href="become_delivery_man.html">Become a Delivery Man</a>
+                    </span>
+                </div>
+                <div class="col-md-2 col-6 mt-md-0 mt-4">
+                    <span id="footerHeading2" class="fs-5 fw-semibold">Coverage</span>
+                    <span class="mt-4">
+                        <a class="nav-link mt-4" href="#">Dubai</a>
+                        <a class="nav-link mt-3" href="#">Abu Dhabi</a>
+                        <a class="nav-link mt-3" href="#">Al Ain</a>
+                        <a class="nav-link mt-3" href="#">Sharjah</a>
+                    </span>
+                </div>
+                <div class="col-md-2 col-6 mt-md-0 mt-4">
+                    <span id="footerHeading3" class="fs-5 fw-semibold">Shops</span>
+                    <span class="mt-4">
+                        <a class="nav-link mt-4" href="#">Almaya Supermarket</a>
+                        <a class="nav-link mt-3" href="#">Fresh Mart</a>
+                        <a class="nav-link mt-3" href="#">Pizza Express</a>
+                        <a class="nav-link mt-3" href="#">Al Rubooa Groery</a>
+                    </span>
+                </div>
+                <div class="col-md-2 col-6 mt-md-0 mt-4">
+                    <span id="footerHeading4" class="fs-5 fw-semibold">Restaurants</span>
+                    <span class="mt-4">
+                        <a class="nav-link mt-4" href="#">Burger King</a>
+                        <a class="nav-link mt-3" href="#">Texas Chicken</a>
+                        <a class="nav-link mt-3" href="#">Pizza Express</a>
+                        <a class="nav-link mt-3" href="#">Click To Food</a>
+                    </span>
+                </div>
+            </div>
+            <div class="row footer-text border-top border-2 border-fade">
+
+                <div class="col-md-6 col-12 mt-4">
+                    <p id="copyRight" class="text-md-start text-center">&copy; 2024 Click To Food</p>
+                </div>
+
+                <div class="col-md-6 col-12 mt-4">
+                    <div class="d-flex justify-content-md-end justify-content-center">
+                        <a id="facebookLink" class="nav-link me-4" href="#">
+                            <img id="facebookIcon" class="icon-size-3" src="/assets/icons/facebook.svg">
+                        </a>
+                        <a id="twitterLink" class="nav-link me-4" href="#">
+                            <img id="twitterIcon" class="icon-size-3" src="/assets/icons/x.svg">
+                        </a>
+                        <a id="instagramLink" class="nav-link me-4" href="#">
+                            <img id="instagramIcon" class="icon-size-3" src="/assets/icons/instagram.svg">
+                        </a>
+                        <a id="linkedinLink" class="nav-link" href="#">
+                            <img id="linkedinIcon" class="icon-size-3" src="/assets/icons/linkedin.svg">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!--Bootstrap_js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!--custom_js-->
+    <script src="/js/swiper_about.js"></script>
+</body>
+</html>
